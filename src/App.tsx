@@ -4,12 +4,7 @@ import Navbar from './components/Navbar';
 import { motion } from 'framer-motion';
 import SkillCard from './components/SkillCard';
 import ProjectCard from './components/ProjectCard';
-import {
-  Code2,
-  Database,
-  Globe,
-  Server,
-  Cpu,
+import { Code2, Database, Globe, Server,Cpu,
   Cloud,
   Brain,
   Lock,
@@ -24,144 +19,145 @@ import {
 } from 'lucide-react';
 
 function App() {
+ 
   const skills = [
     {
       title: 'Frontend Development',
-      description: 'React, Vue, Angular with modern practices',
-      icon: Globe,
+      description: 'React, Vue, Angular',
+      icon: 'Globe',
     },
     {
       title: 'Backend Development',
-      description: 'Node.js, Python, Java microservices',
-      icon: Server,
+      description: 'Node.js, Python, Java',
+      icon: 'Server',
     },
     {
       title: 'Database Design',
       description: 'SQL, NoSQL, Data Modeling',
-      icon: Database,
+      icon: 'Database',
     },
     {
       title: 'Cloud Architecture',
-      description: 'AWS, Azure, GCP solutions',
-      icon: Cloud,
+      description: 'AWS, Azure, GCP',
+      icon: 'Cloud',
     },
     {
       title: 'Machine Learning',
       description: 'TensorFlow, PyTorch, Neural Networks',
-      icon: Brain,
+      icon: 'Brain',
     },
-    { title: 'DevOps', description: 'CI/CD, Docker, Kubernetes', icon: Code2 },
+    {
+      title: 'DevOps',
+      description: 'CI/CD, Docker, Kubernetes',
+      icon: 'Code2',
+    },
     {
       title: 'System Architecture',
       description: 'Scalable distributed systems',
-      icon: Cpu,
+      icon: 'Cpu',
     },
     {
       title: 'Security',
       description: 'Cybersecurity best practices',
-      icon: Lock,
+      icon: 'Lock',
+    },
+    {
+      title: 'Programming Languages',
+      description: 'Python, C, C++, MATLAB',
+      icon: 'Code',
+    },
+    {
+      title: 'Libraries and Tools',
+      description: 'PyTorch, Keras, Pandas, Numpy, OpenCV',
+      icon: 'Tools',
+    },
+    {
+      title: 'ML Models',
+      description: 'CNN, DNN, YOLO, Transfer Learning',
+      icon: 'Brain',
+    },
+    {
+      title: 'Version Control',
+      description: 'Git, AWS CodeCommit',
+      icon: 'Git',
+    },
+    {
+      title: 'Research & Analysis',
+      description: 'Statistical & Qualitative Research',
+      icon: 'BarChart',
+    },
+    {
+      title: 'Specializations',
+      description: 'Robotics, AI, IOT',
+      icon: 'Target',
+    },
+    {
+      title: 'Database Management',
+      description: 'MySQL, MongoDB',
+      icon: 'Database',
+    },
+    {
+      title: 'Soft Skills',
+      description: 'Communication, Teamwork, Leadership, Adaptability',
+      icon: 'Users',
+    },
+    {
+      title: 'AI & Computer Vision',
+      description: 'Image Recognition, Object Detection, Segmentation, Face Recognition',
+      icon: 'Camera',
+    },
+    {
+      title: 'Project Management',
+      description: 'Agile, Scrum, Kanban, Stakeholder Communication, Roadmap Planning',
+      icon: 'ProjectDiagram',
     },
   ];
-
+  
   const projects = [
     {
-      title: 'AI-Powered Analytics Platform',
-      description: 'Real-time data analysis using machine learning algorithms',
-      image:
-        'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github:
-        'https://github.com/astromanu007/Makardhwaj-Medicine-Recommendation-System',
-      demo: '#',
+      title: 'AI-Driven Object Detection for Autonomous Cars',
+      description: 'A real-time object detection system for autonomous vehicles using MobileNet SSD for vehicle, pedestrian, and traffic sign detection.',
+      image: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=913&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      github: 'https://github.com/astromanu007/AI-Driven-Object-Detection-for-Autonomous-Cars-',
+      demo: 'https://github.com/astromanu007/AI-Driven-Object-Detection-for-Autonomous-Cars-',
     },
     {
-      title: 'Quantum Computing Simulator',
-      description: 'Educational platform for quantum computing concepts',
-      image:
-        'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github: '#',
-      demo: '#',
+      title: 'Makardhwaj Medicine Recommendation System',
+      description: 'A machine learning-based platform that diagnoses over 40 diseases and provides personalized medicine recommendations.',
+      image: 'https://cdn.pixabay.com/photo/2017/08/24/03/41/starry-sky-2675322_640.jpg',
+      github: 'https://github.com/astromanu007/Makardhwaj-Medicine-Recommendation-System',
+      demo: 'https://github.com/astromanu007/Makardhwaj-Medicine-Recommendation-System',
     },
     {
-      title: 'Blockchain Explorer',
-      description: 'Visualize and analyze blockchain transactions',
-      image:
-        'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github: '#',
-      demo: '#',
+      title: 'AI-Enhanced Smart Stethoscope',
+      description: 'An AI-powered stethoscope integrated with telemedicine, wireless charging, and real-time data analysis.',
+      image: 'https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      github: 'https://github.com/astromanu007/AI-Enhanced-Smart-Stethoscope',
+      demo: 'https://github.com/astromanu007/AI-Enhanced-Smart-Stethoscope',
     },
     {
-      title: 'Smart City IoT Platform',
-      description: 'IoT management system for urban infrastructure',
-      image:
-        'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github: '#',
-      demo: '#',
+      title: 'Advanced PCB Anomaly Detection System',
+      description: 'A fault detection system using infrared imaging to localize overheated PCB components and improve system reliability.',
+      image: 'https://media.istockphoto.com/id/1035676256/photo/background-of-galaxy-and-stars.webp?a=1&b=1&s=612x612&w=0&k=20&c=fTMmKEEBS5hNqG_Ddl90z1z_3cm7i6GXgVXYtV6fQyk=',
+      github: 'https://github.com/astromanu007/PCB_Anomaly_Detection',
+      demo: 'https://github.com/astromanu007/PCB_Anomaly_Detection',
     },
     {
-      title: 'Neural Network Visualization',
-      description: 'Interactive 3D visualization of neural networks',
-      image:
-        'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github: '#',
-      demo: '#',
+      title: 'Deep Learning-Based Leaf Disease Detection and Cure',
+      description: 'A deep learning-based Flask application for diagnosing leaf diseases and providing care suggestions for 39 plant species.',
+      image: 'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+      github: 'https://github.com/astromanu007/Leaf-Disease-Detection',
+      demo: 'https://github.com/astromanu007/Leaf-Disease-Detection',
     },
     {
-      title: 'Autonomous Drone Control',
-      description: 'AI-powered drone navigation system',
-      image:
-        'https://images.unsplash.com/photo-1508614589041-895b88991e3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Cybersecurity Analysis Tool',
-      description: 'Advanced threat detection and analysis',
-      image:
-        'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Green Energy Management',
-      description: 'Renewable energy optimization platform',
-      image:
-        'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Medical Imaging AI',
-      description: 'AI-assisted medical image analysis',
-      image:
-        'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Space Weather Predictor',
-      description: 'ML-based solar activity prediction',
-      image:
-        'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Quantum Computing Simulator',
-      description: 'Educational platform for quantum computing concepts',
-      image:
-        'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Space Weather Predictor',
-      description: 'ML-based solar activity prediction',
-      image:
-        'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-      github: '#',
-      demo: '#',
-    },
+      title: 'AI Virtual Mouse',
+      description: 'AI Virtual Mouse is a cutting-edge project that brings a new dimension to computer interaction. Using advanced machine learning and computer vision techniques, FingerMouse allows you to control your computer with the wave of your hand.',
+      image: 'https://cdn.pixabay.com/photo/2020/12/25/04/51/polar-lights-5858656_1280.jpg',
+      github: 'https://github.com/astromanu007/AI_Virtual_Mouse',
+      demo: 'https://github.com/astromanu007/AI_Virtual_Mouse',
+    }
   ];
+  
 
   const experience = [
     {
@@ -323,7 +319,7 @@ function App() {
     },
   ];
 
-  const publications = Array.from({ length: 15 }, (_, i) => ({
+  const publications = Array.from({ length: 5 }, (_, i) => ({
     title: `Advanced ${
       [
         'Neural Networks',
@@ -415,7 +411,7 @@ function App() {
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
               <img
-                src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                src="https://media.licdn.com/dms/image/v2/D5603AQG2MgYrwHZbxA/profile-displayphoto-shrink_200_200/B56ZSoBHXnGoAY-/0/1737985652724?e=1743638400&v=beta&t=7iSNRmidAxCj9CfTPyibGTZuBO1UVLU-zUr8AEeqQ_Q"
                 alt="Profile"
                 className="relative rounded-full w-64 h-64 mx-auto object-cover"
               />
@@ -652,7 +648,7 @@ function App() {
           </h2>
           <div className="flex justify-center space-x-8">
             <motion.a
-              href="https://github.com/yourusername"
+              href="https://github.com/astromanu007"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
@@ -662,7 +658,7 @@ function App() {
               <Github className="relative w-12 h-12 text-white" />
             </motion.a>
             <motion.a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/manish-dhatrak-b759171aa/"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
@@ -672,7 +668,7 @@ function App() {
               <Linkedin className="relative w-12 h-12 text-white" />
             </motion.a>
             <motion.a
-              href="mailto:your.email@example.com"
+              href="mailto:manishdhatrak1121@gmail.com"
               whileHover={{ scale: 1.1 }}
               className="relative group"
             >
