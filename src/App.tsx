@@ -470,11 +470,11 @@ function App() {
       description: 'A precision control brake system with an ergonomic grip for enhanced user comfort and control. The design reduces hand strain during use. Offers improved braking precision, ideal for long-duration usage.',
     },
     {
-      title: 'FLEXIFEAST SPOON',
-      number: 'Design No. : 415106-001',
+      title: 'OPULENT SOAP COMPARTMENT STOOL',
+      number: 'Design No. : 414552-001',
       year: '2024',
       status: 'Pending',
-      description: 'A flexible spoon design that enhances the experience of eating various types of foods. The innovative spoon adapts to different food textures, making it easy to scoop and enjoy a variety of dishes, whether they are soft or semi-solid. Its ergonomic design offers comfort during use, making it a versatile addition to dining experiences.',
+      description: 'The Opulent Soap Compartment Stool is an innovative design that combines comfort with functionality. It features a dedicated soap compartment integrated into the seat, offering convenience and practicality for users.',
     },
   ];
   
@@ -512,7 +512,7 @@ function App() {
             onClick={handleExploreWork}
             className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
           >
-            <strong>Unveil My Creations</strong>
+            Unveil My Creations
           </motion.button>
         </motion.div>
       </section>
@@ -529,7 +529,7 @@ function App() {
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
               <img
-                src="https://avatars.githubusercontent.com/u/98075143?s=400&u=73e1af4d3675f7d8eedbe342374e8bc7112f23fa&v=4"
+                src="https://avatars.githubusercontent.com/u/98075143?s=400&u=d87c28809dc33c8d81123df7627a6fee69023b63&v=4"
                 alt="Profile"
                 className="relative rounded-full w-64 h-64 mx-auto object-cover"
               />

@@ -18,6 +18,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
+            {/* Profile Image */}
+            <img
+              src="https://avatars.githubusercontent.com/u/98075143?s=400&u=73e1af4d3675f7d8eedbe342374e8bc7112f23fa&v=4" // Add your image URL here
+              alt="Manish Dhatrak"
+              className="w-10 h-10 rounded-full mr-3"
+            />
+            {/* Portfolio Title */}
             <span className="text-white text-xl font-bold">
               Manish Dhatrak Portfolio
             </span>
