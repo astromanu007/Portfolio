@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <span className="text-white text-xl font-bold">
-              Manish's Portfolio
+              Manish Dhatrak Portfolio
             </span>
           </div>
 

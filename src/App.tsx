@@ -16,6 +16,11 @@ import { Code2, Database, Globe, Server,Cpu,
   Lightbulb,
   Briefcase,
   Trophy,
+  BarChart,
+  Python,
+  Camera,
+  Users,
+  Target
 } from 'lucide-react';
 
 function App() {
@@ -24,92 +29,92 @@ function App() {
     {
       title: 'Frontend Development',
       description: 'React, Vue, Angular',
-      icon: 'Globe',
+      icon: Globe,
     },
     {
       title: 'Backend Development',
       description: 'Node.js, Python, Java',
-      icon: 'Server',
+      icon: Server,
     },
     {
       title: 'Database Design',
       description: 'SQL, NoSQL, Data Modeling',
-      icon: 'Database',
+      icon: Database,
     },
     {
       title: 'Cloud Architecture',
       description: 'AWS, Azure, GCP',
-      icon: 'Cloud',
+      icon: Cloud,
     },
     {
       title: 'Machine Learning',
       description: 'TensorFlow, PyTorch, Neural Networks',
-      icon: 'Brain',
+      icon: Brain,
     },
     {
       title: 'DevOps',
       description: 'CI/CD, Docker, Kubernetes',
-      icon: 'Code2',
+      icon: Code2,
     },
     {
       title: 'System Architecture',
       description: 'Scalable distributed systems',
-      icon: 'Cpu',
+      icon: Cpu,
     },
     {
       title: 'Security',
       description: 'Cybersecurity best practices',
-      icon: 'Lock',
+      icon: Lock,
     },
     {
       title: 'Programming Languages',
       description: 'Python, C, C++, MATLAB',
-      icon: 'Code',
+      icon: Code2,
     },
     {
       title: 'Libraries and Tools',
       description: 'PyTorch, Keras, Pandas, Numpy, OpenCV',
-      icon: 'Tools',
+      icon: Lightbulb,
     },
     {
       title: 'ML Models',
       description: 'CNN, DNN, YOLO, Transfer Learning',
-      icon: 'Brain',
+      icon: Brain,
     },
     {
       title: 'Version Control',
       description: 'Git, AWS CodeCommit',
-      icon: 'Git',
+      icon: Briefcase,
     },
     {
       title: 'Research & Analysis',
       description: 'Statistical & Qualitative Research',
-      icon: 'BarChart',
+      icon: BarChart,
     },
     {
       title: 'Specializations',
       description: 'Robotics, AI, IOT',
-      icon: 'Target',
+      icon: Target,
     },
     {
       title: 'Database Management',
       description: 'MySQL, MongoDB',
-      icon: 'Database',
+      icon: Database,
     },
     {
       title: 'Soft Skills',
       description: 'Communication, Teamwork, Leadership, Adaptability',
-      icon: 'Users',
+      icon: Users,
     },
     {
       title: 'AI & Computer Vision',
       description: 'Image Recognition, Object Detection, Segmentation, Face Recognition',
-      icon: 'Camera',
+      icon: Camera,
     },
     {
       title: 'Project Management',
       description: 'Agile, Scrum, Kanban, Stakeholder Communication, Roadmap Planning',
-      icon: 'ProjectDiagram',
+      icon: Globe,
     },
   ];
   
@@ -319,47 +324,160 @@ function App() {
     },
   ];
 
-  const publications = Array.from({ length: 5 }, (_, i) => ({
-    title: `Advanced ${
-      [
-        'Neural Networks',
-        'Quantum Computing',
-        'Blockchain',
-        'Cloud Architecture',
-        'Cybersecurity',
-      ][i % 5]
-    } Research Paper ${i + 1}`,
-    journal: `${
-      ['Nature', 'Science', 'IEEE', 'ACM', 'arXiv'][i % 5]
-    } Journal of Technology`,
-    year: `${2024 - Math.floor(i / 3)}`,
-    link: '#',
-    citation: `${150 - i * 10}+ citations`,
-  }));
+  const publications = {
+    publishedPapers: [
+      {
+        title:
+          'Topic Modelling for News Article Categorization Using Latent Dirichlet Allocation: A Text Mining Approach',
+        authors: 'M. A. Dhatrak, S. Jadhav, S. Gupta, N. Siddiqui',
+        journal:
+          'Journal of Knowledge in Data Science and Information Management, (2024)',
+        link: 'https://matjournals.net/engineering/index.php/JoKDSIM/article/view/1003',
+      },
+      {
+        title:
+          'Self-Supervised Learning in Computer Vision: Enhancing Model Accuracy with Limited Labeled Data',
+        authors: 'S. Jadhav, M. A. Dhatrak, S. Gupta, N. Siddiqui',
+        journal: 'Journal of Data Engineering and Knowledge Discovery, (2024)',
+        link: 'https://matjournals.net/engineering/index.php/JoDEKD/article/view/1167',
+      },
+    ],
+    acceptedPapers: [
+      {
+        title:
+          'AI-Powered Emotion and Stress Detection: A WBAN-Based Approach for Real-Time Health Monitoring',
+        authors: 'M. A. Dhatrak, S. Jadhav, P. Vibhute, S. Gupta',
+        journal:
+          '19th EAI International Conference on Body Area Networks: Globally Connected Intelligent BAN (Final Stage of Publication)',
+        link: '#',
+      },
+      {
+        title:
+          'AI-Powered Virtual Try-On System: Enhancing Fit Prediction and User Comfort Through Deep Learning',
+        authors: 'M. A. Dhatrak, S. Jadhav, A. Harkal, A. Kankrale, S. Gupta',
+        journal:
+          '5th International Conference on Communication, Computing & Industry 6.0 (C2I6) (Final Stage of Publication)',
+        link: '#',
+      },
+      {
+        title:
+          'AI Enhanced Stethoscope for Real-Time Cardiopulmonary Diagnostics and Telemedicine Integration',
+        authors: 'M. A. Dhatrak, S. Jadhav, S. Gupta, N. Siddiqui',
+        journal:
+          '3rd International Conference on Advancement in Computation & Computer Technologies (InCACCT) (Preliminarily Stage of Publication)',
+        link: '#',
+      },
+    ],
+    underReviewPapers: [
+      {
+        title:
+          'Columbus Voice Automation System: An NLP-Powered Real-Time Speech Command Processing',
+        authors: 'M. A. Dhatrak, S. Jadhav, N. Darwante, B. Agarkar',
+        journal: 'Songklanakarin Journal of Science and Technology (SJST)',
+      },
+      {
+        title:
+          'Wearable IoT-Based Animal Distraction Device for Mitigating Human-Wildlife Conflicts',
+        authors: 'K. Wakchaure, P. Vibhute, M. A. Dhatrak, K. Fuse, S. Kulkarni',
+        journal: 'Internet of Things',
+      },
+      {
+        title:
+          'A Deep Learning-Driven Approach for Real-Time PCB Anomaly Detection via Thermal Imaging',
+        authors: 'M. A. Dhatrak, S. Jadhav, S. Gupta, N. Siddiqui',
+        journal: 'Songklanakarin Journal of Science and Technology (SJST)',
+      },
+      {
+        title:
+          'AI-Enabled Real-Time Intrusion Detection for Smart Fences Using Advanced Image Processing',
+        authors: 'S. Bhongale, M. A. Dhatrak, R. Gagare, T. Shivadkar',
+        journal:
+          '3rd International Conference on Advancement in Computation & Computer Technologies (InCACCT)',
+      },
+      {
+        title:
+          'Computer Vision-Driven Car Speed Control System Using Real-Time Traffic Sign Detection and Recognition',
+        authors: 'S. Jadhav, M. A. Dhatrak, P. Vibhute',
+        journal: 'Journal of Artificial Intelligence Research (JAIR)',
+      },
+      {
+        title:
+          'Multimodal Emotion Recognition: Leveraging Hybrid Fusion with Deep Learning Techniques',
+        authors: 'S. Kulkarni, M. A. Dhatrak, S. Jadhav, N. Bhopale',
+        journal:
+          'International Journal of Ad Hoc and Ubiquitous Computing',
+      },
+    ],
+  };
+  
+  
 
-  const patents = Array.from({ length: 10 }, (_, i) => ({
-    title: `${
-      ['AI-Powered', 'Quantum', 'Blockchain', 'Cloud', 'Neural'][i % 5]
-    } ${
-      ['Algorithm', 'Architecture', 'Protocol', 'System', 'Framework'][i % 5]
-    } Innovation ${i + 1}`,
-    number: `US${Math.floor(Math.random() * 900000000) + 100000000}`,
-    year: `${2024 - Math.floor(i / 5)}`,
-    status: i < 20 ? 'Granted' : 'Pending',
-    description: `Innovative ${
-      [
-        'machine learning',
-        'quantum computing',
-        'blockchain',
-        'cloud computing',
-        'neural network',
-      ][i % 5]
-    } solution for ${
-      ['optimization', 'security', 'scalability', 'efficiency', 'automation'][
-        i % 5
-      ]
-    }`,
-  }));
+  const patents = [
+    {
+      title: 'WRITING PAD WITH PEN HOLDER',
+      number: 'Design No. : 415676-001',
+      year: '2024',
+      status: 'Granted',
+      description: 'Innovative writing pad design with an integrated pen holder for improved functionality and convenience. Ideal for students, professionals, and creatives alikes.',
+    },
+    {
+      title: 'SMART SPECTACLES',
+      number: 'Design No. : 414349-001',
+      year: '2024',
+      status: 'Granted',
+      description: 'A new design for spectacles enhancing comfort and style. Engineered for both fashion and functionality, it provides long-lasting comfort. The frame is suitable for a variety of face shapes and sizes.',
+    },
+    {
+      title: 'ROBOTIC ARM GRIPPER',
+      number: 'Design No. : 416281-001',
+      year: '2024',
+      status: 'Granted',
+      description: 'A robotic arm gripper design to improve precision and strength for industrial applications. The gripper enhances accuracy in handling delicate items. Built to withstand high-stress environments in industry settings.',
+    },
+    {
+      title: 'HYDROHEAL BOTTLE',
+      number: 'Design No. : 415935-001',
+      year: '2024',
+      status: 'Granted',
+      description: 'An innovative bottle design with hydro healing technology to retain hydration properties. The bottle is designed with advanced materials that help retain water temperature for longer durations. Ideal for people with active lifestyles, it promotes hydration efficiency with a comfortable grip for ease of use.',
+    },
+    {
+      title: 'FLEXIFEAST SPOON',
+      number: 'Design No. : 415106-001',
+      year: '2024',
+      status: 'Granted',
+      description: 'A flexible spoon design that enhances the experience of eating various types of foods. The flexible tip adapts to the shape and consistency of different foods, making it easier to scoop up and consume. Whether for soft desserts or soups, it ensures that users can enjoy their meals without any hassle.',
+    },
+    {
+      title: 'ENIGMAGUARD: USB PORT PROTECTOR',
+      number: 'Design No. : 414830-001',
+      year: '2024',
+      status: 'Granted',
+      description: 'A silicon-based protector for laptop USB ports, providing enhanced protection against wear and tear. It shields USB ports from daily use and damage. Easy to apply and remove, ensuring long-lasting durability.',
+    },
+    {
+      title: 'ELEGANCE SEAT WITH BAG COMPARTMENT VAULT',
+      number: 'Design No. : 415290-001',
+      year: '2024',
+      status: 'Granted',
+      description: 'A unique seat design featuring a compartment for safely storing bags and accessories. The compartment ensures your personal belongings are safe. A sleek and stylish design, perfect for modern spaces.',
+    },
+    {
+      title: 'PRECISION CONTROL BRAKE WITH ERGONOMIC GRIP',
+      number: 'Design No. : 433263-001',
+      year: '2024',
+      status: 'Granted',
+      description: 'A precision control brake system with an ergonomic grip for enhanced user comfort and control. The design reduces hand strain during use. Offers improved braking precision, ideal for long-duration usage.',
+    },
+    {
+      title: 'FLEXIFEAST SPOON',
+      number: 'Design No. : 415106-001',
+      year: '2024',
+      status: 'Pending',
+      description: 'A flexible spoon design that enhances the experience of eating various types of foods. The innovative spoon adapts to different food textures, making it easy to scoop and enjoy a variety of dishes, whether they are soft or semi-solid. Its ergonomic design offers comfort during use, making it a versatile addition to dining experiences.',
+    },
+  ];
+  
 
   const handleExploreWork = (e) => {
     e.preventDefault();
@@ -386,7 +504,7 @@ function App() {
             Driven by Curiosity, Powered by Innovation
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            "Where Technology Meets Imagination"
+          <strong>"Where Technology Meets Imagination"</strong>
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -394,7 +512,7 @@ function App() {
             onClick={handleExploreWork}
             className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
           >
-            Unveil My Creations
+            <strong>Unveil My Creations</strong>
           </motion.button>
         </motion.div>
       </section>
@@ -411,17 +529,17 @@ function App() {
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
               <img
-                src="https://media.licdn.com/dms/image/v2/D5603AQG2MgYrwHZbxA/profile-displayphoto-shrink_200_200/B56ZSoBHXnGoAY-/0/1737985652724?e=1743638400&v=beta&t=7iSNRmidAxCj9CfTPyibGTZuBO1UVLU-zUr8AEeqQ_Q"
+                src="https://avatars.githubusercontent.com/u/98075143?s=400&u=73e1af4d3675f7d8eedbe342374e8bc7112f23fa&v=4"
                 alt="Profile"
                 className="relative rounded-full w-64 h-64 mx-auto object-cover"
               />
             </div>
             <div>
               <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-                About Me
+              <strong>About Me</strong>
               </h2>
               <p className="text-gray-300 mb-6 text-justify">
-                As an undergraduate in Electronics and Computer Engineering,
+              I am <strong>Manish Dhatrak</strong>, as an undergraduate in <strong>Electronics and Computer Engineering</strong>,
                 I’ve led over 60 impactful projects, authored 10 research
                 papers, and secured 25 patents (10 granted). Driven by a passion
                 for creativity and technological advancement, I craft innovative
@@ -436,7 +554,7 @@ function App() {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-2 rounded-full border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all duration-300 inline-block"
               >
-                Download Resume
+                <strong>Download Resume</strong>
               </motion.a>
             </div>
           </motion.div>
@@ -560,85 +678,125 @@ function App() {
 
       {/* Publications Section */}
       <section id="publications" className="py-20 relative">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-            Publications
-          </h2>
-          <div className="space-y-6">
-            {publications.map((pub, index) => (
-              <motion.div
-                key={pub.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative group"
+  <div className="max-w-6xl mx-auto px-4">
+    <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+      Authored Publications
+    </h2>
+
+    {/* Published Papers */}
+    <h3 className="text-2xl font-bold mb-6 text-white">Published Papers</h3>
+    <div className="space-y-6">
+      {publications.publishedPapers.map((pub, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          className="relative group"
+        >
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+          <div className="relative p-6 bg-black rounded-lg">
+            <h3 className="text-xl font-bold text-white mb-2">{pub.title}</h3>
+            <p className="text-gray-400 mb-1">{pub.authors}</p>
+            <p className="text-sm text-purple-400 mb-2">{pub.journal}</p>
+            {pub.link && (
+              <a
+                href={pub.link}
+                className="text-blue-400 hover:text-blue-300 text-sm mt-2 inline-block"
               >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <div className="relative p-6 bg-black rounded-lg flex items-start space-x-4">
-                  <FileText className="w-8 h-8 text-purple-400 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {pub.title}
-                    </h3>
-                    <p className="text-gray-400 mb-1">
-                      {pub.journal} • {pub.year}
-                    </p>
-                    <p className="text-sm text-purple-400">{pub.citation}</p>
-                    <a
-                      href={pub.link}
-                      className="text-blue-400 hover:text-blue-300 text-sm mt-2 inline-block"
-                    >
-                      Read Paper →
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                Read Paper →
+              </a>
+            )}
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Accepted Papers */}
+    <h3 className="text-2xl font-bold mt-12 mb-6 text-white">Accepted Papers</h3>
+    <div className="space-y-6">
+      {publications.acceptedPapers.map((pub, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          className="relative group"
+        >
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+          <div className="relative p-6 bg-black rounded-lg">
+            <h3 className="text-xl font-bold text-white mb-2">{pub.title}</h3>
+            <p className="text-gray-400 mb-1">{pub.authors}</p>
+            <p className="text-sm text-purple-400 mb-2">{pub.journal}</p>
+            
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Under Review Papers */}
+    <h3 className="text-2xl font-bold mt-12 mb-6 text-white">Under Review Papers</h3>
+    <div className="space-y-6">
+      {publications.underReviewPapers.map((pub, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          className="relative group"
+        >
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+          <div className="relative p-6 bg-black rounded-lg">
+            <h3 className="text-xl font-bold text-white mb-2">{pub.title}</h3>
+            <p className="text-gray-400 mb-1">{pub.authors}</p>
+            <p className="text-sm text-purple-400 mb-2">{pub.journal}</p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
 
       {/* Patents Section */}
-      <section id="patents" className="py-20 relative">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-            Patents
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {patents.map((patent, index) => (
-              <motion.div
-                key={patent.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative group"
-              >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <div className="relative p-6 bg-black rounded-lg">
-                  <Lightbulb className="w-12 h-12 text-purple-400 mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    {patent.title}
-                  </h3>
-                  <p className="text-gray-400 mb-2">{patent.number}</p>
-                  <p className="text-sm text-gray-500 mb-2">{patent.year}</p>
-                  <span
-                    className={`px-2 py-1 rounded-full text-xs ${
-                      patent.status === 'Granted'
-                        ? 'bg-green-500/20 text-green-400'
-                        : 'bg-yellow-500/20 text-yellow-400'
-                    }`}
-                  >
-                    {patent.status}
-                  </span>
-                  <p className="text-gray-400 text-sm mt-3">
-                    {patent.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+     {/* Patents Section */}
+<section id="patents" className="py-20 relative">
+  <div className="max-w-6xl mx-auto px-4">
+    <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+      Patents
+    </h2>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {patents.map((patent, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          className="relative group"
+        >
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+          <div className="relative p-6 bg-black rounded-lg">
+            <Lightbulb className="w-12 h-12 text-purple-400 mb-4" />
+            <h3 className="text-xl font-bold text-white mb-2">{patent.title}</h3>
+            <p className="text-gray-400 mb-2">{patent.number}</p>
+            <p className="text-sm text-gray-500 mb-2">{patent.year}</p>
+            <span
+              className={`px-2 py-1 rounded-full text-xs ${
+                patent.status === 'Granted'
+                  ? 'bg-green-500/20 text-green-400'
+                  : 'bg-yellow-500/20 text-yellow-400'
+              }`}
+            >
+              {patent.status}
+            </span>
+            <p className="text-gray-400 text-sm mt-3">{patent.description}</p>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 relative">
