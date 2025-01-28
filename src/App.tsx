@@ -554,7 +554,7 @@ function App() {
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-2 rounded-full border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all duration-300 inline-block"
               >
-                <strong>Download Resume</strong>
+                <strong>Download Resume/CV</strong>
               </motion.a>
             </div>
           </motion.div>
