@@ -561,6 +561,90 @@ function App() {
         </div>
       </section>
 
+
+      {/* Philosophy Section */}
+      <section className="py-20 relative z-10">
+        <div className="max-w-6xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+              Philosophy of Success
+            </h2>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="relative group max-w-3xl mx-auto"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+            <div className="relative p-8 bg-black rounded-2xl border border-purple-500/20">
+              <div className="text-center space-y-6">
+                <div className="text-3xl font-mono space-y-4">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="inline-block"
+                  >
+                    <span className="text-purple-400">P(Success)</span> = 1
+                  </motion.div>
+                  <div className="text-2xl">
+                    where
+                  </div>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    className="inline-block"
+                  >
+                    <span className="text-purple-400">Success</span> = <span className="text-blue-400">Σ</span> <span className="text-green-400">(Failures × Impact)</span>
+                  </motion.div>
+                </div>
+                
+                <div className="mt-8 text-gray-300 text-lg">
+                  <p className="mb-4">The probability of success approaches certainty (1) as the sum of our failures and their magnitude increases. Each failure contributes proportionally to its impact:</p>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="relative group p-4 rounded-lg bg-purple-900/20"
+                    >
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                      <div className="relative">
+                        <span className="text-xl font-bold text-purple-400">Small Failure</span>
+                        <p className="text-sm mt-2">Impact × 1</p>
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="relative group p-4 rounded-lg bg-purple-900/20"
+                    >
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                      <div className="relative">
+                        <span className="text-xl font-bold text-blue-400">Medium Failure</span>
+                        <p className="text-sm mt-2">Impact × 2</p>
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      className="relative group p-4 rounded-lg bg-purple-900/20"
+                    >
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                      <div className="relative">
+                        <span className="text-xl font-bold text-green-400">Large Failure</span>
+                        <p className="text-sm mt-2">Impact × 3</p>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Experience Section */}
       <section id="experience" className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4">
