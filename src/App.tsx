@@ -164,7 +164,20 @@ function App() {
   ];
   
 
-  const experience = [
+    const experience = [
+      {
+        title: 'Artificial Intelligence & Machine Learning Intern',
+        company: 'Adgebra | Inuxu Digital Media Technologies · Internship',
+        period: 'Jan 2025 - Present · 1 mo',
+        location: 'Pune, Maharashtra, India · On-site',
+        description: 'Working as an intern on artificial intelligence and machine learning projects, contributing to model development and real-time data analysis.',
+        achievements: [
+          'Developing machine learning models to optimize business processes.',
+          'Collaborating with the team on AI-driven data analysis and automation tasks.',
+          'Participating in weekly brainstorming sessions to innovate and improve ML solutions.'
+        ],
+      },
+         
     {
       title: 'Project Developer',
       company: 'Sanjivani Group of Institutes, India',
@@ -572,7 +585,7 @@ function App() {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-              Philosophy of Success
+              My Philosophy of Success
             </h2>
           </motion.div>
           
