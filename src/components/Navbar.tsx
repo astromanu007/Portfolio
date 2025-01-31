@@ -40,6 +40,7 @@ const Navbar = () => {
                 'Projects',
                 'Publications',
                 'Patents',
+                'Certifications',
                 'Contact',
               ].map((item) => (
                 <a
@@ -76,6 +77,7 @@ const Navbar = () => {
               'Projects',
               'Publications',
               'Patents',
+              'Certifications',
               'Contact',
             ].map((item) => (
               <a
