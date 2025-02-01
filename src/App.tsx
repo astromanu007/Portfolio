@@ -7,17 +7,19 @@ import ProjectCard from './components/ProjectCard';
 import { Code2, Database, Globe, Server,Cpu,
   Cloud,
   Brain,
+  MousePointer,
   Lock,
   Github,
   Linkedin,
   Mail,
+  Leaf,
+  Heart,
   Award,
   FileText,
   Lightbulb,
   Briefcase,
   Trophy,
   BarChart,
-  Python,
   Camera,
   Users,
   Target
@@ -117,7 +119,7 @@ function App() {
       icon: Globe,
     },
   ];
-  
+
   const projects = [
     {
       title: 'AI-Driven Object Detection for Autonomous Cars',
@@ -125,6 +127,8 @@ function App() {
       image: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=913&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       github: 'https://github.com/astromanu007/AI-Driven-Object-Detection-for-Autonomous-Cars-',
       demo: 'https://github.com/astromanu007/AI-Driven-Object-Detection-for-Autonomous-Cars-',
+      tags: ['Computer Vision', 'AI/ML', 'Object Detection', 'TensorFlow'],
+      icon: <Brain className="w-6 h-6" />
     },
     {
       title: 'Makardhwaj Medicine Recommendation System',
@@ -132,6 +136,8 @@ function App() {
       image: 'https://cdn.pixabay.com/photo/2017/08/24/03/41/starry-sky-2675322_640.jpg',
       github: 'https://github.com/astromanu007/Makardhwaj-Medicine-Recommendation-System',
       demo: 'https://github.com/astromanu007/Makardhwaj-Medicine-Recommendation-System',
+      tags: ['Machine Learning', 'AI in Healthcare', 'Data Science', 'Python'],
+      icon: <Trophy className="w-6 h-6" />
     },
     {
       title: 'AI-Enhanced Smart Stethoscope',
@@ -139,6 +145,8 @@ function App() {
       image: 'https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       github: 'https://github.com/astromanu007/AI-Enhanced-Smart-Stethoscope',
       demo: 'https://github.com/astromanu007/AI-Enhanced-Smart-Stethoscope',
+      tags: ['Healthcare Tech', 'AI/ML', 'Wearable Devices', 'IoT'],
+      icon: <Heart className="w-6 h-6" />
     },
     {
       title: 'Advanced PCB Anomaly Detection System',
@@ -146,6 +154,8 @@ function App() {
       image: 'https://media.istockphoto.com/id/1035676256/photo/background-of-galaxy-and-stars.webp?a=1&b=1&s=612x612&w=0&k=20&c=fTMmKEEBS5hNqG_Ddl90z1z_3cm7i6GXgVXYtV6fQyk=',
       github: 'https://github.com/astromanu007/PCB_Anomaly_Detection',
       demo: 'https://github.com/astromanu007/PCB_Anomaly_Detection',
+      tags: ['Electronics', 'Infrared Imaging', 'Fault Detection', 'AI/ML'],
+      icon: <Server className="w-6 h-6" />
     },
     {
       title: 'Deep Learning-Based Leaf Disease Detection and Cure',
@@ -153,6 +163,8 @@ function App() {
       image: 'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
       github: 'https://github.com/astromanu007/Leaf-Disease-Detection',
       demo: 'https://github.com/astromanu007/Leaf-Disease-Detection',
+      tags: ['Agriculture Tech', 'AI in Farming', 'Computer Vision', 'Flask'],
+      icon: <Leaf className="w-6 h-6" />
     },
     {
       title: 'AI Virtual Mouse',
@@ -160,8 +172,11 @@ function App() {
       image: 'https://cdn.pixabay.com/photo/2020/12/25/04/51/polar-lights-5858656_1280.jpg',
       github: 'https://github.com/astromanu007/AI_Virtual_Mouse',
       demo: 'https://github.com/astromanu007/AI_Virtual_Mouse',
+      tags: ['AI/ML', 'Computer Vision', 'Hand Gesture Recognition', 'Human-Computer Interaction'],
+      icon: <MousePointer className="w-6 h-6" />
     }
   ];
+  
   
 
     const experience = [
@@ -618,7 +633,7 @@ function App() {
                 across industries and communities.
               </p>
               <motion.a
-                href="https://drive.google.com/file/d/17tZcOmRx-FtceFSlzgtGr2FyMyLv9kn5/view?usp=sharing"
+                href="https://drive.google.com/file/d/10ZOa6TTvq4p1lmupKDVTfaKQHKA6AXAp/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
@@ -810,26 +825,61 @@ function App() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 relative">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-            Featured Projects
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.title}
+         {/* Projects Section */}
+         <section id="projects" className="py-20 relative z-10">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5 }}
+                className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500"
               >
-                <ProjectCard {...project} />
-              </motion.div>
-            ))}
+                Featured Projects
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-gray-400 max-w-2xl mx-auto"
+              >
+                Exploring the intersection of innovation and technology through carefully crafted solutions
+              </motion.p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <motion.div
+                  key={project.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <ProjectCard {...project} />
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="text-center mt-16"
+            >
+              <a
+                href="https://github.com/astromanu007/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 hover:scale-105"
+              >
+                <Github className="w-5 h-5" />
+                View More Projects
+              </a>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
+  
+
 
       {/* Publications Section */}
       <section id="publications" className="py-20 relative">

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import { ReactNode, useState } from 'react';
 
 interface ProjectCardProps {
   title: string;
@@ -7,31 +8,157 @@ interface ProjectCardProps {
   image: string;
   github?: string;
   demo?: string;
+  tags: string[];
+  icon: ReactNode;
 }
 
-const ProjectCard = ({ title, description, image, github, demo }: ProjectCardProps) => {
+const ProjectCard = ({ title, description, image, github, demo, tags, icon }: ProjectCardProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
+      className="relative group h-[400px] rounded-xl overflow-hidden cursor-pointer"
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
       whileHover={{ scale: 1.02 }}
-      className="relative group rounded-xl overflow-hidden"
+      transition={{ duration: 0.3 }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
-      <img src={image} alt={title} className="w-full h-64 object-cover" />
-      <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-        <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-        <p className="text-gray-200 text-sm mb-4">{description}</p>
-        <div className="flex space-x-4">
+      {/* Animated Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <motion.img 
+          src={image} 
+          alt={title} 
+          className="w-full h-full object-cover"
+          animate={{
+            scale: isHovered ? 1.1 : 1,
+            filter: isHovered ? 'brightness(0.7)' : 'brightness(0.9)'
+          }}
+          transition={{ duration: 0.5 }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/90 opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+      </div>
+
+      {/* Content */}
+      <div className="relative h-full p-6 flex flex-col justify-end">
+        {/* Floating Icon */}
+        <motion.div
+          className="absolute top-4 right-4 p-3 bg-purple-500/20 rounded-full backdrop-blur-sm border border-purple-500/20"
+          animate={{
+            y: isHovered ? 0 : -10,
+            scale: isHovered ? 1.1 : 1,
+            rotateZ: isHovered ? 360 : 0
+          }}
+          transition={{ duration: 0.5 }}
+        >
+          {icon}
+        </motion.div>
+
+        {/* Title and Description */}
+        <motion.div
+          initial={false}
+          animate={{
+            y: isHovered ? 0 : 10,
+            opacity: 1
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.h3
+            className="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors"
+            animate={{ scale: isHovered ? 1.05 : 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            {title}
+          </motion.h3>
+          <motion.p
+            className="text-gray-300 text-sm mb-4 line-clamp-2 group-hover:line-clamp-none"
+            animate={{
+              height: isHovered ? 'auto' : '3em',
+              opacity: isHovered ? 1 : 0.8
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            {description}
+          </motion.p>
+        </motion.div>
+
+        {/* Animated Tags */}
+        <motion.div
+          className="flex flex-wrap gap-2 mb-4"
+          initial={false}
+          animate={{
+            y: isHovered ? 0 : 20,
+            opacity: isHovered ? 1 : 0.7
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          {tags.map((tag, index) => (
+            <motion.span
+              key={index}
+              className="px-2 py-1 text-xs rounded-full bg-purple-900/30 text-purple-400 border border-purple-500/20 backdrop-blur-sm"
+              initial={false}
+              animate={{
+                scale: isHovered ? 1.05 : 1,
+                x: isHovered ? 0 : -10
+              }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+            >
+              {tag}
+            </motion.span>
+          ))}
+        </motion.div>
+
+        {/* Animated Links */}
+        <motion.div
+          className="flex gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: isHovered ? 1 : 0,
+            y: isHovered ? 0 : 10
+          }}
+          transition={{ duration: 0.3 }}
+        >
           {github && (
-            <a href={github} target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-400 transition-colors">
-              <Github className="w-6 h-6" />
-            </a>
+            <motion.a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Github className="w-5 h-5" />
+              <span className="text-sm">Code</span>
+            </motion.a>
           )}
           {demo && (
-            <a href={demo} target="_blank" rel="noopener noreferrer" className="text-white hover:text-purple-400 transition-colors">
-              <ExternalLink className="w-6 h-6" />
-            </a>
+            <motion.a
+              href={demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ExternalLink className="w-5 h-5" />
+              <span className="text-sm">Live Demo</span>
+            </motion.a>
           )}
-        </div>
+        </motion.div>
+
+        {/* Animated Border */}
+        <motion.div
+          className="absolute inset-0 rounded-xl"
+          initial={false}
+          animate={{
+            boxShadow: isHovered
+              ? '0 0 0 2px rgba(168, 85, 247, 0.4), 0 0 20px rgba(168, 85, 247, 0.2)'
+              : '0 0 0 0px rgba(168, 85, 247, 0)'
+          }}
+          transition={{ duration: 0.3 }}
+        />
       </div>
     </motion.div>
   );
