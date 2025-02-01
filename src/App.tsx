@@ -15,7 +15,7 @@ import { Code2, Database, Globe, Server,Cpu,
   Leaf,
   Heart,
   Award,
-  FileText,
+
   Lightbulb,
   Briefcase,
   Trophy,
@@ -171,7 +171,7 @@ function App() {
       description: 'AI Virtual Mouse is a cutting-edge project that brings a new dimension to computer interaction. Using advanced machine learning and computer vision techniques, FingerMouse allows you to control your computer with the wave of your hand.',
       image: 'https://cdn.pixabay.com/photo/2020/12/25/04/51/polar-lights-5858656_1280.jpg',
       github: 'https://github.com/astromanu007/AI_Virtual_Mouse',
-      demo: 'https://github.com/astromanu007/AI_Virtual_Mouse',
+      demo: "https://github.com/astromanu007/AI_Virtual_Mouse",
       tags: ['AI/ML', 'Computer Vision', 'Hand Gesture Recognition', 'Human-Computer Interaction'],
       icon: <MousePointer className="w-6 h-6" />
     }
