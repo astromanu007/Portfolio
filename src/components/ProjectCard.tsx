@@ -126,32 +126,34 @@ const ProjectCard = ({ title, description, image, github, demo, tags, icon }: Pr
             </motion.span>
           ))}
         </motion.div>
+{/* Permanent Links (No Animation) */}
+<div className="flex gap-6 mt-4 relative z-10">
+  {github && (
+    <a
+      href={github}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
+      style={{ pointerEvents: 'auto', zIndex: 10 }} // Ensuring Clickability
+    >
+      <Github className="w-5 h-5" />
+      <span className="text-sm">Code</span>
+    </a>
+  )}
+  {demo && (
+    <a
+      href={demo}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
+      style={{ pointerEvents: 'auto', zIndex: 10 }} // Ensuring Clickability
+    >
+      <ExternalLink className="w-5 h-5" />
+      <span className="text-sm">Live Demo</span>
+    </a>
+  )}
+</div>
 
-        {/* Permanent Links (No Animation) */}
-        <div className="flex gap-4 mt-4">
-          {github && (
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
-            >
-              <Github className="w-5 h-5" />
-              <span className="text-sm">Code</span>
-            </a>
-          )}
-          {demo && (
-            <a
-              href={demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
-            >
-              <ExternalLink className="w-5 h-5" />
-              <span className="text-sm">Live Demo</span>
-            </a>
-          )}
-        </div>
 
         {/* Animated Border */}
         <motion.div
