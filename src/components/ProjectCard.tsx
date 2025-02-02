@@ -127,46 +127,31 @@ const ProjectCard = ({ title, description, image, github, demo, tags, icon }: Pr
           ))}
         </motion.div>
 
-          {/* Animated Links */}
-        <motion.div
-  className="flex gap-4"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{
-    opacity: isHovered ? 1 : 0,
-    y: isHovered ? 0 : 10
-  }}
-  transition={{ duration: 0.3 }}
-  style={{ zIndex: 10 }} // Ensure that the links are on top of other elements
->
-  {github && (
-    <motion.a
-      href={github}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      style={{ pointerEvents: 'auto' }} // Ensure the link is clickable
-    >
-      <Github className="w-9 h-9" />
-      <span className="text-sm">Code</span>
-    </motion.a>
-  )}
-  {demo && (
-    <motion.a
-      href={demo}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      style={{ pointerEvents: 'auto' }} // Ensure the link is clickable
-    >
-      <ExternalLink className="w-9 h-9" />
-      <span className="text-sm">Live Demo</span>
-    </motion.a>
-  )}
-</motion.div>
+        {/* Permanent Links (No Animation) */}
+        <div className="flex gap-4 mt-4">
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
+            >
+              <Github className="w-5 h-5" />
+              <span className="text-sm">Code</span>
+            </a>
+          )}
+          {demo && (
+            <a
+              href={demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
+            >
+              <ExternalLink className="w-5 h-5" />
+              <span className="text-sm">Live Demo</span>
+            </a>
+          )}
+        </div>
 
         {/* Animated Border */}
         <motion.div
