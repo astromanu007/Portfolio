@@ -14,17 +14,28 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, image, github, demo, tags, icon }: ProjectCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isTouched, setIsTouched] = useState(false);
+
+  const handleTouch = () => {
+    setIsTouched(!isTouched);
+  };
 
   return (
     <motion.div
-      className="relative group h-[400px] rounded-xl overflow-hidden cursor-pointer"
+      className="relative group h-[400px] md:h-[450px] rounded-xl overflow-hidden cursor-pointer"
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
+      onTouchStart={handleTouch}
       whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.3 }}
     >
       {/* Animated Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div 
+        className={`absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 transition-opacity duration-500 ${
+          isHovered || isTouched ? 'opacity-100' : 'opacity-0'
+        }`} 
+      />
       
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
@@ -33,23 +44,27 @@ const ProjectCard = ({ title, description, image, github, demo, tags, icon }: Pr
           alt={title} 
           className="w-full h-full object-cover"
           animate={{
-            scale: isHovered ? 1.1 : 1,
-            filter: isHovered ? 'brightness(0.7)' : 'brightness(0.9)'
+            scale: isHovered || isTouched ? 1.1 : 1,
+            filter: isHovered || isTouched ? 'brightness(0.7)' : 'brightness(0.9)'
           }}
           transition={{ duration: 0.5 }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/90 opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
+        <div 
+          className={`absolute inset-0 bg-gradient-to-b from-black/20 via-black/60 to-black/90 transition-opacity duration-300 ${
+            isHovered || isTouched ? 'opacity-100' : 'opacity-90'
+          }`} 
+        />
       </div>
 
       {/* Content */}
-      <div className="relative h-full p-6 flex flex-col justify-end">
+      <div className="relative h-full p-4 md:p-6 flex flex-col justify-end">
         {/* Floating Icon */}
         <motion.div
           className="absolute top-4 right-4 p-3 bg-purple-500/20 rounded-full backdrop-blur-sm border border-purple-500/20"
           animate={{
-            y: isHovered ? 0 : -10,
-            scale: isHovered ? 1.1 : 1,
-            rotateZ: isHovered ? 360 : 0
+            y: isHovered || isTouched ? 0 : -10,
+            scale: isHovered || isTouched ? 1.1 : 1,
+            rotateZ: isHovered || isTouched ? 360 : 0
           }}
           transition={{ duration: 0.5 }}
         >
@@ -60,23 +75,25 @@ const ProjectCard = ({ title, description, image, github, demo, tags, icon }: Pr
         <motion.div
           initial={false}
           animate={{
-            y: isHovered ? 0 : 10,
+            y: isHovered || isTouched ? 0 : 10,
             opacity: 1
           }}
           transition={{ duration: 0.3 }}
         >
           <motion.h3
-            className="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors"
-            animate={{ scale: isHovered ? 1.05 : 1 }}
+            className="text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors"
+            animate={{ scale: isHovered || isTouched ? 1.05 : 1 }}
             transition={{ duration: 0.3 }}
           >
             {title}
           </motion.h3>
           <motion.p
-            className="text-gray-300 text-sm mb-4 line-clamp-2 group-hover:line-clamp-none"
+            className={`text-gray-300 text-sm mb-4 transition-all duration-300 ${
+              isHovered || isTouched ? 'line-clamp-none' : 'line-clamp-2'
+            }`}
             animate={{
-              height: isHovered ? 'auto' : '3em',
-              opacity: isHovered ? 1 : 0.8
+              height: isHovered || isTouched ? 'auto' : '3em',
+              opacity: isHovered || isTouched ? 1 : 0.8
             }}
             transition={{ duration: 0.3 }}
           >
@@ -89,8 +106,8 @@ const ProjectCard = ({ title, description, image, github, demo, tags, icon }: Pr
           className="flex flex-wrap gap-2 mb-4"
           initial={false}
           animate={{
-            y: isHovered ? 0 : 20,
-            opacity: isHovered ? 1 : 0.7
+            y: isHovered || isTouched ? 0 : 20,
+            opacity: isHovered || isTouched ? 1 : 0.7
           }}
           transition={{ duration: 0.3 }}
         >
@@ -100,8 +117,8 @@ const ProjectCard = ({ title, description, image, github, demo, tags, icon }: Pr
               className="px-2 py-1 text-xs rounded-full bg-purple-900/30 text-purple-400 border border-purple-500/20 backdrop-blur-sm"
               initial={false}
               animate={{
-                scale: isHovered ? 1.05 : 1,
-                x: isHovered ? 0 : -10
+                scale: isHovered || isTouched ? 1.05 : 1,
+                x: isHovered || isTouched ? 0 : -10
               }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
             >
@@ -110,7 +127,7 @@ const ProjectCard = ({ title, description, image, github, demo, tags, icon }: Pr
           ))}
         </motion.div>
 
-        {/* Animated Links */}
+          {/* Animated Links */}
         <motion.div
   className="flex gap-4"
   initial={{ opacity: 0, y: 20 }}
@@ -156,7 +173,7 @@ const ProjectCard = ({ title, description, image, github, demo, tags, icon }: Pr
           className="absolute inset-0 rounded-xl"
           initial={false}
           animate={{
-            boxShadow: isHovered
+            boxShadow: isHovered || isTouched
               ? '0 0 0 2px rgba(168, 85, 247, 0.4), 0 0 20px rgba(168, 85, 247, 0.2)'
               : '0 0 0 0px rgba(168, 85, 247, 0)'
           }}
