@@ -148,7 +148,7 @@ const ProjectCard = ({ title, description, image, github, demo, tags, icon }: Pr
       whileTap={{ scale: 0.95 }}
       style={{ pointerEvents: 'auto' }} // Ensure the link is clickable
     >
-      <Github className="w-5 h-5" />
+      <Github className="w-9 h-9" />
       <span className="text-sm">Code</span>
     </motion.a>
   )}
@@ -162,7 +162,7 @@ const ProjectCard = ({ title, description, image, github, demo, tags, icon }: Pr
       whileTap={{ scale: 0.95 }}
       style={{ pointerEvents: 'auto' }} // Ensure the link is clickable
     >
-      <ExternalLink className="w-5 h-5" />
+      <ExternalLink className="w-9 h-9" />
       <span className="text-sm">Live Demo</span>
     </motion.a>
   )}
