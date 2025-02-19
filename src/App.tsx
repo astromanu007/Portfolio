@@ -357,7 +357,7 @@ function App() {
       {
         title:
           'Topic Modelling for News Article Categorization Using Latent Dirichlet Allocation: A Text Mining Approach',
-        authors: 'M. A. Dhatrak, S. Jadhav, S. Gupta, N. Siddiqui',
+        authors: 'M. A. Dhatrak, S. Jadhav, P. D. Kudake, A. V. Brahmane',
         journal:
           'Journal of Knowledge in Data Science and Information Management, (2024)',
         link: 'https://matjournals.net/engineering/index.php/JoKDSIM/article/view/1003',
