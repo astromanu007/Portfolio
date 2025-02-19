@@ -501,7 +501,7 @@ function App() {
       title: 'OPULENT SOAP COMPARTMENT STOOL',
       number: 'Design No. : 414552-001',
       year: '2024',
-      status: 'Pending',
+      status: 'Granted',
       description: 'The Opulent Soap Compartment Stool is an innovative design that combines comfort with functionality. It features a dedicated soap compartment integrated into the seat, offering convenience and practicality for users.',
     },
   ];
