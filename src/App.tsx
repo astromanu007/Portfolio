@@ -356,6 +356,14 @@ function App() {
     publishedPapers: [
       {
         title:
+          'AI-Powered Virtual Try-On System: Enhancing Fit Prediction and User Comfort Through Deep Learning',
+        authors: 'M. A. Dhatrak, S. Jadhav, A. Harkal, A. Kankrale, S. Gupta',
+        journal:
+          '5th International Conference on Communication, Computing & Industry 6.0 (C2I6) (2025)',
+        link: 'https://ieeexplore.ieee.org/document/10895137',
+      },
+      {
+        title:
           'Topic Modelling for News Article Categorization Using Latent Dirichlet Allocation: A Text Mining Approach',
         authors: 'M. A. Dhatrak, S. Jadhav, P. D. Kudake, A. V. Brahmane',
         journal:
@@ -377,14 +385,6 @@ function App() {
         authors: 'M. A. Dhatrak, S. Jadhav, P. Vibhute, S. Gupta',
         journal:
           '19th EAI International Conference on Body Area Networks: Globally Connected Intelligent BAN (Final Stage of Publication)',
-        link: '#',
-      },
-      {
-        title:
-          'AI-Powered Virtual Try-On System: Enhancing Fit Prediction and User Comfort Through Deep Learning',
-        authors: 'M. A. Dhatrak, S. Jadhav, A. Harkal, A. Kankrale, S. Gupta',
-        journal:
-          '5th International Conference on Communication, Computing & Industry 6.0 (C2I6) (Final Stage of Publication)',
         link: '#',
       },
       {
