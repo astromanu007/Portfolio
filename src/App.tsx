@@ -636,7 +636,7 @@ function App() {
                 across industries and communities.
               </p>
               <motion.a
-                href="https://drive.google.com/file/d/10ZOa6TTvq4p1lmupKDVTfaKQHKA6AXAp/view?usp=sharing"
+                href="https://drive.google.com/file/d/1jgo2ZwppgE15gCa9k7yH5D7f8veRstuE/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
