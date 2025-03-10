@@ -181,6 +181,20 @@ function App() {
 
     const experience = [
       {
+        title: "NASA International Space Apps Challenge Local Lead - Kopargaon",
+        company: "NASA International Space Apps Challenge",
+        period: "March 2025 - Present · 1 mo",
+        location: "Kopargaon, Maharashtra, India · On-site",
+        description: "Leading and organizing the NASA International Space Apps Challenge in Kopargaon, fostering innovation in artificial intelligence and machine learning for space applications.",
+        achievements: [
+          "Coordinating with participants, mentors, and global organizers to facilitate a successful hackathon.",
+          "Guiding teams in developing AI/ML-based solutions for real-world space challenges.",
+          "Hosting brainstorming sessions to drive innovation and collaboration among participants.",
+          "Managing event logistics and outreach to maximize engagement within the local tech community."
+        ],
+      },
+      
+      {
         title: 'Artificial Intelligence & Machine Learning Intern',
         company: 'Adgebra | Inuxu Digital Media Technologies · Internship',
         period: 'Jan 2025 - Present · 1 mo',
