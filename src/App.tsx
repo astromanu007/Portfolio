@@ -181,6 +181,19 @@ function App() {
 
     const experience = [
       {
+        title: "Generative AI Intern",
+        company: "Tech Mahindra · Internship",
+        period: "March 2025 - Present · 1 mo",
+        location: "Pune, Maharashtra, India · On-site",
+        description: "Working as an intern on Generative AI projects, focusing on data collection, fine-tuning, and AI-driven research.",
+        achievements: [
+          "Working on data collection and fine-tuning for Indus for Education on Qualcomm PC.",
+          "Collaborating with a team of interns and leads to develop AI solutions for education.",
+          "Engaging in AI-driven research and innovation to enhance learning experiences."
+        ],
+      },
+      
+      {
         title: "NASA International Space Apps Challenge Local Lead - Kopargaon",
         company: "NASA International Space Apps Challenge",
         period: "March 2025 - Present · 1 mo",
