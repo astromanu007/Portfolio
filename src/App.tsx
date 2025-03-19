@@ -181,15 +181,15 @@ function App() {
 
     const experience = [
       {
-        title: "Generative AI Intern",
-        company: "Tech Mahindra · Internship",
+        title: "Research Student Intern (Remote)",
+        company: "Nanyang Technological University (NTU) · Internship",
         period: "March 2025 - Present · 1 mo",
-        location: "Pune, Maharashtra, India · On-site",
-        description: "Working as an intern on Generative AI projects, focusing on data collection, fine-tuning, and AI-driven research.",
+        location: "Singapore · Remote",
+        description: "Conducting research in deep learning for medical imaging, focusing on AI-driven diagnosis and classification.",
         achievements: [
-          "Working on data collection and fine-tuning for Indus for Education on Qualcomm PC.",
-          "Collaborating with a team of interns and leads to develop AI solutions for education.",
-          "Engaging in AI-driven research and innovation to enhance learning experiences."
+         "Developing and fine-tuning AI models for medical image analysis to improve diagnostic accuracy.",
+          "Collaborating with researchers and faculty to advance deep learning applications in healthcare.",
+          "Engaging in AI-driven research, data analysis, and academic publishing in the field of medical imaging."
         ],
       },
       
