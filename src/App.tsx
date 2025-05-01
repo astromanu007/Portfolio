@@ -325,6 +325,38 @@ function App() {
   ];
 
   const achievements = [
+    
+  
+       
+    {
+      title: 'Second Prize (Runner-Up) – Civil Engineering Domain',
+      organization: 'National Level Project Expo 2K25, MIT ADT University, Pune',
+      year: 'April 2025',
+      description: [
+        "Presented 'MonitorX' — an intelligent Structural Health Monitoring System for resilient infrastructure.",
+        'Secured 2nd Prize among 50+ national-level teams in the Civil Engineering domain.',
+        'Recognized for interdisciplinary collaboration and real-world impact in infrastructure safety.',
+      ],
+    },
+        {
+      title: 'Second Prize – Safety Category',
+      organization: 'Dipex 2025, State-Level Competition (Maharashtra & Goa)',
+      year: 'March 2025',
+      description: [
+        "Developed 'MonitorX' — a novel Structural Health Monitoring System for resilient infrastructure.",
+        'Secured 2nd Prize in the Safety Category among top state-level innovations.',
+        'Awarded ₹5000 cash prize for impactful contribution to engineering safety.',
+      ],
+    },   
+    {
+      title: 'People’s Choice Award Winner',
+      organization: 'NASA Space Apps Challenge, USA',
+      year: 'December 2024',
+      description: [
+        "Developed 'ExoYatra,' an exploration game focused on galactic challenges.",
+        'Achieved 90% user engagement and captivated 60,000+ participants.',
+      ],
+    },
     {
       title: 'People’s Choice Award Winner',
       organization: 'NASA Space Apps Challenge, USA',
