@@ -326,7 +326,18 @@ function App() {
 
   const achievements = [
     
-  
+    {
+      title: 'AIR 1 – NASA Visit Winner | Mission Rhumi 2024',
+      organization: 'Space Zone India, Tamil Nadu',
+      year: '2024',
+      description: [
+        'Secured **All India Rank 1** among 15,000+ participants in Mission Rhumi – 2024 National Assessment.',
+        'Ranked in the **Top 0.0067%** of participants, showcasing unparalleled excellence.',
+        'Selected as one of the **Top 3 Winners** to represent India for a prestigious visit to **NASA**.',
+        'Recognized for exceptional performance, innovation, and excellence in STEM.',
+        'Selected after a rigorous multi-phase assessment process involving innovation challenges and technical evaluations.'
+      ],
+    },
        
     {
       title: 'Second Prize (Runner-Up) – Civil Engineering Domain',
