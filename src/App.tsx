@@ -339,15 +339,16 @@ function App() {
       organization: 'National Level Project Expo 2K25, MIT ADT University, Pune',
       year: 'April 2025',
       description: [
-        'Presented MonitorX, a structural health monitoring system. Secured 2nd Prize among 50+ national teams for interdisciplinary innovation and real-world impact in infrastructure safety.'
+        'Presented MonitorX, a structural health monitoring system. Secured 2nd Prize among 50+ national teams for interdisciplinary innovation and real-world impact in infrastructure safety. Won ₹11,000 cash prize and a trophy.'
       ],
     },
+    
     {
       title: 'Second Prize – Safety Category',
       organization: 'Dipex 2025, State-Level Competition (Maharashtra & Goa)',
       year: 'March 2025',
       description: [
-        'Developed MonitorX for resilient infrastructure. Won 2nd Prize in the Safety Category among top innovations and received ₹5000 for engineering impact.'
+        'Developed MonitorX for resilient infrastructure. Won 2nd Prize in the Safety Category among top innovations and received ₹5000 and Trophy for engineering impact.'
       ],
     },
     {
