@@ -183,7 +183,7 @@ function App() {
       {
         title: "Research Student Intern (Remote)",
         company: "Nanyang Technological University (NTU) · Internship",
-        period: "March 2025 - Present · 1 mo",
+        period: "March 2025 - Present · 2 mo",
         location: "Singapore · Remote",
         description: "Conducting research in deep learning for medical imaging, focusing on AI-driven diagnosis and classification.",
         achievements: [
@@ -329,7 +329,7 @@ function App() {
     {
       title: 'AIR 1 – NASA Visit Winner | Mission Rhumi 2024',
       organization: 'Space Zone India, Tamil Nadu',
-      year: '2024',
+      year: 'April 2025',
       description: [
         'Secured All India Rank 1 among 15,000+ participants and ranked in the top 0.0067%. Selected among the top 3 winners to represent India for a NASA visit, recognized for innovation and STEM excellence through a rigorous multi-phase national assessment.'
       ],
@@ -445,7 +445,7 @@ function App() {
           'AI Enhanced Stethoscope for Real-Time Cardiopulmonary Diagnostics and Telemedicine Integration',
         authors: 'M. A. Dhatrak, S. Jadhav, S. Gupta, N. Siddiqui',
         journal:
-          '3rd International Conference on Advancement in Computation & Computer Technologies (InCACCT) (Preliminarily Stage of Publication)',
+          '3rd International Conference on Advancement in Computation & Computer Technologies (InCACCT) (Final Stage of Publication)',
         link: '#',
       },
 
@@ -474,7 +474,7 @@ function App() {
       {
         title:
           'AI-Enabled Real-Time Intrusion Detection for Smart Fences Using Advanced Image Processing',
-        authors: 'S. Bhongale, M. A. Dhatrak, R. Gagare, T. Shivadkar',
+        authors: 'M. A. Dhatrak, S. Jadhav, S. Gupta',
         journal:
           '3rd International Conference on Advancement in Computation & Computer Technologies (InCACCT)',
       },
