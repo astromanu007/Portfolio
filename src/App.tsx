@@ -1056,7 +1056,25 @@ function App() {
         </motion.div>
       ))}
     </div>
+    <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="text-center mt-16"
+            >
+              <a
+                href="https://drive.google.com/drive/folders/1wgzRRHnwbshsgPmqaXucf8Xv64fAa31H?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 hover:scale-105"
+              >
+                <Github className="w-5 h-5" />
+                View More Patents
+              </a>
+            </motion.div>
+
   </div>
+
 </section>
 <section id="certifications" className="py-20 relative z-10">
   <div className="max-w-6xl mx-auto px-4">
