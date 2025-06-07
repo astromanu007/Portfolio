@@ -665,13 +665,13 @@ function App() {
               <p className="text-gray-300 mb-6 text-justify">
               I am <strong>Manish Dhatrak</strong>, as an undergraduate in <strong>Electronics and Computer Engineering</strong>,
                 I’ve led over 60 impactful projects, authored 10 research
-                papers, and secured 25 patents (10 granted). Driven by a passion
+                papers, and secured 25 patents (13 granted). Driven by a passion
                 for creativity and technological advancement, I craft innovative
                 solutions that push boundaries and create meaningful change
                 across industries and communities.
               </p>
               <motion.a
-                href="https://drive.google.com/file/d/1jgo2ZwppgE15gCa9k7yH5D7f8veRstuE/view?usp=sharing"
+                href="https://drive.google.com/file/d/1dQmJrS_oG5TcOzQCGX3oJ0KL3WgJ82P8/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
