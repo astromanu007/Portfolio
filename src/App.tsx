@@ -390,6 +390,14 @@ function App() {
     publishedPapers: [
       {
         title:
+          'AI Enhanced Stethoscope for Real-Time Cardiopulmonary Diagnostics and Telemedicine Integration',
+        authors: 'M. A. Dhatrak, S. Jadhav, S. Gupta, N. Siddiqui',
+        journal:
+          '3rd International Conference on Advancement in Computation & Computer Technologies (InCACCT) (Final Stage of Publication)',
+        link: 'https://ieeexplore.ieee.org/document/11011421',
+      },
+      {
+        title:
           'AI-Powered Virtual Try-On System: Enhancing Fit Prediction and User Comfort Through Deep Learning',
         authors: 'M. A. Dhatrak, S. Jadhav, A. Harkal, A. Kankrale, S. Gupta',
         journal:
@@ -410,7 +418,10 @@ function App() {
         authors: 'S. Jadhav, M. A. Dhatrak, S. Gupta, N. Siddiqui',
         journal: 'Journal of Data Engineering and Knowledge Discovery, (2024)',
         link: 'https://matjournals.net/engineering/index.php/JoDEKD/article/view/1167',
-      },
+      }
+      
+
+
     ],
     acceptedPapers: [
       {
@@ -421,17 +432,7 @@ function App() {
           '19th EAI International Conference on Body Area Networks: Globally Connected Intelligent BAN (Final Stage of Publication)',
         link: '#',
       },
-      {
-        title:
-          'AI Enhanced Stethoscope for Real-Time Cardiopulmonary Diagnostics and Telemedicine Integration',
-        authors: 'M. A. Dhatrak, S. Jadhav, S. Gupta, N. Siddiqui',
-        journal:
-          '3rd International Conference on Advancement in Computation & Computer Technologies (InCACCT) (Final Stage of Publication)',
-        link: '#',
-      },
-
-
-      
+     
     ],
     underReviewPapers: [
       {
