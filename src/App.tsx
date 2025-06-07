@@ -30,12 +30,12 @@ function App() {
   const skills = [
     {
       title: 'Frontend Development',
-      description: 'React, Vue, Angular',
+      description: 'HTML, CSS, JAVASCRIPT',
       icon: Globe,
     },
     {
       title: 'Backend Development',
-      description: 'Node.js, Python, Java',
+      description: 'Python, Java',
       icon: Server,
     },
     {
@@ -44,30 +44,11 @@ function App() {
       icon: Database,
     },
     {
-      title: 'Cloud Architecture',
-      description: 'AWS, Azure, GCP',
-      icon: Cloud,
-    },
-    {
       title: 'Machine Learning',
       description: 'TensorFlow, PyTorch, Neural Networks',
       icon: Brain,
     },
-    {
-      title: 'DevOps',
-      description: 'CI/CD, Docker, Kubernetes',
-      icon: Code2,
-    },
-    {
-      title: 'System Architecture',
-      description: 'Scalable distributed systems',
-      icon: Cpu,
-    },
-    {
-      title: 'Security',
-      description: 'Cybersecurity best practices',
-      icon: Lock,
-    },
+
     {
       title: 'Programming Languages',
       description: 'Python, C, C++, MATLAB',
