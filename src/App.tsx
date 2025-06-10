@@ -445,7 +445,7 @@ function App() {
         title:
           'Wearable IoT-Based Animal Distraction Device for Mitigating Human-Wildlife Conflicts',
         authors: 'K. Wakchaure, P. Vibhute, M. A. Dhatrak, K. Fuse, S. Kulkarni',
-        journal: 'Internet of Things',
+        journal: 'IEEE INDISCON 2025, NIT ROURKELA',
       },
       {
         title:
