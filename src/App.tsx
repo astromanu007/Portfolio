@@ -431,13 +431,7 @@ function App() {
         journal:
           '19th EAI International Conference on Body Area Networks: Globally Connected Intelligent BAN (Final Stage of Publication)',
         link: '#',
-      },    
-      {
-        title:
-          'A Deep Learning-Driven Approach for Real-Time PCB Anomaly Detection via Thermal Imaging',
-        authors: 'M. A. Dhatrak, S. Jadhav, S. Gupta, N. Siddiqui',
-        journal: 'Songklanakarin Journal of Science and Technology (SJST)',
-      }
+      },
      
     ],
     underReviewPapers: [
