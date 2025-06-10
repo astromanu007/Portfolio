@@ -429,7 +429,7 @@ function App() {
           'AI-Powered Emotion and Stress Detection: A WBAN-Based Approach for Real-Time Health Monitoring',
         authors: 'M. A. Dhatrak, S. Jadhav, P. Vibhute, S. Gupta',
         journal:
-          '19th EAI International Conference on Body Area Networks: Globally Connected Intelligent BAN (Final Stage of Publication)',
+          '19th EAI International Conference on Body Area Networks: Globally Connected Intelligent BAN, IIT BHU (Final Stage of Publication)',
         link: '#',
       },
       {
