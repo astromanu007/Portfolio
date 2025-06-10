@@ -432,6 +432,12 @@ function App() {
           '19th EAI International Conference on Body Area Networks: Globally Connected Intelligent BAN (Final Stage of Publication)',
         link: '#',
       },
+      {
+        title:
+          'Wearable IoT-Based Animal Distraction Device for Mitigating Human-Wildlife Conflicts',
+        authors: 'K. Wakchaure, P. Vibhute, M. A. Dhatrak, K. Fuse, S. Kulkarni',
+        journal: 'IEEE INDISCON 2025, NIT ROURKELA',
+      }
      
     ],
     underReviewPapers: [
@@ -441,14 +447,8 @@ function App() {
         authors: 'M. A. Dhatrak, S. Jadhav, N. Darwante, B. Agarkar',
         journal: 'Songklanakarin Journal of Science and Technology (SJST)',
       },
-      {
-        title:
-          'Wearable IoT-Based Animal Distraction Device for Mitigating Human-Wildlife Conflicts',
-        authors: 'K. Wakchaure, P. Vibhute, M. A. Dhatrak, K. Fuse, S. Kulkarni',
-        journal: 'IEEE INDISCON 2025, NIT ROURKELA',
-      },
-
-      {
+        
+          {
         title:
           'AI-Enabled Real-Time Intrusion Detection for Smart Fences Using Advanced Image Processing',
         authors: 'M. A. Dhatrak, S. Jadhav, S. Gupta',
