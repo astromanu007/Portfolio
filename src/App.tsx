@@ -311,7 +311,7 @@ function App() {
   organization: 'Mediterranean Machine Learning (M2L) Summer School, Split',
   year: 'September 2025',
   description: [
-  "Selected as a fully funded scholar for the M2L Summer School 2025 in Croatia, sponsored by Google DeepMind."],
+  'Selected for M2L Summer School 2025 in Croatia, sponsored by Google DeepMind. Chosen among global AI talents for intensive training in ethical and human-centered machine learning.'],
 },
 
     {
