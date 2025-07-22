@@ -306,7 +306,14 @@ function App() {
   ];
 
   const achievements = [
-    
+    {
+  title: 'Selected Scholar – M2L Summer School, Croatia',
+  organization: 'Mediterranean Machine Learning (M2L) Summer School, Split',
+  year: 'September 2025',
+  description: [
+  "Selected as a fully funded scholar for the M2L Summer School 2025 in Croatia, sponsored by Google DeepMind."],
+},
+
     {
       title: 'AIR 1 – NASA Visit Winner | Mission Rhumi 2024',
       organization: 'Space Zone India, Tamil Nadu',
