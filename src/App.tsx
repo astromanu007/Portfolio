@@ -164,7 +164,7 @@ function App() {
       {
         title: "Research Student Intern (Remote)",
         company: "Nanyang Technological University (NTU) · Internship",
-        period: "March 2025 - Present · 2 mo",
+        period: "March 2025 - Present ·",
         location: "Singapore · Remote",
         description: "Conducting research in deep learning for medical imaging, focusing on AI-driven diagnosis and classification.",
         achievements: [
@@ -177,7 +177,7 @@ function App() {
       {
         title: "NASA International Space Apps Challenge Local Lead - Kopargaon",
         company: "NASA International Space Apps Challenge",
-        period: "March 2025 - Present · 1 mo",
+        period: "March 2025 - Present ·",
         location: "Kopargaon, Maharashtra, India · On-site",
         description: "Leading and organizing the NASA International Space Apps Challenge in Kopargaon, fostering innovation in artificial intelligence and machine learning for space applications.",
         achievements: [
@@ -191,7 +191,7 @@ function App() {
       {
         title: 'Artificial Intelligence & Machine Learning Intern',
         company: 'Adgebra | Inuxu Digital Media Technologies · Internship',
-        period: 'Jan 2025 - Present · 1 mo',
+        period: 'Jan 2025 - May 2025 · 4 months',
         location: 'Pune, Maharashtra, India · On-site',
         description: 'Working as an intern on artificial intelligence and machine learning projects, contributing to model development and real-time data analysis.',
         achievements: [
@@ -217,7 +217,7 @@ function App() {
       title: 'IEEE Student Member',
       company:
         'Institute of Electrical and Electronics Engineers (IEEE), India',
-      period: 'January 2021 - Present',
+      period: 'January 2024 - Dec 2024',
       description:
         'Actively contributing to the advancement of technology and professional growth as part of the IEEE community.',
       achievements: [
@@ -667,7 +667,7 @@ function App() {
               <p className="text-gray-300 mb-6 text-justify">
               I am <strong>Manish Dhatrak</strong>, as an undergraduate in <strong>Electronics and Computer Engineering</strong>,
                 I’ve led over 60 impactful projects, authored 10 research
-                papers, and secured 25 patents (13 granted). Driven by a passion
+                papers, and secured 25 patents (20 granted). Driven by a passion
                 for creativity and technological advancement, I craft innovative
                 solutions that push boundaries and create meaningful change
                 across industries and communities.
