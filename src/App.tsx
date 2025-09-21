@@ -4,18 +4,16 @@ import Navbar from './components/Navbar';
 import { motion } from 'framer-motion';
 import SkillCard from './components/SkillCard';
 import ProjectCard from './components/ProjectCard';
-import { Code2, Database, Globe, Server,Cpu,
-  Cloud,
+import PhotoGallery from './components/PhotoGallery';
+import { Code2, Database, Globe, Server,
   Brain,
   MousePointer,
-  Lock,
   Github,
   Linkedin,
   Mail,
   Leaf,
   Heart,
   Award,
-
   Lightbulb,
   Briefcase,
   Trophy,
@@ -667,10 +665,11 @@ function App() {
               <p className="text-gray-300 mb-6 text-justify">
               I am <strong>Manish Dhatrak</strong>, as an undergraduate in <strong>Electronics and Computer Engineering</strong>,
                 I’ve led over 60 impactful projects, authored 10 research
-                papers, and secured 25 patents (20 granted). Driven by a passion
+                papers, and secured 35 patents (20 granted). Driven by a passion
                 for creativity and technological advancement, I craft innovative
                 solutions that push boundaries and create meaningful change
                 across industries and communities.
+                
               </p>
               <motion.a
                 href="https://drive.google.com/file/d/1dQmJrS_oG5TcOzQCGX3oJ0KL3WgJ82P8/view?usp=sharing"
@@ -771,6 +770,10 @@ function App() {
         </div>
       </section>
 
+
+
+
+
       {/* Experience Section */}
       <section id="experience" className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4">
@@ -843,6 +846,11 @@ function App() {
           </div>
         </div>
       </section>
+
+
+
+      {/* Photo Gallery Section */}
+      <PhotoGallery />
 
       {/* Skills Section */}
       <section id="skills" className="py-20 relative">
