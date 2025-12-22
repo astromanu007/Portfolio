@@ -406,6 +406,15 @@ function App() {
 
   const publications = {
     publishedPapers: [
+
+      {
+        title:
+          'Wearable IoT-Based Animal Distraction Device for Mitigating Human-Wildlife Conflicts',
+        authors: 'K. Wakchaure, P. Vibhute, M. A. Dhatrak, K. Fuse, S. Kulkarni',
+        journal: 'IEEE INDISCON 2025, NIT ROURKELA',
+        link: 'https://ieeexplore.ieee.org/document/11252381',
+      },
+
       {
         title:
           'AI Enhanced Stethoscope for Real-Time Cardiopulmonary Diagnostics and Telemedicine Integration',
@@ -449,13 +458,8 @@ function App() {
         journal:
           '19th EAI International Conference on Body Area Networks: Globally Connected Intelligent BAN, IIT BHU (Final Stage of Publication)',
         link: '#',
-      },
-      {
-        title:
-          'Wearable IoT-Based Animal Distraction Device for Mitigating Human-Wildlife Conflicts',
-        authors: 'K. Wakchaure, P. Vibhute, M. A. Dhatrak, K. Fuse, S. Kulkarni',
-        journal: 'IEEE INDISCON 2025, NIT ROURKELA',
       }
+      
      
     ],
     underReviewPapers: [
