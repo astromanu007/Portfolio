@@ -175,7 +175,7 @@ function App() {
       {
         title: "NASA International Space Apps Challenge Local Lead - Kopargaon",
         company: "NASA International Space Apps Challenge",
-        period: "March 2025 - Present ·",
+        period: "March 2025 - Dec 2025 ·",
         location: "Kopargaon, Maharashtra, India · On-site",
         description: "Leading and organizing the NASA International Space Apps Challenge in Kopargaon, fostering innovation in artificial intelligence and machine learning for space applications.",
         achievements: [
