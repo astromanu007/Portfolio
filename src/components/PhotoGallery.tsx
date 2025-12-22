@@ -13,56 +13,62 @@ interface GalleryImage {
 const galleryImages: GalleryImage[] = [
   {
     id: 1,
-    src: "https://media.licdn.com/dms/image/v2/D5622AQGPo-g6Qjk5JQ/feedshare-shrink_1280/B56ZjcGf7mHAA0-/0/1756039350986?e=1767830400&v=beta&t=IAKhjRJIXCnzWEINCeU1hltmV-8T7FTbrGyR9WCl5Tk",
+    src: "https://wallpapers.com/images/featured/nasa-galaxy-pictures-70kbz3omj6qrevn2.jpg",
     headline: "All India Rank 1 — Mission Rhumi (Fully Funded NASA Visit)",
     date: "2025",
     category: "Awards"
   },
   {
     id: 2,
-    src: "https://media.licdn.com/dms/image/v2/D5622AQF5kd-wpDkSmw/feedshare-shrink_800/B56ZaBkNAUGkAg-/0/1745930529181?e=1767830400&v=beta&t=bUH96KgN_v0s_NDfi7UJ3wmQtlpZqAUTmtONfKvUL4Y",
-    headline: "Winner — MIT ADT University Tech Expo",
-    date: "2024",
-    category: "Academia"
-  },
-
-  {
-    id: 3,
-    src: "https://media.licdn.com/dms/image/v2/D5622AQFSY4kiT-OSyw/feedshare-shrink_800/feedshare-shrink_800/0/1730113289010?e=1767830400&v=beta&t=cra6_UbFzPI-bYqoLaI5pdMVOd7v1Kx5JuSF4dSQhnk",
+    src: "https://forwardtogether.org/wp-content/uploads/2019/11/002e6962-9d03-486d-a662-23290f1ab1f9-shutterstock-1420252922.jpg",
     headline: "People’s Choice Award — NASA Space Apps Challenge (ExoYatra)",
     date: "2024",
     category: "Hackathon"
   },
   {
-    id: 4,
-    src: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=2070&q=80",
+    id: 3,
+    src: "https://www.kindpng.com/picc/m/175-1756272_education-empowered-students-hd-png-download.png",
     headline: "Selected Scholar — M2L Summer School (Google DeepMind)",
     date: "2025",
     category: "International"
   },
   {
-    id: 5,
-    src: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=2070&q=80",
+    id: 4,
+    src: "https://c4.wallpaperflare.com/wallpaper/108/140/869/digital-digital-art-artwork-fantasy-art-drawing-hd-wallpaper-preview.jpg",
     headline: "Winner — IEEE Mumbai Section Research Paper Presentation",
     date: "2024",
     category: "Research"
   },
   {
-    id: 6,
-    src: "https://media.licdn.com/dms/image/v2/D5622AQFF7EBc8i29aw/feedshare-shrink_2048_1536/B56ZZ2TbwuHgAs-/0/1745741530813?e=1767830400&v=beta&t=Sad2gLSyj8vOC-I9naw3rHvb9nx1mjWTJxZCsRTqVnA",
+    id: 5,
+    src: "https://media.licdn.com/dms/image/v2/D5622AQGpzQ1HOocxAQ/feedshare-shrink_2048_1536/B56ZZ2Tbw5HUAo-/0/1745741530853?e=1767830400&v=beta&t=gZV_4zCedqKEVRE4aY8HkZk_lzo79HHC2eiu8h1Mcek",
     headline: "Winner — DIPEX 2025 (Innovative Structural Safety Monitoring)",
     date: "2025",
     category: "Competition"
   },
   {
+    id: 6,
+    src: "https://media.licdn.com/dms/image/v2/D5622AQF8tOBm_r6pmg/feedshare-shrink_2048_1536/B56ZaBkNAJGQAo-/0/1745930530247?e=1767830400&v=beta&t=p-SmdVXvZCVms9IFuftPGIAFlsGdmIrxle2iuNfrLuA",
+    headline: "Winner — MIT ADT University Tech Expo",
+    date: "2024",
+    category: "Academia"
+  },
+  {
     id: 7,
-    src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2070&q=80",
-    headline: "Local Lead — NASA Space Apps Challenge (Mentored 100+ Students)",
+    src: "https://wallpapercave.com/wp/wp14679603.jpg",
+    headline: "Finalist — Bosch Hackathon (Industry Challenge)",
+    date: "April 2024",
+    category: "Industry"
+  },
+  {
+    id: 8,
+    src: "https://wallup.net/wp-content/uploads/2016/01/157049-planet-sea-sunset-beach-water-space-748x468.jpg",
+    headline: "Local Lead — NASA Space Apps Challenge (Mentored 80+ Students)",
     date: "2025",
     category: "Leadership"
   }
-  
 ];
+
 
 const PhotoGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
