@@ -171,6 +171,19 @@ function App() {
           "Engaging in AI-driven research, data analysis, and academic publishing in the field of medical imaging."
         ],
       },
+      {
+        title: 'Research Intern (Artificial Intelligence & Intelligent Systems)',
+        company: 'Sanjivani University · Research Internship',
+        period: 'Jul 2025 - Present',
+        location: 'Kopargaon, Maharashtra, India · On-site',
+        description: 'Engaged in applied and research-oriented artificial intelligence projects focused on perception-driven systems and real-world deployment.',
+        achievements: [
+          'Designing AI-based perception pipelines for wildlife threat detection and early warning systems.',
+          'Fine-tuning deep learning models (YOLO-based architectures) for real-time object detection under resource constraints.',
+          'Integrating sensor data and vision models to support intelligent decision-making systems.',
+          'Exploring the use of large language models (LLMs) for contextual reasoning and system-level intelligence.'
+        ],
+      }, 
       
       {
         title: "NASA International Space Apps Challenge Local Lead - Kopargaon",
@@ -202,7 +215,7 @@ function App() {
     {
       title: 'Project Developer',
       company: 'Sanjivani Group of Institutes, India',
-      period: 'June 2022 - Present',
+      period: 'June 2022 - Jan 2025',
       description:
         'Developed innovative IoT, AI, ML, and web solutions for smart campus initiatives, streamlining operations and fostering innovation.',
       achievements: [
