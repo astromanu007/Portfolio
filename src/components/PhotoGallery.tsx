@@ -39,7 +39,7 @@ const galleryImages: GalleryImage[] = [
     src: "https://media.licdn.com/dms/image/v2/D5622AQGpzQ1HOocxAQ/feedshare-shrink_2048_1536/B56ZZ2Tbw5HUAo-/0/1745741530853?e=1767830400&v=beta&t=gZV_4zCedqKEVRE4aY8HkZk_lzo79HHC2eiu8h1Mcek",
     headline: "Winner — DIPEX 2025 (Innovative Structural Safety Monitoring)",
     date: "2025",
-    category: "Competition"
+    category: "State Level - Competition"
   },
   {
     id: 5,
