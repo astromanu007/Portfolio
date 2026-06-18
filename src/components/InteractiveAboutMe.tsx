@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Terminal, Cpu, Award, Download, ShieldCheck, Database, Rocket } from 'lucide-react';
+import { sfx } from '../utils/audio';
 
 interface TabContent {
   title: string;
@@ -70,6 +71,7 @@ const InteractiveAboutMe = () => {
       if (isCancelled) return;
       
       setTypingText(fullText.slice(0, index + 1));
+      sfx.playKeyboard();
       index++;
       
       if (index >= fullText.length) {
@@ -168,7 +170,8 @@ const InteractiveAboutMe = () => {
                 return (
                   <button
                     key={key}
-                    onClick={() => setActiveTab(key)}
+                    onClick={() => { sfx.playClick(); setActiveTab(key); }}
+                    onMouseEnter={() => sfx.playHover()}
                     className={`flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl border text-xs font-mono transition-all duration-300 ${
                       isActive
                         ? 'bg-purple-600/20 border-purple-500 text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.2)]'
