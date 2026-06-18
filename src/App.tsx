@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Scene from './components/Scene';
 import Navbar from './components/Navbar';
 import { motion } from 'framer-motion';
 import SkillCard from './components/SkillCard';
 import ProjectCard from './components/ProjectCard';
 import PhotoGallery from './components/PhotoGallery';
+import ProjectModal from './components/ProjectModal';
+import ContactForm from './components/ContactForm';
+import AstroAIChatbot from './components/AstroAIChatbot';
 import { Code2, Database, Globe, Server,
   Brain,
   MousePointer,
@@ -20,11 +23,18 @@ import { Code2, Database, Globe, Server,
   BarChart,
   Camera,
   Users,
-  Target
+  Target,
+  Search
 } from 'lucide-react';
 
 function App() {
- 
+  const [projectSearch, setProjectSearch] = useState('');
+  const [projectCategory, setProjectCategory] = useState('All');
+  const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [patentSearch, setPatentSearch] = useState('');
+  const [pubSearch, setPubSearch] = useState('');
+
+
   const skills = [
     {
       title: 'Frontend Development',
@@ -174,7 +184,7 @@ function App() {
       {
         title: 'Research Intern (Artificial Intelligence & Intelligent Systems)',
         company: 'Sanjivani University · Research Internship',
-        period: 'Jul 2025 - Present',
+        period: 'Jul 2025 - March 2026',
         location: 'Kopargaon, Maharashtra, India · On-site',
         description: 'Engaged in applied and research-oriented artificial intelligence projects focused on perception-driven systems and real-world deployment.',
         achievements: [
@@ -445,52 +455,16 @@ function App() {
         authors: 'S. Jadhav, M. A. Dhatrak, S. Gupta, N. Siddiqui',
         journal: 'Journal of Data Engineering and Knowledge Discovery, (2024)',
         link: 'https://matjournals.net/engineering/index.php/JoDEKD/article/view/1167',
-      }
-      
-
-
-    ],
-    acceptedPapers: [
+      },
       {
         title:
           'AI-Powered Emotion and Stress Detection: A WBAN-Based Approach for Real-Time Health Monitoring',
         authors: 'M. A. Dhatrak, S. Jadhav, P. Vibhute, S. Gupta',
         journal:
-          '19th EAI International Conference on Body Area Networks: Globally Connected Intelligent BAN, IIT BHU (Final Stage of Publication)',
-        link: '#',
+          '19th EAI International Conference on Body Area Networks: Globally Connected Intelligent BAN, IIT BHU',
+        link: 'https://www.springerprofessional.de/en/ai-powered-emotion-and-stress-detection-a-wban-based-approach-fo/52246384',
       }
-      
-     
-    ],
-    underReviewPapers: [
-      {
-        title:
-          'Columbus Voice Automation System: An NLP-Powered Real-Time Speech Command Processing',
-        authors: 'M. A. Dhatrak, S. Jadhav, N. Darwante, B. Agarkar',
-        journal: 'Songklanakarin Journal of Science and Technology (SJST)',
-      },
-        
-          {
-        title:
-          'AI-Enabled Real-Time Intrusion Detection for Smart Fences Using Advanced Image Processing',
-        authors: 'M. A. Dhatrak, S. Jadhav, S. Gupta',
-        journal:
-          '3rd International Conference on Advancement in Computation & Computer Technologies (InCACCT)',
-      },
-      {
-        title:
-          'Computer Vision-Driven Car Speed Control System Using Real-Time Traffic Sign Detection and Recognition',
-        authors: 'S. Jadhav, M. A. Dhatrak, P. Vibhute',
-        journal: 'Journal of Artificial Intelligence Research (JAIR)',
-      },
-      {
-        title:
-          'Multimodal Emotion Recognition: Leveraging Hybrid Fusion with Deep Learning Techniques',
-        authors: 'S. Kulkarni, M. A. Dhatrak, S. Jadhav, N. Bhopale',
-        journal:
-          'International Journal of Ad Hoc and Ubiquitous Computing',
-      },
-    ],
+    ]
   };
   
   
@@ -641,11 +615,11 @@ function App() {
           transition={{ duration: 1 }}
           className="text-center z-10"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500 leading-tight">
             Driven by Curiosity, Powered by Innovation
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-          <strong>"Where Technology Meets Imagination"</strong>
+            <strong>"Where Technology Meets Imagination"</strong>
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -655,8 +629,12 @@ function App() {
           >
             Unveil My Creations
           </motion.button>
+
+
         </motion.div>
       </section>
+
+
 
       {/* About Section */}
       <section id="about" className="py-20 relative">
@@ -791,6 +769,8 @@ function App() {
 
 
 
+
+
       {/* Experience Section */}
       <section id="experience" className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4">
@@ -837,6 +817,8 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
             Key Achievements
           </h2>
+
+
           <div className="grid md:grid-cols-2 gap-8">
             {achievements.map((achievement, index) => (
               <motion.div
@@ -906,19 +888,59 @@ function App() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-gray-400 max-w-2xl mx-auto"
+                className="text-gray-400 max-w-2xl mx-auto mb-8"
               >
                 Exploring the intersection of innovation and technology through carefully crafted solutions
               </motion.p>
+
+              {/* Search & Category Filter Controls */}
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4 max-w-4xl mx-auto p-4 rounded-2xl bg-white/5 border border-purple-500/10 backdrop-blur-md mb-12">
+                <div className="relative w-full md:w-80">
+                  <Search className="absolute left-3 top-3.5 w-4 h-4 text-purple-400" />
+                  <input
+                    type="text"
+                    value={projectSearch}
+                    onChange={(e) => setProjectSearch(e.target.value)}
+                    placeholder="Search projects..."
+                    className="w-full pl-10 pr-4 py-3 bg-black/40 border border-purple-500/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition"
+                  />
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {['All', 'Computer Vision', 'AI/ML', 'Healthcare', 'IoT'].map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setProjectCategory(cat)}
+                      className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                        projectCategory === cat
+                          ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/30'
+                          : 'bg-white/5 border border-purple-500/10 text-gray-400 hover:text-white hover:bg-white/10'
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
+              {projects.filter(project => {
+                const matchesSearch = project.title.toLowerCase().includes(projectSearch.toLowerCase()) ||
+                                      project.description.toLowerCase().includes(projectSearch.toLowerCase()) ||
+                                      project.tags.some(t => t.toLowerCase().includes(projectSearch.toLowerCase()));
+                const matchesCategory = projectCategory === 'All' || project.tags.some(t => {
+                  if (projectCategory === 'Healthcare') return t.toLowerCase().includes('health');
+                  if (projectCategory === 'Computer Vision') return t.toLowerCase().includes('vision') || t.toLowerCase().includes('imaging');
+                  return t.toLowerCase() === projectCategory.toLowerCase();
+                });
+                return matchesSearch && matchesCategory;
+              }).map((project, index) => (
                 <motion.div
                   key={project.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  onClick={() => setSelectedProject(project)}
                 >
                   <ProjectCard {...project} />
                 </motion.div>
@@ -943,20 +965,36 @@ function App() {
             </motion.div>
           </div>
         </section>
+
   
 
 
       {/* Publications Section */}
       <section id="publications" className="py-20 relative">
   <div className="max-w-6xl mx-auto px-4">
-    <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+    <h2 className="text-4xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
       Authored Publications
     </h2>
+
+    <div className="relative w-full md:w-80 mx-auto mb-12">
+      <Search className="absolute left-3 top-3.5 w-4 h-4 text-purple-400" />
+      <input
+        type="text"
+        value={pubSearch}
+        onChange={(e) => setPubSearch(e.target.value)}
+        placeholder="Search publications..."
+        className="w-full pl-10 pr-4 py-3 bg-black/40 border border-purple-500/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition"
+      />
+    </div>
 
     {/* Published Papers */}
     <h3 className="text-2xl font-bold mb-6 text-white">Published Papers</h3>
     <div className="space-y-6">
-      {publications.publishedPapers.map((pub, index) => (
+      {publications.publishedPapers.filter(pub => 
+        pub.title.toLowerCase().includes(pubSearch.toLowerCase()) ||
+        pub.authors.toLowerCase().includes(pubSearch.toLowerCase()) ||
+        pub.journal.toLowerCase().includes(pubSearch.toLowerCase())
+      ).map((pub, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, x: -20 }}
@@ -981,63 +1019,37 @@ function App() {
         </motion.div>
       ))}
     </div>
-
-    {/* Accepted Papers */}
-    <h3 className="text-2xl font-bold mt-12 mb-6 text-white">Accepted Papers</h3>
-    <div className="space-y-6">
-      {publications.acceptedPapers.map((pub, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="relative group"
-        >
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
-          <div className="relative p-6 bg-black rounded-lg">
-            <h3 className="text-xl font-bold text-white mb-2">{pub.title}</h3>
-            <p className="text-gray-400 mb-1">{pub.authors}</p>
-            <p className="text-sm text-purple-400 mb-2">{pub.journal}</p>
-            
-          </div>
-        </motion.div>
-      ))}
-    </div>
-
-    {/* Under Review Papers */}
-    <h3 className="text-2xl font-bold mt-12 mb-6 text-white">Under Review Papers</h3>
-    <div className="space-y-6">
-      {publications.underReviewPapers.map((pub, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="relative group"
-        >
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
-          <div className="relative p-6 bg-black rounded-lg">
-            <h3 className="text-xl font-bold text-white mb-2">{pub.title}</h3>
-            <p className="text-gray-400 mb-1">{pub.authors}</p>
-            <p className="text-sm text-purple-400 mb-2">{pub.journal}</p>
-          </div>
-        </motion.div>
-      ))}
-    </div>
   </div>
 </section>
 
 
 
+
+
       {/* Patents Section */}
-     {/* Patents Section */}
 <section id="patents" className="py-20 relative">
   <div className="max-w-6xl mx-auto px-4">
-    <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+    <h2 className="text-4xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
       Patents
     </h2>
+
+    <div className="relative w-full md:w-80 mx-auto mb-12">
+      <Search className="absolute left-3 top-3.5 w-4 h-4 text-purple-400" />
+      <input
+        type="text"
+        value={patentSearch}
+        onChange={(e) => setPatentSearch(e.target.value)}
+        placeholder="Search patents..."
+        className="w-full pl-10 pr-4 py-3 bg-black/40 border border-purple-500/20 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition"
+      />
+    </div>
+
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {patents.map((patent, index) => (
+      {patents.filter(patent => 
+        patent.title.toLowerCase().includes(patentSearch.toLowerCase()) ||
+        patent.number.toLowerCase().includes(patentSearch.toLowerCase()) ||
+        patent.description.toLowerCase().includes(patentSearch.toLowerCase())
+      ).map((patent, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 20 }}
@@ -1147,7 +1159,9 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
             Let's Connect
           </h2>
-          <div className="flex justify-center space-x-8">
+          <ContactForm />
+          
+          <div className="flex justify-center space-x-8 mt-12">
             <motion.a
               href="https://github.com/astromanu007"
               target="_blank"
@@ -1179,8 +1193,23 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Astro-AI Chatbot and ProjectModal details view */}
+      <AstroAIChatbot 
+        skills={skills}
+        projects={projects}
+        experience={experience}
+        achievements={achievements}
+        publications={publications}
+        patents={patents}
+        certifications={certifications}
+      />
+      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+
+
     </div>
   );
 }
 
 export default App;
+
