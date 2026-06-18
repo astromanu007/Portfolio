@@ -6,6 +6,7 @@ import SkillCard from './components/SkillCard';
 import ProjectCard from './components/ProjectCard';
 import PhotoGallery from './components/PhotoGallery';
 import MilestoneTimeline from './components/MilestoneTimeline';
+import InteractiveAboutMe from './components/InteractiveAboutMe';
 import ProjectModal from './components/ProjectModal';
 import ContactForm from './components/ContactForm';
 import AstroAIChatbot from './components/AstroAIChatbot';
@@ -639,47 +640,15 @@ function App() {
 
       {/* About Section */}
       <section id="about" className="py-20 relative">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="grid md:grid-cols-2 gap-12 items-center"
-          >
-            <div className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
-              <img
-                src="https://avatars.githubusercontent.com/u/98075143?s=400&u=d87c28809dc33c8d81123df7627a6fee69023b63&v=4"
-                alt="Profile"
-                className="relative rounded-full w-64 h-64 mx-auto object-cover"
-              />
-            </div>
-            <div>
-              <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-              <strong>About Me</strong>
-              </h2>
-              <p className="text-gray-300 mb-6 text-justify">
-              I am <strong>Manish Dhatrak</strong>, as an undergraduate in <strong>Electronics and Computer Engineering</strong>,
-                I’ve led over 60 impactful projects, authored 10 research
-                papers, and secured 35 patents (20 granted). Driven by a passion
-                for creativity and technological advancement, I craft innovative
-                solutions that push boundaries and create meaningful change
-                across industries and communities.
-                
-              </p>
-              <motion.a
-                href="https://drive.google.com/file/d/1aT5M4RNyHwRgD4V8OUoDhwzYkLOSPQUg/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-2 rounded-full border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all duration-300 inline-block"
-              >
-                <strong>Download Resume/CV</strong>
-              </motion.a>
-            </div>
-          </motion.div>
+        <div className="max-w-6xl mx-auto px-4 text-center mb-12">
+          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+            About Me
+          </h2>
+          <p className="text-gray-400 text-sm mt-2">
+            System Telemetry & Mission Diagnostics Log
+          </p>
         </div>
+        <InteractiveAboutMe />
       </section>
 
 
