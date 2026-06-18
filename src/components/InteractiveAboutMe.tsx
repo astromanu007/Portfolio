@@ -64,16 +64,24 @@ const InteractiveAboutMe = () => {
     const fullText = selectedData.content;
     setTypingText('');
     
+    let isCancelled = false;
+    
     const interval = setInterval(() => {
-      setTypingText((prev) => prev + fullText.charAt(index));
+      if (isCancelled) return;
+      
+      setTypingText(fullText.slice(0, index + 1));
       index++;
+      
       if (index >= fullText.length) {
         clearInterval(interval);
       }
-    }, 8); // Fast typing speed
+    }, 12); // Steady typing speed
 
-    return () => clearInterval(interval);
-  }, [activeTab]);
+    return () => {
+      isCancelled = true;
+      clearInterval(interval);
+    };
+  }, [activeTab, selectedData.content]);
 
   return (
     <div className="max-w-6xl mx-auto px-4">
