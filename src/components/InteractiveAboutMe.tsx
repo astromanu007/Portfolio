@@ -85,6 +85,13 @@ const InteractiveAboutMe = () => {
             {/* Pulsing scanning radar glow */}
             <div className="absolute -inset-0.5 bg-gradient-to-tr from-purple-600 via-blue-500 to-cyan-400 rounded-full blur opacity-40 group-hover:opacity-80 transition duration-1000"></div>
             
+            {/* Rotating dashed HUD outer ring */}
+            <motion.div 
+              className="absolute inset-1 rounded-full border border-dashed border-cyan-400/40 pointer-events-none z-10"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            />
+            
             {/* Dynamic radar scanning green/cyan line */}
             <motion.div 
               className="absolute left-0 w-full h-[2px] bg-cyan-400/80 shadow-[0_0_12px_rgba(34,211,238,0.8)] z-10 pointer-events-none"
@@ -102,14 +109,14 @@ const InteractiveAboutMe = () => {
             <img
               src="https://avatars.githubusercontent.com/u/98075143?s=400&u=d87c28809dc33c8d81123df7627a6fee69023b63&v=4"
               alt="Manish Dhatrak"
-              className="w-[98%] h-[98%] rounded-full object-cover z-0 grayscale group-hover:grayscale-0 transition-all duration-700"
+              className="w-[96%] h-[96%] rounded-full object-cover z-0 transition-all duration-700"
             />
 
             {/* Futuristic Tech Scan Markers */}
-            <div className="absolute top-4 left-4 text-[9px] font-mono text-cyan-400/60 pointer-events-none select-none z-10">
+            <div className="absolute top-4 left-6 text-[9px] font-mono text-cyan-400/60 pointer-events-none select-none z-10">
               SYS.LOC // 19.6248° N
             </div>
-            <div className="absolute bottom-4 right-4 text-[9px] font-mono text-purple-400/60 pointer-events-none select-none z-10">
+            <div className="absolute bottom-4 right-6 text-[9px] font-mono text-purple-400/60 pointer-events-none select-none z-10">
               SCAN_STATUS: OK
             </div>
           </div>
