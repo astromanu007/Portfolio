@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import SkillCard from './components/SkillCard';
 import ProjectCard from './components/ProjectCard';
 import PhotoGallery from './components/PhotoGallery';
+import MilestoneTimeline from './components/MilestoneTimeline';
 import ProjectModal from './components/ProjectModal';
 import ContactForm from './components/ContactForm';
 import AstroAIChatbot from './components/AstroAIChatbot';
@@ -770,6 +771,19 @@ function App() {
 
 
 
+
+      {/* Interactive Milestones Timeline Section */}
+      <section id="journey" className="py-20 relative">
+        <div className="max-w-6xl mx-auto px-4 text-center mb-12">
+          <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+            Interactive Career Journey
+          </h2>
+          <p className="text-gray-400 text-sm mt-3">
+            Milestones and major timeline events throughout my AI and Space technology journey
+          </p>
+        </div>
+        <MilestoneTimeline />
+      </section>
 
       {/* Experience Section */}
       <section id="experience" className="py-20 relative">
