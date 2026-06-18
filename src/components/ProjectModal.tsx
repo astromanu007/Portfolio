@@ -42,10 +42,11 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 text-gray-400 hover:text-white rounded-full bg-white/5 hover:bg-white/10 transition-colors"
+            className="absolute top-4 right-4 z-50 p-2 text-white bg-black/70 border border-white/20 hover:border-purple-500 rounded-full hover:bg-purple-600 transition-all duration-300 shadow-lg"
           >
-            <X className="w-6 h-6" />
+            <X className="w-5 h-5" />
           </button>
+
 
           {/* Header image & title */}
           <div className="mb-6 rounded-xl overflow-hidden h-[200px] md:h-[280px] relative">
