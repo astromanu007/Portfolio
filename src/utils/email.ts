@@ -72,6 +72,20 @@ export const sendContactEmail = async (params: ContactEmailParams): Promise<bool
 export const sendScheduleEmail = async (params: ScheduleEmailParams): Promise<boolean> => {
   try {
     if (EMAILJS_CONFIG.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+      const scheduleDetails = `
+📅 1-ON-1 INTERVIEW CALL REQUEST DETAILS:
+----------------------------------------
+• Candidate Name: ${params.from_name}
+• Email: ${params.from_email}
+• Company / Organization: ${params.company || 'N/A'}
+• Meeting Topic: ${params.topic}
+• Preferred Date: ${params.preferred_date}
+• Preferred Time: ${params.preferred_time}
+
+📝 Agenda / Notes:
+${params.notes || 'No extra notes provided.'}
+      `.trim();
+
       await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID_SCHEDULE,
@@ -79,11 +93,12 @@ export const sendScheduleEmail = async (params: ScheduleEmailParams): Promise<bo
           to_email: EMAILJS_CONFIG.RECEIVER_EMAIL,
           from_name: params.from_name,
           from_email: params.from_email,
-          company: params.company || 'N/A',
-          topic: params.topic,
-          preferred_date: params.preferred_date,
-          preferred_time: params.preferred_time,
-          notes: params.notes || 'N/A',
+          name: params.from_name,
+          email: params.from_email,
+          title: `1-on-1 Call Request: ${params.topic} (${params.from_name})`,
+          subject: `1-on-1 Call Request: ${params.topic} (${params.from_name})`,
+          message: scheduleDetails,
+          time: new Date().toLocaleString()
         },
         EMAILJS_CONFIG.PUBLIC_KEY
       );
