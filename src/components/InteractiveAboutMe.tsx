@@ -34,11 +34,11 @@ const ABOUT_TABS: Record<string, TabContent> = {
   patents: {
     title: 'Patents & Inventions',
     icon: Award,
-    content: "Fostering technological innovation through active intellectual property protection. Authored 10 research papers in top-tier conferences (including Springer, WBAN-based real-time systems) and filed 35 patents (with 20 successfully granted) covering diverse industrial applications.",
+    content: "Fostering technological innovation through active intellectual property protection. Authored 6 peer-reviewed research papers in top IEEE & Springer publications. Holds 50+ design patents (25 granted), 3+ product patents, and 2 utility patents covering diverse industrial and biomedical applications.",
     stats: [
-      { label: 'Patents Filed', value: '35 Total', color: 'from-amber-400 to-orange-500' },
-      { label: 'Granted Patents', value: '20 Approved', color: 'from-green-400 to-emerald-500' },
-      { label: 'Research Papers', value: '10 Published', color: 'from-blue-400 to-purple-500' }
+      { label: 'Design Patents', value: '50+ (25 Granted)', color: 'from-amber-400 to-orange-500' },
+      { label: 'Product Patents', value: '3+ Filed', color: 'from-green-400 to-emerald-500' },
+      { label: 'Research Papers', value: '6 Published', color: 'from-blue-400 to-purple-500' }
     ]
   },
   directives: {
@@ -131,7 +131,7 @@ const InteractiveAboutMe = () => {
             </div>
             <div className="flex justify-between items-center">
               <span className="flex items-center gap-1.5"><Database className="w-3.5 h-3.5 text-blue-400" /> Database Cores</span>
-              <span className="text-white">Active (35 Patents)</span>
+              <span className="text-white">Active (50+ Patents)</span>
             </div>
           </div>
         </div>

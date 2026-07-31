@@ -47,16 +47,16 @@ const RecruiterQuickView: React.FC<RecruiterQuickViewProps> = ({ isOpen, onClose
           {/* Quick Metrics */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
             <div className="p-3 bg-white/5 border border-white/10 rounded-2xl">
-              <div className="text-[10px] text-gray-400 uppercase font-mono">Patents Filed</div>
-              <div className="text-xl font-bold text-amber-400">35 Total (20 Granted)</div>
+              <div className="text-[10px] text-gray-400 uppercase font-mono">Design Patents</div>
+              <div className="text-xl font-bold text-amber-400">50+ (25 Granted)</div>
+            </div>
+            <div className="p-3 bg-white/5 border border-white/10 rounded-2xl">
+              <div className="text-[10px] text-gray-400 uppercase font-mono">Product Patents</div>
+              <div className="text-xl font-bold text-purple-400">3+ Filed</div>
             </div>
             <div className="p-3 bg-white/5 border border-white/10 rounded-2xl">
               <div className="text-[10px] text-gray-400 uppercase font-mono">Research Papers</div>
-              <div className="text-xl font-bold text-cyan-400">10 Published</div>
-            </div>
-            <div className="p-3 bg-white/5 border border-white/10 rounded-2xl">
-              <div className="text-[10px] text-gray-400 uppercase font-mono">NASA Award</div>
-              <div className="text-xl font-bold text-purple-400">People's Choice</div>
+              <div className="text-xl font-bold text-cyan-400">6 Published</div>
             </div>
             <div className="p-3 bg-white/5 border border-white/10 rounded-2xl">
               <div className="text-[10px] text-gray-400 uppercase font-mono">Completed Projects</div>

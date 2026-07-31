@@ -57,7 +57,7 @@ const TerminalCLIMode: React.FC<TerminalCLIModeProps> = ({ isOpen, onClose }) =>
       case 'patents':
         newLogs.push({
           type: 'output',
-          text: 'PATENT STATS:\n - 35 Total Filed Patents\n - 20 Granted Patents\n - 10 Published Research Papers (IEEE, Springer, WBAN)'
+          text: 'PATENT STATS:\n - 50+ Design Patents (25 Granted)\n - 3+ Product Patents & 2 Utility Patents Filed\n - 6 Published Peer-Reviewed Research Papers (IEEE, Springer, WBAN)'
         });
         break;
       case 'projects':
