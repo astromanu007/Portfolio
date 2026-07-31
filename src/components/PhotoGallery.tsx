@@ -26,7 +26,7 @@ const galleryImages: GalleryImage[] = [
     date: "2024",
     category: "Hackathon"
   },
-  
+
   {
     id: 3,
     src: "https://anish-dhatrak.sirv.com/Images/manish.jpg",
@@ -43,7 +43,7 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 5,
-    src: "https://media.licdn.com/dms/image/v2/D5622AQF8tOBm_r6pmg/feedshare-shrink_2048_1536/B56ZaBkNAJGQAo-/0/1745930530247?e=1767830400&v=beta&t=p-SmdVXvZCVms9IFuftPGIAFlsGdmIrxle2iuNfrLuA",
+    src: "https://kommodo.ai/i/mlYWHhfC6j97kCndiOG7",
     headline: "Winner — MIT ADT University Tech Expo",
     date: "2024",
     category: "Academia"
@@ -56,14 +56,14 @@ const galleryImages: GalleryImage[] = [
     category: "Industry Hackathon"
   },
   {
-  id: 7,
-  src: "https://media.licdn.com/dms/image/v2/C4D22AQEPHczAzj6bqg/feedshare-shrink_800/feedshare-shrink_800/0/1655580979897?e=1767830400&v=beta&t=kmDrkRQAAW32ABMi9MJ0Q2YuHtsahjBgAcCW5NAXNss",
-  headline: "International Space Olympiad — Global Second Rank",
-  date: "2024",
-  category: "International Olympiad"
-}
+    id: 7,
+    src: "https://media.licdn.com/dms/image/v2/C4D22AQEPHczAzj6bqg/feedshare-shrink_800/feedshare-shrink_800/0/1655580979897?e=1767830400&v=beta&t=kmDrkRQAAW32ABMi9MJ0Q2YuHtsahjBgAcCW5NAXNss",
+    headline: "International Space Olympiad — Global Second Rank",
+    date: "2024",
+    category: "International Olympiad"
+  }
 
-  
+
 ];
 
 
@@ -133,7 +133,7 @@ const PhotoGallery = () => {
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -166,7 +166,7 @@ const PhotoGallery = () => {
         {/* Main Gallery Container */}
         <div className="relative">
           {/* Gallery Carousel */}
-          <div 
+          <div
             className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden group"
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
@@ -190,7 +190,7 @@ const PhotoGallery = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                
+
                 {/* Image Content Overlay */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -262,11 +262,10 @@ const PhotoGallery = () => {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
                       ? 'bg-purple-500 scale-125'
                       : 'bg-gray-600 hover:bg-gray-500'
-                  }`}
+                    }`}
                 />
               ))}
             </div>
