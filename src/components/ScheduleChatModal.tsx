@@ -155,13 +155,18 @@ const ScheduleChatModal: React.FC<ScheduleChatModalProps> = ({ isOpen, onClose }
                       onChange={(e) => setFormData({ ...formData, time: e.target.value })}
                       className="w-full p-2.5 rounded-xl bg-slate-900 border border-purple-500/30 text-white outline-none focus:border-cyan-400 font-mono text-xs cursor-pointer appearance-none"
                     >
-                      <option value="09:00 AM">09:00 AM IST</option>
-                      <option value="10:00 AM">10:00 AM IST</option>
-                      <option value="11:00 AM">11:00 AM IST</option>
-                      <option value="02:00 PM">02:00 PM IST</option>
-                      <option value="04:00 PM">04:00 PM IST</option>
-                      <option value="06:00 PM">06:00 PM IST</option>
-                      <option value="08:00 PM">08:00 PM IST</option>
+                      <option value="09:00 AM IST">09:00 AM IST</option>
+                      <option value="10:00 AM IST">10:00 AM IST</option>
+                      <option value="11:00 AM IST">11:00 AM IST</option>
+                      <option value="12:00 PM IST">12:00 PM IST (Noon)</option>
+                      <option value="01:00 PM IST">01:00 PM IST</option>
+                      <option value="02:00 PM IST">02:00 PM IST</option>
+                      <option value="03:00 PM IST">03:00 PM IST</option>
+                      <option value="04:00 PM IST">04:00 PM IST</option>
+                      <option value="05:00 PM IST">05:00 PM IST</option>
+                      <option value="06:00 PM IST">06:00 PM IST</option>
+                      <option value="07:00 PM IST">07:00 PM IST</option>
+                      <option value="08:00 PM IST">08:00 PM IST</option>
                     </select>
                     <Clock className="w-4 h-4 text-cyan-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
