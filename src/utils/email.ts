@@ -33,7 +33,7 @@ export interface ScheduleEmailParams {
 export const sendContactEmail = async (params: ContactEmailParams): Promise<boolean> => {
   try {
     if (EMAILJS_CONFIG.PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-      // 1. Send notification to Manish
+      // Send single transmitted message with visitor's email and details to Manish
       await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID_TRANSMIT,
@@ -41,6 +41,7 @@ export const sendContactEmail = async (params: ContactEmailParams): Promise<bool
           to_email: EMAILJS_CONFIG.RECEIVER_EMAIL,
           from_name: params.from_name,
           from_email: params.from_email,
+          reply_to: params.from_email,
           name: params.from_name,
           email: params.from_email,
           title: params.subject || 'Portfolio Contact Message',
@@ -50,43 +51,6 @@ export const sendContactEmail = async (params: ContactEmailParams): Promise<bool
         },
         EMAILJS_CONFIG.PUBLIC_KEY
       );
-
-      // 2. Send automatic confirmation email back to the visitor
-      try {
-        const confirmationMsg = `
-Hi ${params.from_name},
-
-Thank you for reaching out through my website portfolio!
-
-I have received your message regarding "${params.subject || 'General Inquiry'}" and will get back to you as soon as possible.
-
-Best regards,
-Manish Dhatrak
-Electronics & Computer Engineering Researcher | AI, CV & Space Avionics
-Portfolio: https://astromanu007.github.io/Portfolio/
-Email: manishdhatrak1121@gmail.com
-        `.trim();
-
-        await emailjs.send(
-          EMAILJS_CONFIG.SERVICE_ID,
-          EMAILJS_CONFIG.TEMPLATE_ID_TRANSMIT,
-          {
-            to_email: params.from_email,
-            from_name: 'Manish Dhatrak',
-            from_email: EMAILJS_CONFIG.RECEIVER_EMAIL,
-            name: 'Manish Dhatrak',
-            email: params.from_email,
-            title: `Confirmation: Message Received - Manish Dhatrak`,
-            subject: `Confirmation: Message Received - Manish Dhatrak`,
-            message: confirmationMsg,
-            time: new Date().toLocaleString()
-          },
-          EMAILJS_CONFIG.PUBLIC_KEY
-        );
-      } catch (autoErr) {
-        console.warn('Auto-reply confirmation send warning:', autoErr);
-      }
-
       return true;
     }
   } catch (error) {
@@ -131,6 +95,7 @@ ${params.notes || 'No extra notes provided.'}
           to_email: EMAILJS_CONFIG.RECEIVER_EMAIL,
           from_name: params.from_name,
           from_email: params.from_email,
+          reply_to: params.from_email,
           name: params.from_name,
           email: params.from_email,
           title: `1-on-1 Call Request: ${params.topic} (${params.from_name})`,
@@ -140,50 +105,6 @@ ${params.notes || 'No extra notes provided.'}
         },
         EMAILJS_CONFIG.PUBLIC_KEY
       );
-
-      // Automatic confirmation email back to sender for scheduling
-      try {
-        const scheduleConfirmationMsg = `
-Hi ${params.from_name},
-
-Thank you for booking a 1-on-1 call / interview!
-
-Here is a summary of your requested slot:
-----------------------------------------
-• Meeting Topic: ${params.topic}
-• Requested Date: ${params.preferred_date}
-• Requested Time: ${params.preferred_time}
-• Company / Org: ${params.company || 'N/A'}
-
-I have received your request and will confirm the calendar slot via email shortly.
-
-Best regards,
-Manish Dhatrak
-Electronics & Computer Engineering Researcher | AI, CV & Space Avionics
-Portfolio: https://astromanu007.github.io/Portfolio/
-Email: manishdhatrak1121@gmail.com
-        `.trim();
-
-        await emailjs.send(
-          EMAILJS_CONFIG.SERVICE_ID,
-          EMAILJS_CONFIG.TEMPLATE_ID_SCHEDULE,
-          {
-            to_email: params.from_email,
-            from_name: 'Manish Dhatrak',
-            from_email: EMAILJS_CONFIG.RECEIVER_EMAIL,
-            name: 'Manish Dhatrak',
-            email: params.from_email,
-            title: `Confirmation: 1-on-1 Call Request Received - Manish Dhatrak`,
-            subject: `Confirmation: 1-on-1 Call Request Received - Manish Dhatrak`,
-            message: scheduleConfirmationMsg,
-            time: new Date().toLocaleString()
-          },
-          EMAILJS_CONFIG.PUBLIC_KEY
-        );
-      } catch (autoErr) {
-        console.warn('Schedule confirmation send warning:', autoErr);
-      }
-
       return true;
     }
   } catch (error) {
