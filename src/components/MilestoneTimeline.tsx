@@ -38,7 +38,7 @@ const TIMELINE_DATA: TimelineEvent[] = [
   },
   {
     year: '2024',
-    title: 'People\'s Choice Award Winner',
+    title: "People's Choice Award Winner",
     subtitle: 'NASA Space Apps Challenge, USA',
     description: 'Created ExoYatra exoplanet game, achieving 90% engagement and 60,000+ global votes.',
     icon: Award,
@@ -48,7 +48,7 @@ const TIMELINE_DATA: TimelineEvent[] = [
     year: '2024',
     title: 'Mission Rhumi Internship Trainee',
     subtitle: 'Space Zone India, Tamil Nadu',
-    description: 'Contributed to Rhumi-1, India\'s first reusable hybrid rocket launch, and CubeSat payloads.',
+    description: "Contributed to Rhumi-1, India's first reusable hybrid rocket launch, and CubeSat payloads.",
     icon: Rocket,
     category: 'space'
   },
@@ -64,13 +64,13 @@ const TIMELINE_DATA: TimelineEvent[] = [
     year: '2022',
     title: 'Founder & Leader',
     subtitle: 'Team Charlie',
-    description: 'Established 6 clubs across Space, Code, Cyber, Digital Marketing, Science, and AI/ML.',
+    description: 'Established 6 clubs across Space and Robotics, Web Development, Cyber Security, Digital Marketing, Science, and AI/ML.',
     icon: GraduationCap,
     category: 'education'
   },
   {
     year: '2021',
-    title: '2nd Global Rank',
+    title: 'Second Global Rank',
     subtitle: 'International Space Olympiad, EduMitra',
     description: 'Ranked 2nd Globally among 1,000+ competitors from 50+ countries.',
     icon: Award,
@@ -93,13 +93,13 @@ const MilestoneTimeline = () => {
       {/* Center timeline vertical line path */}
       <div className="absolute left-1/2 transform -translate-x-1/2 w-[2px] h-[92%] bg-white/10 top-6 pointer-events-none rounded-full">
         {/* Glowing progress line */}
-        <motion.div 
+        <motion.div
           className="absolute top-0 left-0 w-full bg-gradient-to-b from-purple-500 via-blue-500 to-cyan-400 origin-top rounded-full shadow-[0_0_10px_rgba(168,85,247,0.5)]"
           style={{ scaleY, height: '100%' }}
         />
-        
+
         {/* Glowing tracking rocket */}
-        <motion.div 
+        <motion.div
           className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-950 border border-purple-500/50 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.8)] z-20"
           style={{ top: yPosition }}
         >
@@ -119,9 +119,8 @@ const MilestoneTimeline = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`flex flex-col md:flex-row items-center justify-between w-full relative ${
-                isLeft ? 'md:flex-row-reverse' : ''
-              }`}
+              className={`flex flex-col md:flex-row items-center justify-between w-full relative ${isLeft ? 'md:flex-row-reverse' : ''
+                }`}
             >
               {/* Timeline dot */}
               <div className="absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-black border border-purple-500 flex items-center justify-center z-10 shadow-lg shadow-purple-500/25">
