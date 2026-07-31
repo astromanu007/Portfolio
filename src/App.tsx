@@ -850,7 +850,7 @@ function App() {
   };
 
   return (
-    <div className="relative w-full overflow-x-hidden bg-black text-white">
+    <div className="min-h-screen relative w-full overflow-x-hidden bg-gradient-to-b from-black via-purple-950/40 to-black text-white">
       <Scene />
       <Navbar
         onOpenRecruiter={() => setIsRecruiterOpen(true)}

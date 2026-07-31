@@ -4,7 +4,7 @@ import Background from './Background';
 
 const Scene = () => {
   return (
-    <div className="fixed top-0 left-0 w-full h-full -z-10">
+    <div className="fixed inset-0 w-full h-full pointer-events-none z-0">
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Suspense fallback={null}>
           <Background />
