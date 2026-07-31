@@ -207,7 +207,7 @@ function App() {
       {
         title: "Research Student Intern (Remote)",
         company: "Nanyang Technological University (NTU) · Internship",
-        period: "March 2025 - Present",
+        period: "March 2025 - July 31, 2026",
         location: "NTU Singapore · Remote",
         description: "Conducting research in deep learning for medical imaging, focusing on AI-driven diagnosis and brain lesion classification.",
         highlights: [
