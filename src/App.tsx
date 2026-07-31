@@ -1138,70 +1138,66 @@ function App() {
         </div>
       </section>
 
-      {/* Achievements Section */}
-      <section id="achievements" className="py-20 relative">
+      {/* Key Achievements Section */}
+      <section id="achievements" className="py-20 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-            Key Achievements
+          <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-500">
+            Key Achievements & Honors
           </h2>
-
           <div className="grid md:grid-cols-2 gap-8">
-            {achievements.map((achievement, index) => (
+            {achievements.map((item, index) => (
               <motion.div
-                key={achievement.title}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative group"
               >
-                {/* Glow aura background */}
-                <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-purple-600/50 to-blue-600/50 blur opacity-60 group-hover:opacity-100 transition duration-500"></div>
+                {/* Glowing Border Backdrop */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-cyan-500 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-700 group-hover:duration-200"></div>
 
-                <div className="relative p-7 bg-[#08070d] border border-purple-500/20 rounded-2xl h-full flex flex-col justify-between space-y-4">
-                  <div className="space-y-3">
-                    {/* Top Trophy Icon */}
-                    <div>
-                      <Trophy className="w-9 h-9 text-purple-400 stroke-[1.5]" />
+                <div className="relative p-6 md:p-7 bg-slate-950/90 border border-purple-500/30 rounded-2xl h-full flex flex-col justify-between backdrop-blur-xl shadow-xl hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] transition-all duration-300">
+                  <div>
+                    {/* Header Row: Icon + Badges */}
+                    <div className="flex items-start justify-between gap-3 mb-4">
+                      <div className="p-3 rounded-2xl bg-purple-500/10 border border-purple-500/30 text-purple-400 shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <Trophy className="w-6 h-6 text-yellow-400" />
+                      </div>
+                      <div className="flex flex-wrap gap-1.5 justify-end">
+                        {item.tier && (
+                          <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-amber-500/10 text-amber-300 border border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.2)]">
+                            {item.tier}
+                          </span>
+                        )}
+                      </div>
                     </div>
 
                     {/* Title & Organization */}
-                    <div className="space-y-1">
-                      <h3 className="text-xl font-bold text-white leading-snug">
-                        {achievement.title}
-                      </h3>
-                      <p className="text-purple-400 text-sm font-medium">
-                        {achievement.organization}
-                      </p>
-                      <p className="text-gray-400 text-xs">
-                        {achievement.year}
-                      </p>
+                    <h3 className="text-lg md:text-xl font-extrabold text-white mb-1.5 leading-snug group-hover:text-cyan-300 transition-colors">
+                      {item.title}
+                    </h3>
+                    <div className="flex items-center justify-between text-xs font-mono text-purple-400 mb-4 border-b border-white/5 pb-3">
+                      <span className="font-semibold">{item.organization}</span>
+                      <span className="text-gray-400 shrink-0 ml-2">{item.year}</span>
                     </div>
 
-                    {/* Description */}
-                    <div className="text-gray-300 text-sm leading-relaxed space-y-1 pt-1">
-                      {Array.isArray(achievement.description) ? (
-                        achievement.description.map((desc, dIdx) => <p key={dIdx}>{desc}</p>)
-                      ) : (
-                        <p>{achievement.description}</p>
-                      )}
+                    {/* Description Paragraph */}
+                    <div className="text-gray-300 text-xs md:text-sm leading-relaxed space-y-2 mb-6">
+                      {item.description.map((desc, i) => (
+                        <p key={i}>{desc}</p>
+                      ))}
                     </div>
                   </div>
 
-                  {/* Optional extra tags if present */}
-                  {(achievement.reward || achievement.sponsor) && (
-                    <div className="pt-2 flex flex-wrap items-center gap-2">
-                      {achievement.reward && (
-                        <span className="px-2.5 py-0.5 rounded-md bg-purple-950/60 border border-purple-500/30 text-purple-300 font-mono text-xs font-semibold">
-                          {achievement.reward}
-                        </span>
-                      )}
-                      {achievement.sponsor && (
-                        <span className="text-gray-400 text-xs">
-                          Sponsor: <span className="text-purple-300">{achievement.sponsor}</span>
-                        </span>
-                      )}
-                    </div>
-                  )}
+                  {/* Bottom Footer Tags */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 pt-4 border-t border-white/10 text-xs font-mono">
+                    <span className="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-300 border border-purple-500/20 font-semibold">
+                      🎁 {item.reward}
+                    </span>
+                    <span className="text-gray-400 text-[11px]">
+                      Sponsor: <span className="text-cyan-400 font-semibold">{item.sponsor}</span>
+                    </span>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -1457,73 +1453,6 @@ function App() {
 
   </div>
 </section>
-
-      {/* Key Achievements Section */}
-      <section id="achievements" className="py-20 relative z-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-500">
-            Key Achievements & Honors
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {achievements.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative group"
-              >
-                {/* Glowing Border Backdrop */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-cyan-500 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-700 group-hover:duration-200"></div>
-
-                <div className="relative p-6 md:p-7 bg-slate-950/90 border border-purple-500/30 rounded-2xl h-full flex flex-col justify-between backdrop-blur-xl shadow-xl hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] transition-all duration-300">
-                  <div>
-                    {/* Header Row: Icon + Badges */}
-                    <div className="flex items-start justify-between gap-3 mb-4">
-                      <div className="p-3 rounded-2xl bg-purple-500/10 border border-purple-500/30 text-purple-400 shrink-0 group-hover:scale-110 transition-transform duration-300">
-                        <Trophy className="w-6 h-6 text-yellow-400" />
-                      </div>
-                      <div className="flex flex-wrap gap-1.5 justify-end">
-                        {item.tier && (
-                          <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-amber-500/10 text-amber-300 border border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.2)]">
-                            {item.tier}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Title & Organization */}
-                    <h3 className="text-lg md:text-xl font-extrabold text-white mb-1.5 leading-snug group-hover:text-cyan-300 transition-colors">
-                      {item.title}
-                    </h3>
-                    <div className="flex items-center justify-between text-xs font-mono text-purple-400 mb-4 border-b border-white/5 pb-3">
-                      <span className="font-semibold">{item.organization}</span>
-                      <span className="text-gray-400 shrink-0 ml-2">{item.year}</span>
-                    </div>
-
-                    {/* Description Paragraph */}
-                    <div className="text-gray-300 text-xs md:text-sm leading-relaxed space-y-2 mb-6">
-                      {item.description.map((desc, i) => (
-                        <p key={i}>{desc}</p>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Bottom Footer Tags */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 pt-4 border-t border-white/10 text-xs font-mono">
-                    <span className="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-300 border border-purple-500/20 font-semibold">
-                      🎁 {item.reward}
-                    </span>
-                    <span className="text-gray-400 text-[11px]">
-                      Sponsor: <span className="text-cyan-400 font-semibold">{item.sponsor}</span>
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Certifications Section */}
       <section id="certifications" className="py-20 relative z-10">
