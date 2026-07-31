@@ -14,41 +14,41 @@ const ABOUT_TABS: Record<string, TabContent> = {
   summary: {
     title: 'Mission Summary',
     icon: Terminal,
-    content: "I am Manish Dhatrak, an Electronics and Computer Engineering researcher and developer. Passionate about space exploration, machine learning, and hardware-software integration, I lead efforts in building cutting-edge technical products. Over the past 5 years, I have successfully transformed creative concepts into robust research papers, patents, and projects that impact communities globally.",
+    content: "I am Manish Dhatrak — an AI/ML Engineer, Computer Vision, Robotics, and Biomedical AI Researcher. Recognized with All India Rank 1 in Mission Rhumi 2024 Assessment and a Fully Funded Visit to NASA, I pioneer intelligent perception systems, biomedical diagnostic devices, and deep learning models. Author of 6 peer-reviewed research papers and inventor with 50+ design patents (25 Granted).",
     stats: [
-      { label: 'Academic Standing', value: 'ECE Undergraduate', color: 'from-purple-400 to-indigo-500' },
-      { label: 'Leadership', value: 'Founder @ Team Charlie', color: 'from-blue-400 to-cyan-500' },
-      { label: 'Active Projects', value: '60+ Completed', color: 'from-pink-400 to-rose-500' }
+      { label: 'Academic Domain', value: 'Electronics & Computer Eng.', color: 'from-purple-400 to-indigo-500' },
+      { label: 'Primary Specialization', value: 'AI/ML & Robotics', color: 'from-blue-400 to-cyan-500' },
+      { label: 'Scholarly Impact', value: '6 IEEE/Springer Papers', color: 'from-pink-400 to-rose-500' }
     ]
   },
   ai_core: {
     title: 'Cognitive AI Core',
     icon: Cpu,
-    content: "Developing custom perception pipelines and intelligent algorithms. Expertise ranges from YOLO-based wildlife threat identification systems at Sanjivani University to deep learning applications in medical image diagnostics at NTU Singapore. Bridging advanced computer science and hardware layers.",
+    content: "Specializing in real-time computer vision, edge AI, and deep learning diagnostics. Architectural expertise spans MobileNet SSD perception engines for autonomous cars, OpenCV radiometric thermal imaging for PCB fault localization, PyTorch ResNet50/EfficientNet biomedical signal classifiers, AI virtual try-on models, and MediaPipe 3D gesture kinematics.",
     stats: [
-      { label: 'CV Models', value: 'YOLO, CNNs', color: 'from-purple-400 to-pink-500' },
-      { label: 'Research Depth', value: 'Medical Imaging', color: 'from-blue-400 to-indigo-500' },
-      { label: 'Telemetry', value: 'Real-time Datasets', color: 'from-cyan-400 to-teal-500' }
+      { label: 'Vision Architecture', value: 'MobileNet & OpenCV', color: 'from-purple-400 to-pink-500' },
+      { label: 'Biomedical AI', value: 'Cardiopulmonary Diagnostic Models', color: 'from-blue-400 to-indigo-500' },
+      { label: 'Engineering Output', value: '60+ Tech Projects', color: 'from-cyan-400 to-teal-500' }
     ]
   },
   patents: {
     title: 'Patents & Inventions',
     icon: Award,
-    content: "Fostering technological innovation through active intellectual property protection. Authored 6 peer-reviewed research papers in top IEEE & Springer publications. Holds 50+ design patents (25 granted), 3+ product patents, and 2 utility patents covering diverse industrial and biomedical applications.",
+    content: "Pioneering novel hardware-software IP creation across autonomous perception, wearable women safety systems, assistive vision glasses, and waste-energy harvesting turbines. Inventor holding 50+ design patents (25 officially Granted by the Indian Patent Office) and author of 6 peer-reviewed research publications in IEEE and Springer.",
     stats: [
-      { label: 'Design Patents', value: '50+ (25 Granted)', color: 'from-amber-400 to-orange-500' },
-      { label: 'Product Patents', value: '3+ Filed', color: 'from-green-400 to-emerald-500' },
-      { label: 'Research Papers', value: '6 Published', color: 'from-blue-400 to-purple-500' }
+      { label: 'Granted IP', value: '25 Granted Patents', color: 'from-emerald-400 to-teal-500' },
+      { label: 'Total Portfolio', value: '50+ Design Patents', color: 'from-amber-400 to-orange-500' },
+      { label: 'Product Patents', value: '3+ Tech Filings', color: 'from-blue-400 to-purple-500' }
     ]
   },
   directives: {
-    title: 'Space & Space Outreach',
+    title: 'Space & Excellence',
     icon: Rocket,
-    content: "Pioneering community-level science and space exploration awareness. Contributed to India's first hybrid rocket launch payload (Rhumi-1) at Space Zone India, Tamil Nadu. Winner of NASA Space Apps People's Choice Award with ExoYatra game, drawing 60,000+ global votes.",
+    content: "Awarded All India Rank 1 in the national Mission Rhumi 2024 Assessment by Space Zone India (Fully Funded NASA Visit) and achieved 2nd Global Rank in the International Space Olympiad (ISO). Winner of the NASA Space Apps Challenge People's Choice Award for ExoYatra.",
     stats: [
-      { label: 'NASA Space Apps', value: 'People\'s Choice Winner', color: 'from-purple-400 to-pink-500' },
-      { label: 'ISO Olympiad', value: '2nd Global Rank', color: 'from-amber-400 to-yellow-500' },
-      { label: 'Rocket Payload', value: 'Rhumi-1 (CubeSat)', color: 'from-cyan-400 to-blue-500' }
+      { label: 'National Rank', value: 'AIR 1 (Mission Rhumi 2024)', color: 'from-amber-400 to-yellow-500' },
+      { label: 'NASA Space Apps', value: 'People\'s Choice Award Winner', color: 'from-purple-400 to-pink-500' },
+      { label: 'Global Honor', value: 'Fully Funded NASA Visit & M2L Summer Scholar', color: 'from-cyan-400 to-blue-500' }
     ]
   }
 };
@@ -56,7 +56,7 @@ const ABOUT_TABS: Record<string, TabContent> = {
 const InteractiveAboutMe = () => {
   const [activeTab, setActiveTab] = useState<string>('summary');
   const [typingText, setTypingText] = useState<string>('');
-  
+
   const selectedData = ABOUT_TABS[activeTab];
 
   // Simulated typewriter effect on tab change
@@ -64,16 +64,16 @@ const InteractiveAboutMe = () => {
     let index = 0;
     const fullText = selectedData.content;
     setTypingText('');
-    
+
     let isCancelled = false;
-    
+
     const interval = setInterval(() => {
       if (isCancelled) return;
-      
+
       setTypingText(fullText.slice(0, index + 1));
       sfx.playKeyboard();
       index++;
-      
+
       if (index >= fullText.length) {
         clearInterval(interval);
       }
@@ -88,50 +88,56 @@ const InteractiveAboutMe = () => {
   return (
     <div className="max-w-6xl mx-auto px-4">
       <div className="grid md:grid-cols-5 gap-10 items-stretch">
-        
-        {/* Left 2 columns: Bio-Scanner Picture Frame */}
-        <div className="md:col-span-2 flex flex-col items-center justify-center relative">
-          <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border border-purple-500/30 group bg-slate-950 flex items-center justify-center">
-            {/* Pulsing scanning radar glow */}
-            <div className="absolute -inset-0.5 bg-gradient-to-tr from-purple-600 via-blue-500 to-cyan-400 rounded-full blur opacity-40 group-hover:opacity-80 transition duration-1000"></div>
-            
-            {/* Rotating dashed HUD outer ring */}
-            <motion.div 
-              className="absolute inset-1 rounded-full border border-dashed border-cyan-400/40 pointer-events-none z-10"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            />
-            
-            {/* Dynamic radar scanning green/cyan line */}
-            <motion.div 
-              className="absolute left-0 w-full h-[2px] bg-cyan-400/80 shadow-[0_0_12px_rgba(34,211,238,0.8)] z-10 pointer-events-none"
-              animate={{
-                top: ['0%', '100%', '0%']
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
 
-            {/* Profile Avatar Image */}
-            <img
-              src="https://avatars.githubusercontent.com/u/98075143?s=400&u=d87c28809dc33c8d81123df7627a6fee69023b63&v=4"
-              alt="Manish Dhatrak"
-              className="w-[96%] h-[96%] rounded-full object-cover z-0 transition-all duration-700"
-            />
+        {/* Left 2 columns: Sleek HUD Profile Avatar */}
+        <div className="md:col-span-2 flex flex-col items-center justify-center relative">
+          <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full p-1 bg-gradient-to-br from-purple-500/40 via-blue-500/20 to-cyan-500/40 shadow-[0_0_40px_rgba(6,182,212,0.15)] group">
+            <div className="w-full h-full rounded-full overflow-hidden border border-cyan-500/30 bg-slate-950 relative flex items-center justify-center">
+              {/* Rotating outer orbit indicator */}
+              <motion.div
+                className="absolute inset-1 rounded-full border border-dashed border-cyan-400/30 pointer-events-none z-10"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              />
+
+              {/* Laser Scan line overlay */}
+              <motion.div
+                className="absolute left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-cyan-400/80 to-transparent shadow-[0_0_12px_rgba(34,211,238,0.8)] z-10 pointer-events-none"
+                animate={{
+                  top: ['5%', '95%', '5%']
+                }}
+                transition={{
+                  duration: 4.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+
+              {/* Profile Avatar Image */}
+              <img
+                src="https://anish-dhatrak.sirv.com/ChatGPT%20Image%20Jul%2026%2C%202026%2C%2011_43_23%20PM.png"
+                alt="Manish Dhatrak"
+                className="w-full h-full rounded-full object-cover z-0 transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
           </div>
 
-          {/* Quick HUD Metrics below Photo */}
-          <div className="mt-6 w-full max-w-xs p-4 bg-slate-950/70 border border-white/5 rounded-2xl font-mono text-xs text-gray-400 space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-green-400" /> System State</span>
-              <span className="text-green-400 font-bold">ONLINE</span>
+          {/* Elegant HUD Telemetry Pills */}
+          <div className="mt-6 w-full max-w-xs p-3.5 bg-slate-900/80 border border-purple-500/20 rounded-2xl font-mono text-xs backdrop-blur-md shadow-lg space-y-2">
+            <div className="flex justify-between items-center px-1">
+              <span className="flex items-center gap-2 text-gray-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>System State</span>
+              </span>
+              <span className="text-emerald-400 font-bold tracking-wider">ONLINE</span>
             </div>
-            <div className="flex justify-between items-center">
-              <span className="flex items-center gap-1.5"><Database className="w-3.5 h-3.5 text-blue-400" /> Database Cores</span>
-              <span className="text-white">Active (50+ Patents)</span>
+            <div className="h-px bg-white/5 w-full" />
+            <div className="flex justify-between items-center px-1">
+              <span className="flex items-center gap-2 text-gray-400">
+                <Database className="w-3.5 h-3.5 text-cyan-400" />
+                <span>Intel Cores</span>
+              </span>
+              <span className="text-cyan-300 font-semibold">50+ Patents</span>
             </div>
           </div>
         </div>
@@ -139,7 +145,7 @@ const InteractiveAboutMe = () => {
         {/* Right 3 columns: Interactive Flight Logs & Diagnostic Console */}
         <div className="md:col-span-3 flex flex-col justify-between p-6 md:p-8 bg-slate-950/80 border border-purple-500/20 rounded-3xl backdrop-blur-md relative group">
           <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-3xl blur-xl group-hover:blur-2xl opacity-50 pointer-events-none"></div>
-          
+
           <div className="relative">
             {/* Terminal Header */}
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
@@ -163,11 +169,10 @@ const InteractiveAboutMe = () => {
                     key={key}
                     onClick={() => { sfx.playClick(); setActiveTab(key); }}
                     onMouseEnter={() => sfx.playHover()}
-                    className={`flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl border text-xs font-mono transition-all duration-300 ${
-                      isActive
-                        ? 'bg-purple-600/20 border-purple-500 text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.2)]'
-                        : 'border-white/5 hover:border-purple-500/30 text-gray-400 hover:text-white bg-white/5'
-                    }`}
+                    className={`flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl border text-xs font-mono transition-all duration-300 ${isActive
+                      ? 'bg-purple-600/20 border-purple-500 text-purple-300 shadow-[0_0_15px_rgba(168,85,247,0.2)]'
+                      : 'border-white/5 hover:border-purple-500/30 text-gray-400 hover:text-white bg-white/5'
+                      }`}
                   >
                     <Icon className="w-3.5 h-3.5" />
                     <span>{item.title.split(' ')[0]}</span>

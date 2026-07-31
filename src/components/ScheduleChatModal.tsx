@@ -140,7 +140,7 @@ const ScheduleChatModal: React.FC<ScheduleChatModalProps> = ({ isOpen, onClose }
                       required
                       value={formData.date}
                       onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                      className="w-full p-2.5 rounded-xl bg-slate-900 border border-purple-500/30 text-white outline-none focus:border-cyan-400 font-mono text-xs cursor-pointer scheme-dark"
+                      className="w-full p-2.5 rounded-xl bg-slate-900 border border-purple-500/30 text-white outline-none focus:border-cyan-400 font-mono text-xs cursor-pointer scheme-dark [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert-1 [&::-webkit-calendar-picker-indicator]:brightness-200 [&::-webkit-calendar-picker-indicator]:cursor-pointer"
                     />
                   </div>
                 </div>

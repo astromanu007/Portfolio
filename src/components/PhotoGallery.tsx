@@ -14,14 +14,14 @@ interface GalleryImage {
 const galleryImages: GalleryImage[] = [
   {
     id: 1,
-    src: "https://media.licdn.com/dms/image/v2/D5622AQGPo-g6Qjk5JQ/feedshare-shrink_800/B56ZjcGf7mHAAo-/0/1756039350978?e=1767830400&v=beta&t=pkNrinXBhnL4qJHW9-DaPgdpAZjsmpNw4L5aKA7pTgk",
+    src: "https://anish-dhatrak.sirv.com/%F0%9F%8F%86%20%E2%80%9CCrowned%20with%20a%20Fully%20Funded%20NASA%20Visit%E2%80%9D%20%F0%9F%8F%86.png",
     headline: "All India Rank 1 — Mission Rhumi (Fully Funded NASA Visit)",
     date: "2025",
     category: "Awards"
   },
   {
     id: 2,
-    src: "https://media.licdn.com/dms/image/v2/D5622AQHiQNomPumdtw/feedshare-shrink_1280/feedshare-shrink_1280/0/1730113290823?e=1767830400&v=beta&t=Sr8WYiVmYtTPbI0gLtjmx2a61D4g8Dohpeo_gzj0iQs",
+    src: "https://anish-dhatrak.sirv.com/From%20winning%20the%20People%E2%80%99s%20Choice%20Award.png",
     headline: "People’s Choice Award — NASA Space Apps Challenge (ExoYatra)",
     date: "2024",
     category: "Hackathon"
@@ -36,28 +36,28 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: 4,
-    src: "https://media.licdn.com/dms/image/v2/D5622AQGpzQ1HOocxAQ/feedshare-shrink_2048_1536/B56ZZ2Tbw5HUAo-/0/1745741530853?e=1767830400&v=beta&t=gZV_4zCedqKEVRE4aY8HkZk_lzo79HHC2eiu8h1Mcek",
+    src: "https://anish-dhatrak.sirv.com/IMG-20250423-WA0002.jpg",
     headline: "Winner — DIPEX 2025 (Innovative Structural Safety Monitoring)",
     date: "2025",
     category: "State Level - Competition"
   },
   {
     id: 5,
-    src: "https://kommodo.ai/i/mlYWHhfC6j97kCndiOG7",
+    src: "https://anish-dhatrak.sirv.com/MIT%20ADT%20PRIZE%20DISTRIBUTION.jpg",
     headline: "Winner — MIT ADT University Tech Expo",
     date: "2024",
-    category: "Academia"
+    category: "National Level - Competition"
   },
   {
     id: 6,
-    src: "https://media.licdn.com/dms/image/v2/D5622AQHfAYBQAHw0yA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1712483554293?e=1767830400&v=beta&t=l7CnviyncXeUeqhk4Jki6TT3g9Sds0z12LQOuMtWuhU",
+    src: "https://anish-dhatrak.sirv.com/1712483553555.jpeg",
     headline: "Finalist — Bosch Hackathon (Industry Challenge)",
     date: "April 2024",
     category: "Industry Hackathon"
   },
   {
     id: 7,
-    src: "https://media.licdn.com/dms/image/v2/C4D22AQEPHczAzj6bqg/feedshare-shrink_800/feedshare-shrink_800/0/1655580979897?e=1767830400&v=beta&t=kmDrkRQAAW32ABMi9MJ0Q2YuHtsahjBgAcCW5NAXNss",
+    src: "https://anish-dhatrak.sirv.com/ISO_2.jpg",
     headline: "International Space Olympiad — Global Second Rank",
     date: "2024",
     category: "International Olympiad"
@@ -263,8 +263,8 @@ const PhotoGallery = () => {
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                      ? 'bg-purple-500 scale-125'
-                      : 'bg-gray-600 hover:bg-gray-500'
+                    ? 'bg-purple-500 scale-125'
+                    : 'bg-gray-600 hover:bg-gray-500'
                     }`}
                 />
               ))}

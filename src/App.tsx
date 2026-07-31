@@ -164,12 +164,12 @@ function App() {
       icon: <Trophy className="w-6 h-6" />
     },
     {
-      title: 'AI-Enhanced Smart Stethoscope',
-      description: 'An AI-powered stethoscope integrated with telemedicine, wireless charging, and real-time data analysis.',
+      title: 'AURA-STETH AI — Cardiopulmonary Diagnostics',
+      description: 'ESP32-powered AI stethoscope combining ResNet50 (AUC 0.9578) heart murmur detection, EfficientNet-B0 lung analysis, MAX30105/MAX30205 vitals sensors, and HC12 RF offline fail-safe for rural telemedicine.',
       image: 'https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      github: 'https://github.com/astromanu007/AI-Enhanced-Smart-Stethoscope',
-      demo: 'https://github.com/astromanu007/AI-Enhanced-Smart-Stethoscope',
-      tags: ['Healthcare Tech', 'AI/ML', 'Wearable Devices', 'IoT'],
+      github: 'https://github.com/cosmomanish007-pixel/live-vitals-web',
+      demo: 'https://github.com/cosmomanish007-pixel/live-vitals-web',
+      tags: ['Healthcare Tech', 'AI/ML', 'ResNet50', 'ESP32 IoT', 'Telemedicine'],
       icon: <Heart className="w-6 h-6" />
     },
     {
@@ -626,15 +626,15 @@ function App() {
       ],
     },
     {
-      title: 'Innovative Finalist',
+      title: 'National Finalist – Bosch Hackathon',
       organization: 'Bosch Global Software Technologies Pvt Ltd., Pune',
       year: 'April 2024',
-      tier: '⚡ GLOBAL FINALIST',
-      reward: 'Top 3 Rounds',
+      tier: '⚡ NATIONAL FINALIST',
+      reward: 'Top 25 Teams in India',
       sponsor: 'Bosch Global Software',
       description: [
-        'Developed technology solutions improving system functionality by 25%.',
-        'Secured first place in 3 competitive rounds with high-performance prototypes.',
+        'Selected among the Top 25 finalist teams across India after three rigorous evaluation rounds.',
+        'Developed an IoT & AI-powered 2-wheeler safety awareness device for real-time rider protection.',
       ],
     },
     {
@@ -718,70 +718,88 @@ function App() {
 
   const patents = [
     {
-      title: 'WRITING PAD WITH PEN HOLDER',
-      number: 'Design No. : 415676-001',
-      year: '2024',
+      title: 'SMART VISION GLASSES: REAL-TIME OBJECT DETECTION',
+      number: 'Design No. : 459542-001 (Class 16-06)',
+      year: '2025',
       status: 'Granted',
-      description: 'Innovative writing pad design with an integrated pen holder for improved functionality and convenience. Ideal for students, professionals, and creatives alikes.',
+      description: 'An AI-driven wearable computer vision glass design for real-time spatial object recognition and auditory feedback assistance for visually impaired users.',
     },
     {
-      title: 'SMART SPECTACLES',
-      number: 'Design No. : 414349-001',
+      title: 'VEHICLE EXHAUST-DRIVEN TURBINE ENERGY HARVESTER',
+      number: 'Design No. : 458427-001 (Class 13-01)',
+      year: '2025',
+      status: 'Granted',
+      description: 'An innovative energy harvesting turbine system designed for vehicle exhaust channels to convert waste fluid kinetic energy into usable electrical power.',
+    },
+    {
+      title: 'SMART FLUID COOLING AND HEATING SYSTEM',
+      number: 'Design No. : 446412-001 (Class 23-03)',
+      year: '2025',
+      status: 'Granted',
+      description: 'An advanced thermal management system providing precise dual cooling and heating regulation for industrial and high-performance closed fluid loops.',
+    },
+    {
+      title: 'DEVICE FOR WOMEN SAFETY',
+      number: 'Design No. : 415250-001 (Class 10-05)',
       year: '2024',
       status: 'Granted',
-      description: 'A new design for spectacles enhancing comfort and style. Engineered for both fashion and functionality, it provides long-lasting comfort. The frame is suitable for a variety of face shapes and sizes.',
+      description: 'A compact wearable emergency safety defense device equipped with rapid SOS telemetry triggers and real-time location tracking alert mechanisms.',
     },
     {
       title: 'ROBOTIC ARM GRIPPER',
-      number: 'Design No. : 416281-001',
+      number: 'Design No. : 416281-001 (Class 15-01)',
       year: '2024',
       status: 'Granted',
-      description: 'A robotic arm gripper design to improve precision and strength for industrial applications. The gripper enhances accuracy in handling delicate items. Built to withstand high-stress environments in industry settings.',
+      description: 'A high-precision robotic arm gripper engineered for industrial automation, enhancing tactile accuracy when handling delicate manufacturing items.',
+    },
+    {
+      title: 'SMART SPECTACLES',
+      number: 'Design No. : 414349-001 (Class 16-06)',
+      year: '2024',
+      status: 'Granted',
+      description: 'An ergonomic smart spectacle frame engineered for optimal weight distribution, long-lasting comfort, and seamless smart glass component mounting.',
     },
     {
       title: 'HYDROHEAL BOTTLE',
-      number: 'Design No. : 415935-001',
+      number: 'Design No. : 415935-001 (Class 09-01)',
       year: '2024',
       status: 'Granted',
-      description: 'An innovative bottle design with hydro healing technology to retain hydration properties. The bottle is designed with advanced materials that help retain water temperature for longer durations. Ideal for people with active lifestyles, it promotes hydration efficiency with a comfortable grip for ease of use.',
-    },
-    {
-      title: 'FLEXIFEAST SPOON',
-      number: 'Design No. : 415106-001',
-      year: '2024',
-      status: 'Granted',
-      description: 'A flexible spoon design that enhances the experience of eating various types of foods. The flexible tip adapts to the shape and consistency of different foods, making it easier to scoop up and consume. Whether for soft desserts or soups, it ensures that users can enjoy their meals without any hassle.',
+      description: 'An innovative athletic water bottle incorporating specialized thermal retention insulation to maintain water temperature and hydration efficiency.',
     },
     {
       title: 'ENIGMAGUARD: USB PORT PROTECTOR',
-      number: 'Design No. : 414830-001',
+      number: 'Design No. : 414830-001 (Class 14-02)',
       year: '2024',
       status: 'Granted',
-      description: 'A silicon-based protector for laptop USB ports, providing enhanced protection against wear and tear. It shields USB ports from daily use and damage. Easy to apply and remove, ensuring long-lasting durability.',
-    },
-    {
-      title: 'ELEGANCE SEAT WITH BAG COMPARTMENT VAULT',
-      number: 'Design No. : 415290-001',
-      year: '2024',
-      status: 'Granted',
-      description: 'A unique seat design featuring a compartment for safely storing bags and accessories. The compartment ensures your personal belongings are safe. A sleek and stylish design, perfect for modern spaces.',
+      description: 'A custom silicon-based protective seal for laptop USB ports, offering enhanced defense against physical port degradation, dust, and moisture.',
     },
     {
       title: 'PRECISION CONTROL BRAKE WITH ERGONOMIC GRIP',
-      number: 'Design No. : 433263-001',
+      number: 'Design No. : 433263-001 (Class 12-16)',
       year: '2024',
       status: 'Granted',
-      description: 'A precision control brake system with an ergonomic grip for enhanced user comfort and control. The design reduces hand strain during use. Offers improved braking precision, ideal for long-duration usage.',
-    },
-    {
-      title: 'OPULENT SOAP COMPARTMENT STOOL',
-      number: 'Design No. : 414552-001',
-      year: '2024',
-      status: 'Granted',
-      description: 'The Opulent Soap Compartment Stool is an innovative design that combines comfort with functionality. It features a dedicated soap compartment integrated into the seat, offering convenience and practicality for users.',
+      description: 'A precision vehicle brake control mechanism designed with an anti-fatigue ergonomic grip to reduce hand strain and maximize braking accuracy.',
     },
   ];
   const certifications = [
+    {
+      title: 'AWS AI Practitioner Challenge',
+      organization: 'Udacity (part of Accenture)',
+      date: 'May 2026',
+      credentialId: 'd55f9964-3d51-11f1-b0f8-0b7083090a44',
+      image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+      skills: ['AWS AI', 'Machine Learning', 'Cloud AI Services', 'Generative AI Solutions'],
+      verifyLink: 'https://www.udacity.com/certificate/e/d55f9964-3d51-11f1-b0f8-0b7083090a44'
+    },
+    {
+      title: 'Vision Language Models (VLM) Bootcamp — Grade 100%',
+      organization: 'OpenCV University',
+      date: 'February 2026',
+      credentialId: 'bbde8ad8cd1c41c08e5d21ae8e09f463',
+      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80',
+      skills: ['Vision Language Models (VLM)', 'Multimodal AI', 'Computer Vision', 'Deep Learning'],
+      verifyLink: 'https://courses.opencv.org/certificates/bbde8ad8cd1c41c08e5d21ae8e09f463'
+    },
     {
       title: 'Create a Virtual Machine Using AWS EC2',
       organization: 'Coursera',
@@ -1397,21 +1415,25 @@ function App() {
           className="relative group"
         >
           <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-          <div className="relative p-6 bg-black rounded-lg">
-            <Lightbulb className="w-12 h-12 text-purple-400 mb-4" />
-            <h3 className="text-xl font-bold text-white mb-2">{patent.title}</h3>
-            <p className="text-gray-400 mb-2">{patent.number}</p>
-            <p className="text-sm text-gray-500 mb-2">{patent.year}</p>
-            <span
-              className={`px-2 py-1 rounded-full text-xs ${
-                patent.status === 'Granted'
-                  ? 'bg-green-500/20 text-green-400'
-                  : 'bg-yellow-500/20 text-yellow-400'
-              }`}
-            >
-              {patent.status}
-            </span>
-            <p className="text-gray-400 text-sm mt-3">{patent.description}</p>
+          <div className="relative p-6 bg-black rounded-lg h-full flex flex-col justify-between">
+            <div>
+              <Lightbulb className="w-10 h-10 text-purple-400 mb-4" />
+              <h3 className="text-lg font-bold text-white mb-2 min-h-[3.25rem] flex items-start leading-snug">{patent.title}</h3>
+              <p className="text-xs text-purple-300 font-mono mb-1">{patent.number}</p>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-xs text-gray-500 font-mono">{patent.year}</span>
+                <span
+                  className={`px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wider uppercase ${
+                    patent.status === 'Granted'
+                      ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                      : 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
+                  }`}
+                >
+                  {patent.status}
+                </span>
+              </div>
+            </div>
+            <p className="text-gray-300 text-xs leading-relaxed mt-2 min-h-[4rem]">{patent.description}</p>
           </div>
         </motion.div>
       ))}
@@ -1435,6 +1457,73 @@ function App() {
 
   </div>
 </section>
+
+      {/* Key Achievements Section */}
+      <section id="achievements" className="py-20 relative z-10">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-400 to-blue-500">
+            Key Achievements & Honors
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {achievements.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative group"
+              >
+                {/* Glowing Border Backdrop */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-cyan-500 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-700 group-hover:duration-200"></div>
+
+                <div className="relative p-6 md:p-7 bg-slate-950/90 border border-purple-500/30 rounded-2xl h-full flex flex-col justify-between backdrop-blur-xl shadow-xl hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] transition-all duration-300">
+                  <div>
+                    {/* Header Row: Icon + Badges */}
+                    <div className="flex items-start justify-between gap-3 mb-4">
+                      <div className="p-3 rounded-2xl bg-purple-500/10 border border-purple-500/30 text-purple-400 shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <Trophy className="w-6 h-6 text-yellow-400" />
+                      </div>
+                      <div className="flex flex-wrap gap-1.5 justify-end">
+                        {item.tier && (
+                          <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-amber-500/10 text-amber-300 border border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.2)]">
+                            {item.tier}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Title & Organization */}
+                    <h3 className="text-lg md:text-xl font-extrabold text-white mb-1.5 leading-snug group-hover:text-cyan-300 transition-colors">
+                      {item.title}
+                    </h3>
+                    <div className="flex items-center justify-between text-xs font-mono text-purple-400 mb-4 border-b border-white/5 pb-3">
+                      <span className="font-semibold">{item.organization}</span>
+                      <span className="text-gray-400 shrink-0 ml-2">{item.year}</span>
+                    </div>
+
+                    {/* Description Paragraph */}
+                    <div className="text-gray-300 text-xs md:text-sm leading-relaxed space-y-2 mb-6">
+                      {item.description.map((desc, i) => (
+                        <p key={i}>{desc}</p>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom Footer Tags */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 pt-4 border-t border-white/10 text-xs font-mono">
+                    <span className="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-300 border border-purple-500/20 font-semibold">
+                      🎁 {item.reward}
+                    </span>
+                    <span className="text-gray-400 text-[11px]">
+                      Sponsor: <span className="text-cyan-400 font-semibold">{item.sponsor}</span>
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Certifications Section */}
       <section id="certifications" className="py-20 relative z-10">
