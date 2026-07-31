@@ -86,9 +86,6 @@ const TestimonialsCarousel: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-300 to-blue-500">
           Official Letters of Recommendation
         </h2>
-        <p className="text-sm text-gray-400 font-mono max-w-2xl mx-auto">
-          Direct endorsement letters from University Directors, Deans, and Research Supervisors validating Manish's engineering leadership, NASA achievements, and AI publications.
-        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
