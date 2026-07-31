@@ -77,18 +77,18 @@ const TestimonialsCarousel: React.FC = () => {
   const [selectedRec, setSelectedRec] = useState<Recommendation | null>(null);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16">
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 font-mono text-xs mb-3">
-          <UserCheck className="w-3.5 h-3.5 text-cyan-400" />
+    <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+      <div className="text-center mb-8 md:mb-12">
+        <div className="inline-flex items-center justify-center gap-1.5 px-3 py-1 md:px-3.5 md:py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 font-mono text-[11px] md:text-xs mb-3 text-center max-w-full">
+          <UserCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
           <span>VERIFIED ACADEMIC & RESEARCH ENDORSEMENTS</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-300 to-blue-500">
+        <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-3 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-cyan-300 to-blue-500 leading-tight">
           Official Letters of Recommendation
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         {RECOMMENDATIONS.map((rec) => (
           <motion.div
             key={rec.id}
@@ -97,16 +97,16 @@ const TestimonialsCarousel: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             onMouseEnter={() => sfx.playHover()}
-            className="p-8 rounded-3xl bg-slate-950/90 border border-purple-500/30 hover:border-cyan-400/60 backdrop-blur-xl flex flex-col justify-between transition-all duration-300 relative group shadow-[0_0_20px_rgba(168,85,247,0.1)] hover:shadow-[0_0_30px_rgba(56,189,248,0.2)]"
+            className="p-5 md:p-8 rounded-3xl bg-slate-950/90 border border-purple-500/30 hover:border-cyan-400/60 backdrop-blur-xl flex flex-col justify-between transition-all duration-300 relative group shadow-[0_0_20px_rgba(168,85,247,0.1)] hover:shadow-[0_0_30px_rgba(56,189,248,0.2)]"
           >
             <div>
               {/* Header Badges */}
-              <div className="flex items-center justify-between gap-2 mb-6">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] font-semibold">
-                  <CheckCircle className="w-3.5 h-3.5" /> Official Endorsement
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-5">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] font-semibold shrink-0">
+                  <CheckCircle className="w-3.5 h-3.5 shrink-0" /> Official Endorsement
                 </span>
-                <span className="text-xs font-mono text-gray-400 flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5 text-purple-400" /> {rec.date}
+                <span className="text-[11px] md:text-xs font-mono text-gray-400 flex items-center gap-1 shrink-0">
+                  <Calendar className="w-3.5 h-3.5 text-purple-400 shrink-0" /> {rec.date}
                 </span>
               </div>
 

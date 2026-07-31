@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { sendContactEmail } from '../utils/email';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ const ContactForm = () => {
   });
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus('error');
@@ -19,12 +20,20 @@ const ContactForm = () => {
     }
 
     setStatus('sending');
-    // Simulate sending message
-    setTimeout(() => {
+    const success = await sendContactEmail({
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    });
+
+    if (success) {
       setStatus('sent');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setStatus('idle'), 5000);
-    }, 2000);
+      setTimeout(() => setStatus('idle'), 6000);
+    } else {
+      setStatus('error');
+    }
   };
 
   return (

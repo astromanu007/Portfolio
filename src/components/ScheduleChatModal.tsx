@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Clock, X, Send, CheckCircle2, MessageSquare } from 'lucide-react';
 import { sfx } from '../utils/audio';
+import { sendScheduleEmail } from '../utils/email';
 
 interface ScheduleChatModalProps {
   isOpen: boolean;
@@ -22,14 +23,25 @@ const ScheduleChatModal: React.FC<ScheduleChatModalProps> = ({ isOpen, onClose }
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     sfx.playClick();
+    
+    await sendScheduleEmail({
+      from_name: formData.name,
+      from_email: formData.email,
+      company: formData.company,
+      topic: formData.topic,
+      preferred_date: formData.date,
+      preferred_time: formData.time,
+      notes: formData.notes
+    });
+
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
       onClose();
-    }, 2500);
+    }, 3000);
   };
 
   return (
