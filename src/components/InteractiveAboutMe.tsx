@@ -209,7 +209,7 @@ const InteractiveAboutMe = () => {
           {/* Action Button */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <motion.a
-              href="https://drive.google.com/file/d/1aT5M4RNyHwRgD4V8OUoDhwzYkLOSPQUg/view?usp=sharing"
+              href="https://drive.google.com/file/d/1AOQb5gR1mdHdX_PPkxkGkDS18kUwxcoK/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}

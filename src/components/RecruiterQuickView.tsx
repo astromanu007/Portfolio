@@ -64,16 +64,41 @@ const RecruiterQuickView: React.FC<RecruiterQuickViewProps> = ({ isOpen, onClose
             </div>
           </div>
 
-          {/* Executive Summary */}
-          <div className="p-4 bg-purple-950/20 border border-purple-500/20 rounded-2xl mb-6 text-xs sm:text-sm text-gray-300 leading-relaxed">
-            <p className="font-semibold text-purple-200 mb-1 flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-purple-400" /> Key Highlights for Hiring Teams:
+          {/* Executive Summary / Key Highlights */}
+          <div className="p-5 bg-gradient-to-br from-purple-950/30 to-blue-950/20 border border-purple-500/30 rounded-2xl mb-6 space-y-3">
+            <p className="font-bold text-purple-200 text-sm flex items-center gap-2 border-b border-white/10 pb-2">
+              <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0" />
+              <span>Key Highlights for Hiring Teams</span>
             </p>
-            <ul className="list-disc list-inside space-y-1 text-gray-300">
-              <li><strong>Research Experience:</strong> Remote Research Student Intern at NTU Singapore (Medical Image Diagnostics) & Sanjivani University (YOLO threat perception).</li>
-              <li><strong>Aerospace & Avionics:</strong> Contributed to Rhumi-1 (India's 1st hybrid reusable rocket launch payload) at Space Zone India.</li>
-              <li><strong>Technical Depth:</strong> Python, PyTorch, C/C++, OpenCV, MobileNet SSD, Embedded C, AWS, React, TypeScript.</li>
-            </ul>
+            
+            <div className="space-y-2.5 text-xs sm:text-sm">
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded-md bg-purple-500/15 border border-purple-500/30 text-purple-300 font-mono text-[11px] font-semibold shrink-0 mt-0.5">
+                  Research
+                </span>
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">Remote Research Student Intern</strong> at <span className="text-cyan-300 font-medium">NTU Singapore</span> (Medical Image Diagnostics) & <span className="text-purple-300 font-medium">Sanjivani University</span> (YOLO Wildlife Threat Perception).
+                </p>
+              </div>
+
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded-md bg-blue-500/15 border border-blue-500/30 text-blue-300 font-mono text-[11px] font-semibold shrink-0 mt-0.5">
+                  Aerospace
+                </span>
+                <p className="text-gray-300 leading-relaxed">
+                  <strong className="text-white">Avionics & Payload Contributor</strong> for <span className="text-amber-300 font-medium">Rhumi-1</span> (India's 1st hybrid reusable rocket launch payload) at Space Zone India.
+                </p>
+              </div>
+
+              <div className="flex items-start gap-2.5">
+                <span className="px-2 py-0.5 rounded-md bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-mono text-[11px] font-semibold shrink-0 mt-0.5">
+                  Tech Stack
+                </span>
+                <p className="text-gray-300 leading-relaxed">
+                  Python, PyTorch, C/C++, OpenCV, MobileNet SSD, Embedded C, AWS, React, TypeScript.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Primary Skill Pillars */}
@@ -93,7 +118,7 @@ const RecruiterQuickView: React.FC<RecruiterQuickViewProps> = ({ isOpen, onClose
           {/* Action Footer */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-white/10">
             <a
-              href="https://drive.google.com/file/d/1aT5M4RNyHwRgD4V8OUoDhwzYkLOSPQUg/view?usp=sharing"
+              href="https://drive.google.com/file/d/1AOQb5gR1mdHdX_PPkxkGkDS18kUwxcoK/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 text-white font-mono text-xs font-bold shadow-lg shadow-purple-500/25 hover:scale-[1.02] transition"

@@ -75,7 +75,7 @@ const TerminalCLIMode: React.FC<TerminalCLIModeProps> = ({ isOpen, onClose }) =>
       case 'resume':
         newLogs.push({
           type: 'output',
-          text: 'Resume Link: https://drive.google.com/file/d/1aT5M4RNyHwRgD4V8OUoDhwzYkLOSPQUg/view?usp=sharing'
+          text: 'Resume Link: https://drive.google.com/file/d/1AOQb5gR1mdHdX_PPkxkGkDS18kUwxcoK/view?usp=sharing'
         });
         break;
       case 'hire':

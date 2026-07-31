@@ -56,7 +56,7 @@ function App() {
     else if (actionId === 'action-recruiter') setIsRecruiterOpen(true);
     else if (actionId === 'action-cli') setIsCLIOpen(true);
     else if (actionId === 'action-resume') {
-      window.open('https://drive.google.com/file/d/1aT5M4RNyHwRgD4V8OUoDhwzYkLOSPQUg/view?usp=sharing', '_blank');
+      window.open('https://drive.google.com/file/d/1AOQb5gR1mdHdX_PPkxkGkDS18kUwxcoK/view?usp=sharing', '_blank');
     } else if (actionId.startsWith('sec-')) {
       const secId = actionId.replace('sec-', '');
       const el = document.getElementById(secId);
@@ -207,7 +207,7 @@ function App() {
       {
         title: "Research Student Intern (Remote)",
         company: "Nanyang Technological University (NTU) · Internship",
-        period: "March 2025 - May 2025",
+        period: "March 2025 - Present",
         location: "NTU Singapore · Remote",
         description: "Conducting research in deep learning for medical imaging, focusing on AI-driven diagnosis and brain lesion classification.",
         highlights: [
