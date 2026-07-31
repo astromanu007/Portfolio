@@ -41,7 +41,7 @@ const RecruiterQuickView: React.FC<RecruiterQuickViewProps> = ({ isOpen, onClose
             Manish Dhatrak
           </h2>
           <p className="text-sm text-purple-300 font-mono mb-6">
-            Electronics & Computer Engineering Researcher | AI, Computer Vision & Space Avionics
+            Electronics & Computer Engineering Researcher | AI, Computer Vision & Full-Stack Development
           </p>
 
           {/* Quick Metrics */}
@@ -74,19 +74,10 @@ const RecruiterQuickView: React.FC<RecruiterQuickViewProps> = ({ isOpen, onClose
             <div className="space-y-2.5 text-xs sm:text-sm">
               <div className="flex items-start gap-2.5">
                 <span className="px-2 py-0.5 rounded-md bg-purple-500/15 border border-purple-500/30 text-purple-300 font-mono text-[11px] font-semibold shrink-0 mt-0.5">
-                  Research
+                  Research & AI
                 </span>
                 <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Remote Research Student Intern</strong> at <span className="text-cyan-300 font-medium">NTU Singapore</span> (Medical Image Diagnostics) & <span className="text-purple-300 font-medium">Sanjivani University</span> (YOLO Wildlife Threat Perception).
-                </p>
-              </div>
-
-              <div className="flex items-start gap-2.5">
-                <span className="px-2 py-0.5 rounded-md bg-blue-500/15 border border-blue-500/30 text-blue-300 font-mono text-[11px] font-semibold shrink-0 mt-0.5">
-                  Aerospace
-                </span>
-                <p className="text-gray-300 leading-relaxed">
-                  <strong className="text-white">Avionics & Payload Contributor</strong> for <span className="text-amber-300 font-medium">Rhumi-1</span> (India's 1st hybrid reusable rocket launch payload) at Space Zone India.
+                  <strong className="text-white">Research Student Intern</strong> at <span className="text-cyan-300 font-medium">NTU Singapore</span> (Medical Image Diagnostics) & <span className="text-purple-300 font-medium">Sanjivani University</span> (YOLO Computer Vision).
                 </p>
               </div>
 
