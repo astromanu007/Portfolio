@@ -850,7 +850,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-purple-900/20 to-black text-white">
+    <div className="relative w-full overflow-x-hidden bg-black text-white">
       <Scene />
       <Navbar
         onOpenRecruiter={() => setIsRecruiterOpen(true)}
@@ -858,12 +858,12 @@ function App() {
       />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative">
+      <section className="min-h-screen flex items-center justify-center relative px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-center z-10"
+          className="text-center z-10 max-w-4xl mx-auto"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500 leading-tight">
             Driven by Curiosity, Powered by Innovation
