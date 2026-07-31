@@ -575,7 +575,7 @@ function App() {
       reward: '₹11,000 Cash Prize + Trophy',
       sponsor: 'MIT ADT University',
       description: [
-        'Presented MonitorX, a structural health monitoring system. Secured 2nd Prize among 50+ national teams for interdisciplinary innovation and real-world impact in infrastructure safety. Won ₹11,000 cash prize and a trophy.'
+        'Presented MonitorX, a structural health monitoring system. Secured Second Prize among 50+ national teams for interdisciplinary innovation and real-world impact in infrastructure safety. Won ₹11,000 cash prize and a trophy.'
       ],
     },
     {
@@ -586,7 +586,7 @@ function App() {
       reward: '₹5,000 Cash Prize + Trophy',
       sponsor: 'Dipex 2025',
       description: [
-        'Developed MonitorX for resilient infrastructure. Won 2nd Prize in the Safety Category among top innovations and received ₹5000 and Trophy for engineering impact.'
+        'Developed MonitorX for resilient infrastructure. Won Second Prize in the Safety Category among top innovations and received ₹5000 and Trophy for engineering impact.'
       ],
     },
     {
@@ -638,14 +638,14 @@ function App() {
       ],
     },
     {
-      title: '2nd Global Rank',
+      title: 'Second Global Rank',
       organization: 'International Space Olympiad, EduMitra, India',
       year: 'January 2021',
       tier: '🌍 GLOBAL RANK 2',
       reward: 'Global Rank 2 / 1000+',
       sponsor: 'EduMitra International',
       description: [
-        'Achieved 2nd Global Rank among 1000+ participants from 50+ countries.',
+        'Achieved Second Global Rank among 1000+ participants from 50+ countries.',
       ],
     },
     {
