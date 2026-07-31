@@ -121,14 +121,6 @@ const InteractiveAboutMe = () => {
               alt="Manish Dhatrak"
               className="w-[96%] h-[96%] rounded-full object-cover z-0 transition-all duration-700"
             />
-
-            {/* Futuristic Tech Scan Markers */}
-            <div className="absolute top-4 left-6 text-[9px] font-mono text-cyan-400/60 pointer-events-none select-none z-10">
-              SYS.LOC // 19.6248° N
-            </div>
-            <div className="absolute bottom-4 right-6 text-[9px] font-mono text-purple-400/60 pointer-events-none select-none z-10">
-              SCAN_STATUS: OK
-            </div>
           </div>
 
           {/* Quick HUD Metrics below Photo */}
@@ -155,7 +147,6 @@ const InteractiveAboutMe = () => {
                 <span className="w-3 h-3 rounded-full bg-rose-500"></span>
                 <span className="w-3 h-3 rounded-full bg-amber-500"></span>
                 <span className="w-3 h-3 rounded-full bg-emerald-500"></span>
-                <span className="text-xs font-mono text-gray-500 ml-2">bio_system_diagnostic.sh</span>
               </div>
               <span className="text-[10px] font-mono text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">
                 SECURE ACCESS
@@ -187,7 +178,6 @@ const InteractiveAboutMe = () => {
 
             {/* Interactive Telemetry Console Screen */}
             <div className="min-h-[140px] bg-slate-900/60 rounded-2xl border border-white/5 p-5 font-mono text-xs md:text-sm text-gray-300 leading-relaxed mb-6">
-              <div className="text-purple-400 text-xs mb-2">manish@astromanu:~# cat {selectedData.title.toLowerCase().replace(/ /g, '_')}.txt</div>
               <p className="min-h-[100px] text-gray-300">
                 {typingText}
                 <span className="inline-block w-1.5 h-4 bg-purple-400 ml-1 animate-pulse"></span>

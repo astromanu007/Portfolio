@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Github, ExternalLink, ShieldCheck, Cpu, Target, HelpCircle } from 'lucide-react';
+import { X, Github, ExternalLink, Cpu, Target, HelpCircle, ArrowRight } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -14,9 +14,10 @@ interface Project {
 interface ProjectModalProps {
   project: Project | null;
   onClose: () => void;
+  onOpenArchitecture?: (title: string) => void;
 }
 
-const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
+const ProjectModal = ({ project, onClose, onOpenArchitecture }: ProjectModalProps) => {
   if (!project) return null;
 
   return (
@@ -46,7 +47,6 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
           >
             <X className="w-5 h-5" />
           </button>
-
 
           {/* Header image & title */}
           <div className="mb-6 rounded-xl overflow-hidden h-[200px] md:h-[280px] relative">
@@ -88,9 +88,18 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 <h4 className="text-md font-bold text-blue-400 flex items-center gap-2 mb-2">
                   <Cpu className="w-4 h-4" /> Tech Architecture
                 </h4>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Leverages state-of-the-art algorithms, pre-trained neural network models (e.g. YOLO, MobileNet, CNNs), Python, or customized web applications optimized for speed, precision, and responsive performance.
+                <p className="text-gray-400 text-sm leading-relaxed mb-3">
+                  Leverages state-of-the-art algorithms, neural network models (e.g. YOLO, MobileNet, CNNs), Python, or customized web applications optimized for speed and precision.
                 </p>
+                {onOpenArchitecture && (
+                  <button
+                    onClick={() => onOpenArchitecture(project.title)}
+                    className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:underline"
+                  >
+                    <span>View Architecture Flow Diagram</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                )}
               </div>
 
               <div className="p-4 rounded-xl bg-purple-950/20 border border-purple-500/10">

@@ -103,7 +103,7 @@ const MilestoneTimeline = () => {
           className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-slate-950 border border-purple-500/50 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.8)] z-20"
           style={{ top: yPosition }}
         >
-          <Rocket className="w-4 h-4 text-purple-400 rotate-180 animate-pulse" />
+          <Rocket className="w-4 h-4 text-purple-400 -rotate-45 animate-pulse" />
         </motion.div>
       </div>
 

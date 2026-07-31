@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Scene from './components/Scene';
 import Navbar from './components/Navbar';
 import { motion } from 'framer-motion';
@@ -10,6 +10,11 @@ import InteractiveAboutMe from './components/InteractiveAboutMe';
 import ProjectModal from './components/ProjectModal';
 import ContactForm from './components/ContactForm';
 import AstroAIChatbot from './components/AstroAIChatbot';
+import RecruiterQuickView from './components/RecruiterQuickView';
+import CommandPalette from './components/CommandPalette';
+import ArchitectureDiagramModal from './components/ArchitectureDiagramModal';
+import TestimonialsCarousel from './components/TestimonialsCarousel';
+import ScheduleChatModal from './components/ScheduleChatModal';
 import { Code2, Database, Globe, Server,
   Brain,
   MousePointer,
@@ -26,7 +31,9 @@ import { Code2, Database, Globe, Server,
   Camera,
   Users,
   Target,
-  Search
+  Search,
+  Calendar,
+  CheckCircle
 } from 'lucide-react';
 
 function App() {
@@ -35,6 +42,32 @@ function App() {
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
   const [patentSearch, setPatentSearch] = useState('');
   const [pubSearch, setPubSearch] = useState('');
+
+  // Recruiter Features State
+  const [isRecruiterOpen, setIsRecruiterOpen] = useState(false);
+  const [isCLIOpen, setIsCLIOpen] = useState(false);
+  const [isPaletteOpen, setIsPaletteOpen] = useState(false);
+  const [isArchModalOpen, setIsArchModalOpen] = useState(false);
+  const [isScheduleOpen, setIsScheduleOpen] = useState(false);
+  const [archProjectTitle, setArchProjectTitle] = useState('System Architecture');
+
+  const handleCommandPaletteAction = (actionId: string) => {
+    if (actionId === 'toggle-palette') setIsPaletteOpen(true);
+    else if (actionId === 'action-recruiter') setIsRecruiterOpen(true);
+    else if (actionId === 'action-cli') setIsCLIOpen(true);
+    else if (actionId === 'action-resume') {
+      window.open('https://drive.google.com/file/d/1aT5M4RNyHwRgD4V8OUoDhwzYkLOSPQUg/view?usp=sharing', '_blank');
+    } else if (actionId.startsWith('sec-')) {
+      const secId = actionId.replace('sec-', '');
+      const el = document.getElementById(secId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleOpenArchitecture = (title: string) => {
+    setArchProjectTitle(title);
+    setIsArchModalOpen(true);
+  };
 
 
   const skills = [
@@ -174,11 +207,26 @@ function App() {
       {
         title: "Research Student Intern (Remote)",
         company: "Nanyang Technological University (NTU) · Internship",
-        period: "March 2025 - Present ·",
-        location: "Singapore · Remote",
-        description: "Conducting research in deep learning for medical imaging, focusing on AI-driven diagnosis and classification.",
+        period: "March 2025 - Present",
+        location: "NTU Singapore · Remote",
+        description: "Conducting research in deep learning for medical imaging, focusing on AI-driven diagnosis and brain lesion classification.",
+        highlights: [
+          '🧠 Medical Image AI',
+          '⚡ Edge Model Optimization',
+          '📄 Published Research Contributor'
+        ],
+        deliverables: [
+          'Medical Image Segmentation Pipeline',
+          'Deep Learning Model Fine-Tuning',
+          'Dataset Preprocessing & Augmentation'
+        ],
+        outputs: [
+          '📄 Authored Conference Paper',
+          '🧠 Brain Lesion Classification AI'
+        ],
+        tools: ['PyTorch', 'Medical Image Segmentation', 'ResNet / UNet', 'TensorRT', 'Python', 'OpenCV'],
         achievements: [
-         "Developing and fine-tuning AI models for medical image analysis to improve diagnostic accuracy.",
+          "Developing and fine-tuning AI models for medical image analysis to improve diagnostic accuracy.",
           "Collaborating with researchers and faculty to advance deep learning applications in healthcare.",
           "Engaging in AI-driven research, data analysis, and academic publishing in the field of medical imaging."
         ],
@@ -187,8 +235,24 @@ function App() {
         title: 'Research Intern (Artificial Intelligence & Intelligent Systems)',
         company: 'Sanjivani University · Research Internship',
         period: 'Jul 2025 - March 2026',
-        location: 'Kopargaon, Maharashtra, India · On-site',
-        description: 'Engaged in applied and research-oriented artificial intelligence projects focused on perception-driven systems and real-world deployment.',
+        location: 'Sanjivani University, India · On-site',
+        description: 'Engaged in applied research-oriented artificial intelligence projects focused on perception-driven systems and real-world rural deployment.',
+        highlights: [
+          '🎯 YOLOv8 Threat Perception',
+          '📟 Custom Sensing PCB Design',
+          '🚜 10+ Farmer Field Deployments'
+        ],
+        deliverables: [
+          'YOLOv8 Wildlife Perception Engine',
+          'Custom Multi-Sensor PCB Design',
+          'Raspberry Pi Edge IoT Controller'
+        ],
+        outputs: [
+          '💡 Product Patent Filed',
+          '🚜 10+ Rural Field Deployments',
+          '📄 1 Top-Tier Conference Paper'
+        ],
+        tools: ['YOLOv8', 'Raspberry Pi', 'OpenCV', 'PIR/Ultrasonic Sensors', 'Custom PCB', 'IoT Alerts'],
         achievements: [
           'Designing AI-based perception pipelines for wildlife threat detection and early warning systems.',
           'Fine-tuning deep learning models (YOLO-based architectures) for real-time object detection under resource constraints.',
@@ -200,9 +264,24 @@ function App() {
       {
         title: "NASA International Space Apps Challenge Local Lead - Kopargaon",
         company: "NASA International Space Apps Challenge",
-        period: "March 2025 - Dec 2025 ·",
+        period: "March 2025 - Dec 2025",
         location: "Kopargaon, Maharashtra, India · On-site",
         description: "Leading and organizing the NASA International Space Apps Challenge in Kopargaon, fostering innovation in artificial intelligence and machine learning for space applications.",
+        highlights: [
+          '🚀 100+ Participants Coordinated',
+          '🌌 AI/ML Space Hackathon Lead',
+          '🏆 People\'s Choice Award Team'
+        ],
+        deliverables: [
+          'Local Hackathon Operations & Outreach',
+          'AI/ML Challenge Mentorship',
+          'Global NASA Challenge Coordination'
+        ],
+        outputs: [
+          '🚀 100+ Student Hackathon Participants',
+          '🏆 Award-Winning Space Apps Chapter'
+        ],
+        tools: ['Hackathon Ops', 'AI/ML Mentorship', 'Space Apps SDK', 'Team Leadership'],
         achievements: [
           "Coordinating with participants, mentors, and global organizers to facilitate a successful hackathon.",
           "Guiding teams in developing AI/ML-based solutions for real-world space challenges.",
@@ -217,6 +296,21 @@ function App() {
         period: 'Jan 2025 - May 2025 · 4 months',
         location: 'Pune, Maharashtra, India · On-site',
         description: 'Working as an intern on artificial intelligence and machine learning projects, contributing to model development and real-time data analysis.',
+        highlights: [
+          '📈 Ad-Tech Analytics Optimization',
+          '⚡ Real-Time Data Pipeline',
+          '🤖 Automated ML Workflow'
+        ],
+        deliverables: [
+          'Business Process Optimization Models',
+          'Ad-Tech Data Pipeline Scripts',
+          'Automated ML Model Benchmarking'
+        ],
+        outputs: [
+          '⚡ Real-Time Data Analysis Pipeline',
+          '📊 Ad Analytics Performance Boost'
+        ],
+        tools: ['Python', 'Scikit-Learn', 'Pandas', 'Automated ML', 'Data Pipelines'],
         achievements: [
           'Developing machine learning models to optimize business processes.',
           'Collaborating with the team on AI-driven data analysis and automation tasks.',
@@ -230,6 +324,21 @@ function App() {
       period: 'June 2022 - Jan 2025',
       description:
         'Developed innovative IoT, AI, ML, and web solutions for smart campus initiatives, streamlining operations and fostering innovation.',
+      highlights: [
+        '💡 60+ Delivered Campus Projects',
+        '⚡ 30% Resource Efficiency Gain',
+        '🎓 200+ Students Mentored'
+      ],
+      deliverables: [
+        'Smart Campus IoT & Automation Systems',
+        'Multi-Department Web Applications',
+        'Student Engineering Project Mentorship'
+      ],
+      outputs: [
+        '💡 60+ Successful Deployed Projects',
+        '⚡ 30% Resource Efficiency Gain'
+      ],
+      tools: ['IoT Systems', 'Python', 'React', 'Node.js', 'Automation', 'Sensors'],
       achievements: [
         'Delivered 60+ successful projects, enhancing efficiency across 10+ departments.',
         'Improved resource efficiency by 30% through automation systems.',
@@ -243,6 +352,21 @@ function App() {
       period: 'January 2024 - Dec 2024',
       description:
         'Actively contributing to the advancement of technology and professional growth as part of the IEEE community.',
+      highlights: [
+        '📜 Technical Conference Delegation',
+        '🛠️ Workshop Organization',
+        '🌐 Global Research Network'
+      ],
+      deliverables: [
+        'Technical Workshop & Seminar Organization',
+        'International Conference Participation',
+        'Peer Research & Knowledge Exchange'
+      ],
+      outputs: [
+        '📜 Conference Research Papers Attended',
+        '🛠️ National Tech Seminars'
+      ],
+      tools: ['IEEE Xplore', 'Technical Publishing', 'Conference Presentations'],
       achievements: [
         'Participated in national and international conferences, gaining insights into cutting-edge technologies.',
         'Organized technical workshops and events, promoting innovation and knowledge sharing.',
@@ -255,6 +379,21 @@ function App() {
       period: 'January 2024 - September 2024',
       description:
         'Worked on groundbreaking aerospace projects, contributing to India’s first reusable hybrid rocket and advancing satellite technology.',
+      highlights: [
+        '🚀 Rhumi-1 Hybrid Rocket Payload',
+        '🛰️ 3 CubeSats & 50 PICO Sats',
+        '🎓 40 Hours Satellite Training'
+      ],
+      deliverables: [
+        'Reusable Hybrid Rocket Subsystem Testing',
+        'Satellite Payload Data Telemetry Integration',
+        'Hands-On Space Hardware Workshops'
+      ],
+      outputs: [
+        '🚀 Rhumi-1 Reusable Rocket Launch',
+        '🛰️ 3 CubeSats & 50 PICO Sats Launched'
+      ],
+      tools: ['Rocket Propulsion', 'Payload Telemetry', 'CubeSat Avionics', 'Satellite Data'],
       achievements: [
         "Contributed to 'Rhumi-1,' India’s first reusable hybrid rocket, under the mentorship of Dr. Mylswamy Annadurai.",
         'Participated in the successful launch of 3 CubeSats and 50 PICO satellites, promoting satellite technology outreach.',
@@ -269,6 +408,21 @@ function App() {
       location: 'Ahmednagar, Maharashtra, India (Hybrid)',
       description:
         'Developed an innovative Exoplanet Exploration Game as part of NASA’s global hackathon, fostering creativity and teamwork to tackle real-world space challenges.',
+      highlights: [
+        '🏆 People\'s Choice Award Winner',
+        '🪐 Exoplanet Exploration Game',
+        '🌌 Post-Hackathon R&D'
+      ],
+      deliverables: [
+        'Exoplanet Exploration Gamified Engine',
+        'Interactive Space Data Visualization',
+        'Post-Hackathon Product Refinement'
+      ],
+      outputs: [
+        '🏆 People\'s Choice Award Winner',
+        '🎮 Exoplanet Gamified App'
+      ],
+      tools: ['Three.js', 'React', 'NASA Open APIs', 'Space Gamification'],
       achievements: [
         "Honored with the People's Choice Award for creating a groundbreaking Exoplanet Exploration Game.",
         'Collaborated with a dynamic team to design and develop a game that enhances space discovery education.',
@@ -281,6 +435,21 @@ function App() {
       period: 'May 2024 - June 2024',
       description:
         'Completed a virtual internship focused on web development, debugging, and utilizing proprietary tools to enhance application performance.',
+      highlights: [
+        '📊 Perspective Data Visualization',
+        '🛠️ Repository Debugging & Fixes',
+        '💻 Full-Stack Dev Workflow'
+      ],
+      deliverables: [
+        'Local Dev Environment Configuration',
+        'Bug Fixing & Financial Data Processing',
+        'Perspective Live Data Visualization'
+      ],
+      outputs: [
+        '📊 Real-Time Financial Dashboard',
+        '🛠️ Debugged Production Codebase'
+      ],
+      tools: ['Perspective JS', 'Python', 'React', 'Git', 'Data Visualization'],
       achievements: [
         'Set up a local development environment by downloading and configuring necessary files, tools, and dependencies.',
         'Debugged and resolved issues in repository files to ensure accurate web application output.',
@@ -294,6 +463,20 @@ function App() {
       location: 'Kopargaon, Maharashtra, India (Remote)',
       description:
         'Focused on developing and implementing machine learning models to solve real-world problems, while gaining hands-on experience in data analysis and algorithm optimization.',
+      highlights: [
+        '🤖 Feature Engineering & Preprocessing',
+        '⚡ Model Accuracy Optimization',
+        '🛠️ Cross-Functional Integration'
+      ],
+      deliverables: [
+        'ML Model Training & Accuracy Optimization',
+        'Data Feature Preprocessing Pipelines',
+        'Cross-Functional Model Deployment'
+      ],
+      outputs: [
+        '🤖 Deployed ML Predictive Models'
+      ],
+      tools: ['Python', 'Scikit-Learn', 'Pandas', 'Feature Engineering'],
       achievements: [
         'Developed and optimized ML models to improve system performance and accuracy.',
         'Conducted data preprocessing and feature engineering to enhance model outputs.',
@@ -307,6 +490,21 @@ function App() {
       location: 'Maharashtra, India (On-site)',
       description:
         'Founded Team Charlie to foster a culture of research-based learning by establishing interdisciplinary clubs and creating opportunities for innovation and collaboration.',
+      highlights: [
+        '🏛️ 6 Interdisciplinary Clubs Founded',
+        '👥 100+ Active Student Members',
+        '🛠️ STEM Workshops & Hackathons'
+      ],
+      deliverables: [
+        'Space, AI/ML, Robotics & Cyber Clubs',
+        'Interdisciplinary Workshop Series',
+        'Student Research Ecosystem Building'
+      ],
+      outputs: [
+        '🏛️ 6 Vibrant Tech Clubs',
+        '🎓 100+ Active Innovators Mentored'
+      ],
+      tools: ['Community Leadership', 'STEM Mentorship', 'Event Operations'],
       achievements: [
         'Established 6 vibrant clubs: Space & Robotics, CodeCrafters, Science, Cybersecurity, Digital Marketing & Content Creation, and AI & ML.',
         'Promoted a collaborative environment, empowering students to explore cutting-edge technologies and innovative solutions.',
@@ -320,6 +518,21 @@ function App() {
       location: 'Bengaluru, Karnataka, India',
       description:
         'Engaged in part-time work to promote and advocate for space-related initiatives, fostering enthusiasm and awareness about space exploration and technology.',
+      highlights: [
+        '🌌 Space Science Advocacy',
+        '📢 STEM Outreach & Media',
+        '🌐 Space Community Growth'
+      ],
+      deliverables: [
+        'Engaging Space Exploration Content',
+        'Industry Partner Collaboration',
+        'STEM Outreach Campaigns'
+      ],
+      outputs: [
+        '📢 Space Science Educational Content',
+        '🌐 Active STEM Community'
+      ],
+      tools: ['Content Strategy', 'Space Outreach', 'STEM Engagement'],
       achievements: [
         'Created and shared engaging content to educate and inspire audiences about space science and exploration.',
         'Collaborated with space industry professionals and organizations to amplify outreach efforts.',
@@ -330,17 +543,26 @@ function App() {
 
   const achievements = [
     {
-  title: 'Selected Scholar – M2L Summer School, Croatia',
-  organization: 'Mediterranean Machine Learning (M2L) Summer School, Split',
-  year: 'September 2025',
-  description: [
-  'Selected for M2L Summer School 2025 in Croatia, sponsored by Google DeepMind. Chosen among global AI talents for intensive training in ethical and human-centered machine learning.'],
-},
+      title: 'Selected Scholar – M2L Summer School, Croatia',
+      organization: 'Mediterranean Machine Learning (M2L) Summer School, Split',
+      year: 'September 2025',
+      tier: '🌍 GLOBAL SCHOLAR',
+      reward: 'Fully Funded (Google DeepMind)',
+      sponsor: 'Google DeepMind',
+      featured: true,
+      description: [
+        'Selected for M2L Summer School 2025 in Croatia, sponsored by Google DeepMind. Chosen among global AI talents for intensive training in ethical and human-centered machine learning.'
+      ],
+    },
 
     {
       title: 'AIR 1 – NASA Visit Winner | Mission Rhumi 2024',
       organization: 'Space Zone India, Tamil Nadu',
       year: 'April 2025',
+      tier: '🏆 ALL INDIA RANK 1',
+      reward: 'Top 0.0067% (1 of 15,000+)',
+      sponsor: 'Space Zone India / NASA',
+      featured: true,
       description: [
         'Secured All India Rank 1 among 15,000+ participants and ranked in the top 0.0067%. Selected among the top 3 winners to represent India for a NASA visit, recognized for innovation and STEM excellence through a rigorous multi-phase national assessment.'
       ],
@@ -349,15 +571,20 @@ function App() {
       title: 'Second Prize (Runner-Up) – Civil Engineering Domain',
       organization: 'National Level Project Expo 2K25, MIT ADT University, Pune',
       year: 'April 2025',
+      tier: '🥇 NATIONAL RUNNER-UP',
+      reward: '₹11,000 Cash Prize + Trophy',
+      sponsor: 'MIT ADT University',
       description: [
         'Presented MonitorX, a structural health monitoring system. Secured 2nd Prize among 50+ national teams for interdisciplinary innovation and real-world impact in infrastructure safety. Won ₹11,000 cash prize and a trophy.'
       ],
     },
-    
     {
       title: 'Second Prize – Safety Category',
       organization: 'Dipex 2025, State-Level Competition (Maharashtra & Goa)',
       year: 'March 2025',
+      tier: '🛡️ STATE RUNNER-UP',
+      reward: '₹5,000 Cash Prize + Trophy',
+      sponsor: 'Dipex 2025',
       description: [
         'Developed MonitorX for resilient infrastructure. Won 2nd Prize in the Safety Category among top innovations and received ₹5000 and Trophy for engineering impact.'
       ],
@@ -366,6 +593,9 @@ function App() {
       title: 'People’s Choice Award Winner',
       organization: 'NASA Space Apps Challenge, USA',
       year: 'December 2024',
+      tier: '🌌 NASA INTERNATIONAL',
+      reward: 'People\'s Choice Winner',
+      sponsor: 'NASA Space Apps',
       description: [
         "Developed 'ExoYatra,' an exploration game focused on galactic challenges.",
         'Achieved 90% user engagement and captivated 60,000+ participants.',
@@ -375,6 +605,9 @@ function App() {
       title: 'Winner of Research Paper Presentation Competition',
       organization: 'IEEE Bombay Section, India',
       year: 'November 2024',
+      tier: '📜 IEEE BEST PAPER',
+      reward: 'Best Paper Award',
+      sponsor: 'IEEE Bombay Section',
       description: [
         'Won among 200+ participants for innovative research and impactful presentation.',
         'Presented groundbreaking findings on an AI Virtual Try-On System, earning wide recognition from judges and peers.',
@@ -384,6 +617,9 @@ function App() {
       title: 'Winner of Singing Competition',
       organization: 'Sanjivani College of Engineering, Kopargaon',
       year: 'November 2024',
+      tier: '🥇 FIRST PLACE',
+      reward: '1st Place Trophy',
+      sponsor: 'Sanjivani COE',
       description: [
         'Secured first place in the college-level singing competition.',
         'Recognized for exceptional vocal performance and stage presence.',
@@ -393,6 +629,9 @@ function App() {
       title: 'Innovative Finalist',
       organization: 'Bosch Global Software Technologies Pvt Ltd., Pune',
       year: 'April 2024',
+      tier: '⚡ GLOBAL FINALIST',
+      reward: 'Top 3 Rounds',
+      sponsor: 'Bosch Global Software',
       description: [
         'Developed technology solutions improving system functionality by 25%.',
         'Secured first place in 3 competitive rounds with high-performance prototypes.',
@@ -402,6 +641,9 @@ function App() {
       title: '2nd Global Rank',
       organization: 'International Space Olympiad, EduMitra, India',
       year: 'January 2021',
+      tier: '🌍 GLOBAL RANK 2',
+      reward: 'Global Rank 2 / 1000+',
+      sponsor: 'EduMitra International',
       description: [
         'Achieved 2nd Global Rank among 1000+ participants from 50+ countries.',
       ],
@@ -410,6 +652,9 @@ function App() {
       title: 'National Maths Olympiad',
       organization: 'Saint Monica English School, Vaijapur',
       year: 'April 2018',
+      tier: '🔢 STATE RANK 11',
+      reward: '50/60 Score',
+      sponsor: 'State Maths Olympiad',
       description: [
         'Scored 50/60 and secured 11th Rank in Maharashtra State Preliminary Level.',
       ],
@@ -607,7 +852,10 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-purple-900/20 to-black text-white">
       <Scene />
-      <Navbar />
+      <Navbar
+        onOpenRecruiter={() => setIsRecruiterOpen(true)}
+        onOpenPalette={() => setIsPaletteOpen(true)}
+      />
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative">
@@ -631,8 +879,6 @@ function App() {
           >
             Unveil My Creations
           </motion.button>
-
-
         </motion.div>
       </section>
 
@@ -770,23 +1016,103 @@ function App() {
                 className="relative group"
               >
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <div className="relative p-6 bg-black rounded-lg">
-                  <div className="flex items-center mb-4">
-                    <Briefcase className="w-6 h-6 text-purple-400 mr-2" />
-                    <h3 className="text-xl font-bold text-white">
-                      {exp.title}
-                    </h3>
+                <div className="relative p-6 md:p-8 bg-slate-950/90 border border-purple-500/25 rounded-2xl backdrop-blur-md hover:border-cyan-400/40 transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.1)]">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    {/* Left & Middle Column: Role Details & Achievements */}
+                    <div className="lg:col-span-2 space-y-4">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <Briefcase className="w-5 h-5 text-cyan-400" />
+                          <h3 className="text-xl font-bold text-white">{exp.title}</h3>
+                        </div>
+                        <span className="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 font-mono text-xs font-semibold">
+                          {exp.period}
+                        </span>
+                      </div>
+
+                      <div className="text-purple-400 font-mono text-sm font-medium flex flex-wrap items-center gap-3">
+                        <span>{exp.company}</span>
+                        {exp.location && (
+                          <span className="text-gray-400 text-xs flex items-center gap-1 font-mono">
+                            • 📍 {exp.location}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Key Highlight Chips */}
+                      {exp.highlights && (
+                        <div className="flex flex-wrap gap-2 pt-1">
+                          {exp.highlights.map((chip: string, i: number) => (
+                            <span key={i} className="px-2.5 py-0.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 font-mono text-[11px] font-semibold">
+                              {chip}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      <p className="text-gray-300 text-sm leading-relaxed">{exp.description}</p>
+
+                      <ul className="space-y-2 text-xs md:text-sm text-gray-300">
+                        {exp.achievements.map((achievement: string, i: number) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="text-purple-400 mt-1 shrink-0">▸</span>
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Right Column: Key Deliverables & Tangible Outputs Panel */}
+                    <div className="p-5 rounded-xl bg-slate-900/80 border border-purple-500/20 flex flex-col justify-between space-y-4">
+                      <div className="space-y-4">
+                        <div className="text-xs font-mono font-bold text-cyan-300 uppercase tracking-wider flex items-center gap-1.5 border-b border-white/10 pb-2">
+                          <CheckCircle className="w-4 h-4 text-emerald-400" /> Key Deliverables & Outputs
+                        </div>
+
+                        {/* Verified Milestone Progress Checklist */}
+                        {exp.deliverables && (
+                          <div className="space-y-1.5">
+                            {exp.deliverables.map((item: string, i: number) => (
+                              <div key={i} className="flex items-start gap-2 text-xs font-mono text-gray-300">
+                                <span className="text-emerald-400 font-bold shrink-0">✓</span>
+                                <span>{item}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        {/* Tangible Research & Project Outputs */}
+                        {exp.outputs && (
+                          <div className="pt-2 space-y-1.5">
+                            <div className="text-[11px] font-mono text-purple-300 font-semibold uppercase tracking-wider">Tangible Outputs</div>
+                            <div className="flex flex-wrap gap-1.5">
+                              {exp.outputs.map((out: string, i: number) => (
+                                <span key={i} className="px-2 py-0.5 rounded bg-purple-950/60 border border-purple-500/30 text-purple-300 font-mono text-[11px]">
+                                  {out}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Primary Tools */}
+                        {exp.tools && (
+                          <div className="pt-1 flex flex-wrap gap-1.5">
+                            {exp.tools.slice(0, 4).map((tool: string, i: number) => (
+                              <span key={i} className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-400 font-mono text-[10px]">
+                                {tool}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="pt-3 border-t border-white/10 text-[11px] font-mono text-gray-400 flex items-center justify-between">
+                        <span>Status</span>
+                        <span className="text-emerald-400 font-semibold">● VERIFIED ENGAGEMENT</span>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-purple-400 mb-2">{exp.company}</p>
-                  <p className="text-gray-400 mb-4">{exp.period}</p>
-                  <p className="text-gray-300 mb-4">{exp.description}</p>
-                  <ul className="list-disc list-inside text-gray-300">
-                    {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="mb-1">
-                        {achievement}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </motion.div>
             ))}
@@ -801,35 +1127,69 @@ function App() {
             Key Achievements
           </h2>
 
-
           <div className="grid md:grid-cols-2 gap-8">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={achievement.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
                 className="relative group"
               >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <div className="relative p-6 bg-black rounded-lg">
-                  <Trophy className="w-12 h-12 text-purple-400 mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    {achievement.title}
-                  </h3>
-                  <p className="text-purple-400 mb-1">
-                    {achievement.organization}
-                  </p>
-                  <p className="text-gray-400 mb-2">{achievement.year}</p>
-                  <p className="text-gray-300">{achievement.description}</p>
+                {/* Glow aura background */}
+                <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-purple-600/50 to-blue-600/50 blur opacity-60 group-hover:opacity-100 transition duration-500"></div>
+
+                <div className="relative p-7 bg-[#08070d] border border-purple-500/20 rounded-2xl h-full flex flex-col justify-between space-y-4">
+                  <div className="space-y-3">
+                    {/* Top Trophy Icon */}
+                    <div>
+                      <Trophy className="w-9 h-9 text-purple-400 stroke-[1.5]" />
+                    </div>
+
+                    {/* Title & Organization */}
+                    <div className="space-y-1">
+                      <h3 className="text-xl font-bold text-white leading-snug">
+                        {achievement.title}
+                      </h3>
+                      <p className="text-purple-400 text-sm font-medium">
+                        {achievement.organization}
+                      </p>
+                      <p className="text-gray-400 text-xs">
+                        {achievement.year}
+                      </p>
+                    </div>
+
+                    {/* Description */}
+                    <div className="text-gray-300 text-sm leading-relaxed space-y-1 pt-1">
+                      {Array.isArray(achievement.description) ? (
+                        achievement.description.map((desc, dIdx) => <p key={dIdx}>{desc}</p>)
+                      ) : (
+                        <p>{achievement.description}</p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Optional extra tags if present */}
+                  {(achievement.reward || achievement.sponsor) && (
+                    <div className="pt-2 flex flex-wrap items-center gap-2">
+                      {achievement.reward && (
+                        <span className="px-2.5 py-0.5 rounded-md bg-purple-950/60 border border-purple-500/30 text-purple-300 font-mono text-xs font-semibold">
+                          {achievement.reward}
+                        </span>
+                      )}
+                      {achievement.sponsor && (
+                        <span className="text-gray-400 text-xs">
+                          Sponsor: <span className="text-purple-300">{achievement.sponsor}</span>
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-
-
 
       {/* Photo Gallery Section */}
       <PhotoGallery />
@@ -1005,10 +1365,6 @@ function App() {
   </div>
 </section>
 
-
-
-
-
       {/* Patents Section */}
 <section id="patents" className="py-20 relative">
   <div className="max-w-6xl mx-auto px-4">
@@ -1078,70 +1434,87 @@ function App() {
             </motion.div>
 
   </div>
-
 </section>
-<section id="certifications" className="py-20 relative z-10">
-  <div className="max-w-6xl mx-auto px-4">
-    <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
-      Certifications
-    </h2>
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {certifications.map((cert, index) => (
-        <motion.div
-          key={cert.credentialId}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          className="relative group"
-        >
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-          <div className="relative p-6 bg-black rounded-lg h-full">
-            <div className="h-48 mb-4 overflow-hidden rounded-lg">
-              <img
-                src={cert.image}
-                alt={cert.title}
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <Award className="w-8 h-8 text-purple-400 mb-4" />
-            <h3 className="text-xl font-bold text-white mb-2">{cert.title}</h3>
-            <p className="text-purple-400 mb-1">{cert.organization}</p>
-            <p className="text-gray-400 mb-2">{cert.date}</p>
-            <p className="text-gray-500 text-sm mb-3">ID: {cert.credentialId}</p>
-            <div className="flex flex-wrap gap-2">
-              {cert.skills.map((skill, i) => (
-                <span
-                  key={i}
-                  className="px-2 py-1 text-xs rounded-full bg-purple-900/30 text-purple-400 border border-purple-500/20"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
 
-            {/* Link Button to Verify the Certificate */}
-            <a
-              href={cert.verifyLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-block px-6 py-2 rounded-full border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all duration-300"
-            >
-              Verify Certificate
-            </a>
+      {/* Certifications Section */}
+      <section id="certifications" className="py-20 relative z-10">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+            Certifications
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={cert.credentialId}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative group"
+              >
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative p-6 bg-black rounded-lg h-full flex flex-col justify-between">
+                  <div>
+                    <div className="h-48 mb-4 overflow-hidden rounded-lg">
+                      <img
+                        src={cert.image}
+                        alt={cert.title}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <Award className="w-8 h-8 text-purple-400 mb-4" />
+                    <h3 className="text-xl font-bold text-white mb-2">{cert.title}</h3>
+                    <p className="text-purple-400 mb-1">{cert.organization}</p>
+                    <p className="text-gray-400 mb-2">{cert.date}</p>
+                    <p className="text-gray-500 text-sm mb-3">ID: {cert.credentialId}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {cert.skills.map((skill, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-1 text-xs rounded-full bg-purple-900/30 text-purple-400 border border-purple-500/20"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Link Button to Verify the Certificate */}
+                  <a
+                    href={cert.verifyLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-block px-6 py-2 rounded-full border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white transition-all duration-300 text-center"
+                  >
+                    Verify Certificate
+                  </a>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
+      {/* Peer Recommendations & Endorsements */}
+      <TestimonialsCarousel />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+          <h2 className="text-4xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
             Let's Connect
           </h2>
+
+          {/* Schedule Chat Trigger Button */}
+          <div className="text-center mb-10">
+            <button
+              onClick={() => setIsScheduleOpen(true)}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-mono text-xs font-bold shadow-lg shadow-purple-500/25 hover:scale-105 transition duration-300"
+            >
+              <Calendar className="w-4 h-4" />
+              <span>📅 Schedule 1-on-1 Interview / Call</span>
+            </button>
+          </div>
+
           <ContactForm />
           
           <div className="flex justify-center space-x-8 mt-12">
@@ -1177,7 +1550,7 @@ function App() {
         </div>
       </section>
 
-      {/* Astro-AI Chatbot and ProjectModal details view */}
+      {/* Astro-AI Chatbot */}
       <AstroAIChatbot 
         skills={skills}
         projects={projects}
@@ -1187,7 +1560,36 @@ function App() {
         patents={patents}
         certifications={certifications}
       />
-      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+
+      {/* Project Modal with Architecture Diagram Link */}
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+        onOpenArchitecture={handleOpenArchitecture}
+      />
+
+      {/* Interactive Recruiter Modals */}
+      <RecruiterQuickView
+        isOpen={isRecruiterOpen}
+        onClose={() => setIsRecruiterOpen(false)}
+      />
+
+      <CommandPalette
+        isOpen={isPaletteOpen}
+        onClose={() => setIsPaletteOpen(false)}
+        onSelectAction={handleCommandPaletteAction}
+      />
+
+      <ArchitectureDiagramModal
+        isOpen={isArchModalOpen}
+        onClose={() => setIsArchModalOpen(false)}
+        projectTitle={archProjectTitle}
+      />
+
+      <ScheduleChatModal
+        isOpen={isScheduleOpen}
+        onClose={() => setIsScheduleOpen(false)}
+      />
 
 
     </div>

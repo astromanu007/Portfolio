@@ -1,12 +1,18 @@
-import { Menu, Volume2, VolumeX } from 'lucide-react';
+import { Menu, Zap, Terminal as TermIcon } from 'lucide-react';
 import { useState } from 'react';
 import { sfx } from '../utils/audio';
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMuted, setIsMuted] = useState(sfx.isMuted());
+interface NavbarProps {
+  onOpenRecruiter?: () => void;
+  onOpenPalette?: () => void;
+}
 
-  const handleNavClick = (e, sectionId) => {
+const Navbar: React.FC<NavbarProps> = ({
+  onOpenRecruiter,
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleNavClick = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
     sfx.playClick();
     const element = document.getElementById(sectionId);
@@ -16,18 +22,8 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  const toggleMute = () => {
-    const newMuteState = sfx.toggleMute();
-    setIsMuted(newMuteState);
-    if (!newMuteState) {
-      sfx.playChime();
-    } else {
-      sfx.playClick();
-    }
-  };
-
   return (
-    <nav className="fixed w-full z-50 bg-opacity-10 bg-black backdrop-blur-lg border-b border-white/5">
+    <nav className="fixed w-full z-40 bg-black/80 backdrop-blur-lg border-b border-white/5 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -39,13 +35,13 @@ const Navbar = () => {
               onMouseEnter={() => sfx.playHover()}
             />
             {/* Portfolio Title */}
-            <span className="text-white text-xl font-bold font-mono tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-purple-400">
-              AstroManu.007
+            <span className="text-xl font-bold font-mono tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-purple-400">
+              Manish Dhatrak
             </span>
           </div>
 
-          <div className="hidden md:flex items-center space-x-6">
-            <div className="flex items-baseline space-x-2">
+          <div className="hidden lg:flex items-center space-x-4">
+            <div className="flex items-baseline space-x-1 text-xs">
               {[
                 'About',
                 'Experience',
@@ -62,34 +58,34 @@ const Navbar = () => {
                   href={`#${item.toLowerCase()}`}
                   onClick={(e) => handleNavClick(e, item.toLowerCase())}
                   onMouseEnter={() => sfx.playHover()}
-                  className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-purple-500/10"
+                  className="px-2.5 py-1.5 rounded-md font-medium text-gray-300 hover:text-white hover:bg-purple-500/10 transition-all duration-300"
                 >
                   {item}
                 </a>
               ))}
             </div>
 
-            {/* Global Audio Controller */}
+            {/* Recruiter Quick Mode Trigger */}
             <button
-              onClick={toggleMute}
+              onClick={() => { sfx.playClick(); onOpenRecruiter?.(); }}
               onMouseEnter={() => sfx.playHover()}
-              className="p-2 rounded-full border border-purple-500/20 hover:border-purple-500 bg-white/5 hover:bg-purple-500/10 text-purple-400 transition-all duration-300"
-              title={isMuted ? "Unmute UI sounds" : "Mute UI sounds"}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 font-mono text-xs font-semibold transition-all duration-300 shadow-[0_0_12px_rgba(245,158,11,0.15)]"
             >
-              {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+              <Zap className="w-3.5 h-3.5 text-amber-400" />
+              <span>Recruiter Summary</span>
             </button>
           </div>
 
-          <div className="md:hidden flex items-center gap-4">
+          <div className="lg:hidden flex items-center gap-2">
             <button
-              onClick={toggleMute}
-              className="p-2 rounded-full border border-purple-500/20 bg-white/5 text-purple-400"
+              onClick={() => { sfx.playClick(); onOpenRecruiter?.(); }}
+              className="px-2.5 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 font-mono text-xs font-bold"
             >
-              {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+              Recruiter
             </button>
             <button
               onClick={() => { sfx.playClick(); setIsOpen(!isOpen); }}
-              className="text-gray-300 hover:text-white p-2"
+              className="p-2 text-gray-300 hover:text-white"
             >
               <Menu className="h-6 w-6" />
             </button>
@@ -98,7 +94,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/95 border-b border-white/10">
             {[
               'About',
@@ -115,8 +111,7 @@ const Navbar = () => {
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={(e) => handleNavClick(e, item.toLowerCase())}
-                onMouseEnter={() => sfx.playHover()}
-                className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-purple-500/10"
               >
                 {item}
               </a>
