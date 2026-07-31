@@ -41,7 +41,7 @@ const RecruiterQuickView: React.FC<RecruiterQuickViewProps> = ({ isOpen, onClose
             Manish Dhatrak
           </h2>
           <p className="text-sm text-purple-300 font-mono mb-6">
-            Electronics & Computer Engineering Researcher | AI, Computer Vision & Full-Stack Development
+            Electronics & Computer Engineering Researcher | AI, Computer Vision, Robotics & Biomedical AI
           </p>
 
           {/* Quick Metrics */}
