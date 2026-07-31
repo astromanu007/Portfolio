@@ -131,24 +131,40 @@ const ScheduleChatModal: React.FC<ScheduleChatModalProps> = ({ isOpen, onClose }
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-gray-400 mb-1">Preferred Date</label>
-                  <input
-                    type="date"
-                    required
-                    value={formData.date}
-                    onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    className="w-full p-2.5 rounded-xl bg-white/5 border border-white/10 text-white outline-none focus:border-purple-500"
-                  />
+                  <label className="block text-gray-400 mb-1 flex items-center gap-1">
+                    <Calendar className="w-3.5 h-3.5 text-purple-400" /> Preferred Date
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="date"
+                      required
+                      value={formData.date}
+                      onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                      className="w-full p-2.5 rounded-xl bg-slate-900 border border-purple-500/30 text-white outline-none focus:border-cyan-400 font-mono text-xs cursor-pointer scheme-dark"
+                    />
+                  </div>
                 </div>
+
                 <div>
-                  <label className="block text-gray-400 mb-1">Preferred Time</label>
-                  <input
-                    type="text"
-                    value={formData.time}
-                    onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                    placeholder="e.g. 2:00 PM EST"
-                    className="w-full p-2.5 rounded-xl bg-white/5 border border-white/10 text-white outline-none focus:border-purple-500"
-                  />
+                  <label className="block text-gray-400 mb-1 flex items-center gap-1">
+                    <Clock className="w-3.5 h-3.5 text-cyan-400" /> Preferred Time
+                  </label>
+                  <div className="relative">
+                    <select
+                      value={formData.time}
+                      onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+                      className="w-full p-2.5 rounded-xl bg-slate-900 border border-purple-500/30 text-white outline-none focus:border-cyan-400 font-mono text-xs cursor-pointer appearance-none"
+                    >
+                      <option value="09:00 AM">09:00 AM IST</option>
+                      <option value="10:00 AM">10:00 AM IST</option>
+                      <option value="11:00 AM">11:00 AM IST</option>
+                      <option value="02:00 PM">02:00 PM IST</option>
+                      <option value="04:00 PM">04:00 PM IST</option>
+                      <option value="06:00 PM">06:00 PM IST</option>
+                      <option value="08:00 PM">08:00 PM IST</option>
+                    </select>
+                    <Clock className="w-4 h-4 text-cyan-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  </div>
                 </div>
               </div>
 
