@@ -30,9 +30,25 @@ const TIMELINE_DATA: TimelineEvent[] = [
   },
   {
     year: '2025',
-    title: 'AI & Machine Learning Intern',
+    title: 'Winner - State Level DIPEX 2025',
+    subtitle: 'DIPEX 2025, Maharashtra & Goa',
+    description: 'Developed MonitorX structural health monitoring system. Won 2nd Prize in Safety Category among top innovations.',
+    icon: Award,
+    category: 'award'
+  },
+  {
+    year: '2025',
+    title: 'Runner-Up - Civil Engineering Domain',
+    subtitle: 'MIT ADT National Level Project Expo 2K25, Pune',
+    description: 'Presented MonitorX structural health system. Secured 2nd Prize among 50+ national teams with ₹11,000 cash prize.',
+    icon: Award,
+    category: 'award'
+  },
+  {
+    year: '2025',
+    title: 'AI & Machine Learning Intern (Team Lead)',
     subtitle: 'Adgebra | Inuxu Digital Media Technologies',
-    description: 'Developed machine learning models to optimize business processes and contribute to real-time analytics.',
+    description: 'Led 4-member AI team to build Drishti Labs, a multimodal classifier serving 50k-100k users.',
     icon: Briefcase,
     category: 'work'
   },
@@ -51,14 +67,6 @@ const TIMELINE_DATA: TimelineEvent[] = [
     description: "Contributed to Rhumi-1, India's first reusable hybrid rocket launch, and CubeSat payloads.",
     icon: Rocket,
     category: 'space'
-  },
-  {
-    year: '2024',
-    title: 'Software Engineering Virtual Intern',
-    subtitle: 'J.P. Morgan Chase & Co.',
-    description: 'Configured and optimized real-time visual telemetry pipelines using Perspective library.',
-    icon: Briefcase,
-    category: 'work'
   },
   {
     year: '2022',
