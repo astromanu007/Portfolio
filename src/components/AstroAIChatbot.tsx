@@ -66,6 +66,12 @@ const AstroAIChatbot = ({
     // 2. INTERNSHIPS / EXPERIENCE
     if (clean.includes('experience') || clean.includes('work') || clean.includes('job') || clean.includes('intern')) {
       // Check for specific companies
+      if (clean.includes('iit') || clean.includes('bombay')) {
+        const exp = experience.find(e => e.company.toLowerCase().includes('iit') || e.company.toLowerCase().includes('bombay'));
+        return exp 
+          ? `At ${exp.company} (${exp.period}), I work as a ${exp.title} (${exp.location}). ${exp.description}\nKey accomplishments:\n- ${exp.achievements.join('\n- ')}`
+          : "I am a Research And Development Intern at IIT Bombay working on an AI-powered Lung Disease Analysis Device.";
+      }
       if (clean.includes('ntu') || clean.includes('singapore') || clean.includes('nanyang')) {
         const exp = experience.find(e => e.company.toLowerCase().includes('nanyang') || e.company.toLowerCase().includes('ntu'));
         return exp 

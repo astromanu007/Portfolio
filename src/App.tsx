@@ -205,6 +205,36 @@ function App() {
 
     const experience = [
       {
+        title: "Research And Development Intern",
+        company: "Indian Institute of Technology, Bombay · Full-time",
+        period: "Aug 2026 - Present · 2 mos",
+        location: "Mumbai, Maharashtra, India · On-site",
+        description: "Working under faculty supervision at IIT Bombay on an integrated cross-disciplinary project spanning AI, electronics, mechanical engineering, and clinical systems.",
+        highlights: [
+          '🫁 AI Lung Disease Analysis Device',
+          '🩺 Biomedical Hardware & IoT',
+          '📊 Real-Time Ventilator GUI & DSP'
+        ],
+        deliverables: [
+          'AI-Powered Acoustic Sensing & Deep Learning Diagnosis Device',
+          'Clinical-Grade Biomedical Hardware & Sound Wave Analysis System',
+          'Full-Stack GUI for Real-Time Data Acquisition & Ventilator Monitoring',
+          'MATLAB Signal Processing & Feature Extraction Pipelines'
+        ],
+        outputs: [
+          '🫁 End-to-End Lung Disease Diagnostic Device',
+          '📊 Real-Time Biomedical Data Acquisition GUI'
+        ],
+        tools: ['MATLAB', 'Biomedical Devices', 'Signal Processing', 'Deep Learning', 'IoT Systems', 'Full-Stack GUI', 'DSP Filters'],
+        achievements: [
+          'Developing an AI-powered Lung Disease Analysis Device integrating acoustic sensing, signal processing, and deep learning-based diagnosis end-to-end from hardware to software.',
+          'Designing and testing biomedical hardware systems combining IoT, mechanical design, sound wave analysis, and DSP filters for clinical-grade data acquisition.',
+          'Building full-stack GUI applications for real-time ventilator data collection and biomedical data acquisition handling complete frontend and backend development.',
+          'Implementing MATLAB-based signal processing pipelines for noise filtering, feature extraction, and waveform analysis from biomedical sensors.',
+          'Working under faculty supervision at IIT Bombay on an integrated cross-disciplinary project spanning AI, electronics, mechanical engineering, and clinical systems.'
+        ],
+      },
+      {
         title: "Research Student Intern (Remote)",
         company: "Nanyang Technological University (NTU) · Internship",
         period: "March 2025 - July 31, 2026",

@@ -14,6 +14,14 @@ interface TimelineEvent {
 const TIMELINE_DATA: TimelineEvent[] = [
   {
     year: '2026',
+    title: 'Research And Development Intern',
+    subtitle: 'Indian Institute of Technology, Bombay',
+    description: 'Developing AI-powered Lung Disease Analysis Device integrating acoustic sensing, signal processing, deep learning & biomedical hardware.',
+    icon: Briefcase,
+    category: 'work'
+  },
+  {
+    year: '2026',
     title: 'Research Intern (AI & Intelligent Systems)',
     subtitle: 'Sanjivani University',
     description: 'Designed wildlife threat detection pipelines and YOLO-based perception models, ending March 2026.',
